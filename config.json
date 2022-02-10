@@ -1,1 +1,1 @@
-{ "packageName": "Finbourne.Luminesce.Sdk", "sourceFolder": ".", "targetFramework": "netstandard2.0", "useDateTimeOffset": true, "netCoreProjectFile": true, "returnICollection": true, "packageVersion": "1.5.164" }
+{ "packageName": "Finbourne.Luminesce.Sdk", "sourceFolder": ".", "targetFramework": "netstandard2.0", "useDateTimeOffset": true, "netCoreProjectFile": true, "returnICollection": true, "packageVersion": "1.5.172" }
