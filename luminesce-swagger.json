@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.5.180",
+    "version": "1.5.207",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -1783,6 +1783,18 @@
               "type": "boolean",
               "description": "Should case-statements have line breaks added?",
               "default": true
+            },
+            "x-nullable": true
+          },
+          {
+            "name": "maxLineWidth",
+            "in": "query",
+            "description": "Maximum number of characters to allow on one line (if possible)",
+            "schema": {
+              "type": "integer",
+              "description": "Maximum number of characters to allow on one line (if possible)",
+              "format": "int32",
+              "default": 120
             },
             "x-nullable": true
           }

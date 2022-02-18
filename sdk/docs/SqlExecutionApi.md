@@ -821,7 +821,7 @@ Name | Type | Description  | Notes
 
 <a name="putquerytoformat"></a>
 # **PutQueryToFormat**
-> string PutQueryToFormat (string body, bool? trailingCommas = null, bool? uppercaseKeywords = null, bool? breakJoinOnSections = null, bool? spaceAfterExpandedComma = null, bool? keywordStandardization = null, bool? expandCommaLists = null, bool? expandInLists = null, bool? expandBooleanExpressions = null, bool? expandBetweenConditions = null, bool? expandCaseStatements = null)
+> string PutQueryToFormat (string body, bool? trailingCommas = null, bool? uppercaseKeywords = null, bool? breakJoinOnSections = null, bool? spaceAfterExpandedComma = null, bool? keywordStandardization = null, bool? expandCommaLists = null, bool? expandInLists = null, bool? expandBooleanExpressions = null, bool? expandBetweenConditions = null, bool? expandCaseStatements = null, int? maxLineWidth = null)
 
 [EXPERIMENTAL] PutQueryToFormat: Executes Sql, returned in JSON format, where the sql is the post-body url.
 
@@ -858,11 +858,12 @@ namespace Example
             var expandBooleanExpressions = true;  // bool? | Should boolean expressions have line breaks added? (optional)  (default to true)
             var expandBetweenConditions = true;  // bool? | Should between conditions have line breaks added? (optional)  (default to true)
             var expandCaseStatements = true;  // bool? | Should case-statements have line breaks added? (optional)  (default to true)
+            var maxLineWidth = 56;  // int? | Maximum number of characters to allow on one line (if possible) (optional)  (default to 120)
 
             try
             {
                 // [EXPERIMENTAL] PutQueryToFormat: Executes Sql, returned in JSON format, where the sql is the post-body url.
-                string result = apiInstance.PutQueryToFormat(body, trailingCommas, uppercaseKeywords, breakJoinOnSections, spaceAfterExpandedComma, keywordStandardization, expandCommaLists, expandInLists, expandBooleanExpressions, expandBetweenConditions, expandCaseStatements);
+                string result = apiInstance.PutQueryToFormat(body, trailingCommas, uppercaseKeywords, breakJoinOnSections, spaceAfterExpandedComma, keywordStandardization, expandCommaLists, expandInLists, expandBooleanExpressions, expandBetweenConditions, expandCaseStatements, maxLineWidth);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -891,6 +892,7 @@ Name | Type | Description  | Notes
  **expandBooleanExpressions** | **bool?**| Should boolean expressions have line breaks added? | [optional] [default to true]
  **expandBetweenConditions** | **bool?**| Should between conditions have line breaks added? | [optional] [default to true]
  **expandCaseStatements** | **bool?**| Should case-statements have line breaks added? | [optional] [default to true]
+ **maxLineWidth** | **int?**| Maximum number of characters to allow on one line (if possible) | [optional] [default to 120]
 
 ### Return type
 
