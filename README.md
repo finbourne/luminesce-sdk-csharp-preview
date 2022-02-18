@@ -17,8 +17,6 @@ $ dotnet add package Finbourne.Luminesce.Sdk.Preview
 
 This C# SDK (Preview) supports `Production`, `Early Access`, `Beta` and `Experimental` API endpoints. For more details on API endpoint categories, see [Documentation - Release Lifecycle](https://www.lusid.com/app/resources/documentation/lifecycle). To find out which category an API endpoint falls into, see [FINBOURNE Luminesce API Documentation](https://www.lusid.com/honeycomb/swagger/index.html). 
 
-N.B. Luminesce was previously called Honeycomb.
-
 ## Build Status 
 
 | branch | status |
