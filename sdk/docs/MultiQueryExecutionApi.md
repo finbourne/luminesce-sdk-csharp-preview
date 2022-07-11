@@ -186,7 +186,7 @@ namespace Example
 
             var apiInstance = new MultiQueryExecutionApi(config);
             var type = ;  // MultiQueryDefinitionType | An enum value defining the set of statements being executed
-            var body = body_example;  // string | A search value (e.g. 'Apple' on an instrument search)
+            var body = body_example;  // string | A \"search\" value (e.g. 'Apple' on an instrument search, a `Finbourne.Filtering` expression of Insights, etc.)  In the cases where \"Nothing\" is valid for a `Finbourne.Filtering` expression, pass `True`.
             var asAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | The AsAt time used by any bitemporal provider in the queries. (optional) 
             var effectiveAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | The EffectiveAt time used by any bitemporal provider in the queries. (optional) 
             var limit1 = 56;  // int? | A limit that is applied to first-level queries (e.g. Instruments themselves) (optional) 
@@ -219,7 +219,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **MultiQueryDefinitionType**| An enum value defining the set of statements being executed | 
- **body** | **string**| A search value (e.g. &#39;Apple&#39; on an instrument search) | 
+ **body** | **string**| A \&quot;search\&quot; value (e.g. &#39;Apple&#39; on an instrument search, a &#x60;Finbourne.Filtering&#x60; expression of Insights, etc.)  In the cases where \&quot;Nothing\&quot; is valid for a &#x60;Finbourne.Filtering&#x60; expression, pass &#x60;True&#x60;. | 
  **asAt** | **DateTimeOffset?**| The AsAt time used by any bitemporal provider in the queries. | [optional] 
  **effectiveAt** | **DateTimeOffset?**| The EffectiveAt time used by any bitemporal provider in the queries. | [optional] 
  **limit1** | **int?**| A limit that is applied to first-level queries (e.g. Instruments themselves) | [optional] 

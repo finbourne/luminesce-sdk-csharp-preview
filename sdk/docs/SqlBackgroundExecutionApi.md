@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**CancelQuery**](SqlBackgroundExecutionApi.md#cancelquery) | **DELETE** /api/SqlBackground/{executionId} | [EXPERIMENTAL] CancelQuery: Cancels (if running) or clears the data from (if completed) a previously started query
 [**FetchQueryResultCsv**](SqlBackgroundExecutionApi.md#fetchqueryresultcsv) | **GET** /api/SqlBackground/{executionId}/csv | [EXPERIMENTAL] FetchQueryResultCsv: Fetches the result from a previously started query, in CSV format.
 [**FetchQueryResultExcel**](SqlBackgroundExecutionApi.md#fetchqueryresultexcel) | **GET** /api/SqlBackground/{executionId}/excel | [EXPERIMENTAL] FetchQueryResultExcel: Fetches the result from a previously started query, in Excel format.
+[**FetchQueryResultHistogram**](SqlBackgroundExecutionApi.md#fetchqueryresulthistogram) | **GET** /api/SqlBackground/{executionId}/histogram | [EXPERIMENTAL] FetchQueryResultHistogram: Fetches the result from a previously started query, converts it to a histogram (counts in buckets).
 [**FetchQueryResultJson**](SqlBackgroundExecutionApi.md#fetchqueryresultjson) | **GET** /api/SqlBackground/{executionId}/json | [EXPERIMENTAL] FetchQueryResultJson: Fetches the result from a previously started query, in JSON string format.  Please move to &#39;/jsonProper&#39; instead.  This may be marked as Deprecated in the future.
 [**FetchQueryResultJsonProper**](SqlBackgroundExecutionApi.md#fetchqueryresultjsonproper) | **GET** /api/SqlBackground/{executionId}/jsonProper | [EXPERIMENTAL] FetchQueryResultJsonProper: Fetches the result from a previously started query, in JSON format.
 [**FetchQueryResultPipe**](SqlBackgroundExecutionApi.md#fetchqueryresultpipe) | **GET** /api/SqlBackground/{executionId}/pipe | [EXPERIMENTAL] FetchQueryResultPipe: Fetches the result from a previously started query, in pipe-delimited format.
@@ -238,6 +239,93 @@ Name | Type | Description  | Notes
  **filter** | **string**| An ODATA filter per Finbourne.Filtering syntax. | [optional] 
  **select** | **string**| Default is null (meaning return all columns in the original query itself).  The values are in terms of the result column name from the original data set and are comma delimited.  The power of this comes in that you may aggregate the data if you wish  (that is the main reason for allowing this, in fact).  e.g.:  - &#x60;MyField&#x60;  - &#x60;Max(x) FILTER (WHERE y &gt; 12) as ABC&#x60; (max of a field, if another field lets it qualify, with a nice column name)  - &#x60;count(*)&#x60; (count the rows for the given group, that would produce a rather ugly column name, but  it works)  - &#x60;count(distinct x) as numOfXs&#x60;  If there was an illegal character in a field you are selecting from, you are responsible for bracketing it with [ ].   e.g.  - &#x60;some_field, count(*) as a, max(x) as b, min([column with space in name]) as nice_name&#x60;    where you would likely want to pass &#x60;1&#x60; as the &#x60;groupBy&#x60; also. | [optional] 
  **groupBy** | **string**| Groups by the specified fields.              A comma delimited list of: 1 based numeric indexes (cleaner), or repeats of the select expressions (a bit verbose and must match exactly).              e.g. &#x60;2,3&#x60;, &#x60;myColumn&#x60;.              Default is null (meaning no grouping will be performed on the selected columns).              This applies only over the result set being requested here, meaning indexes into the \&quot;select\&quot; parameter fields.              Only specify this if you are selecting aggregations in the \&quot;select\&quot; parameter. | [optional] 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="fetchqueryresulthistogram"></a>
+# **FetchQueryResultHistogram**
+> string FetchQueryResultHistogram (string executionId, string timestampFieldName, DateTimeOffset? startAt = null, DateTimeOffset? endAt = null, string bucketSize = null, string filter = null, bool? jsonProper = null)
+
+[EXPERIMENTAL] FetchQueryResultHistogram: Fetches the result from a previously started query, converts it to a histogram (counts in buckets).
+
+Fetch the histogram in Json format (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Finbourne.Luminesce.Sdk.Api;
+using Finbourne.Luminesce.Sdk.Client;
+using Finbourne.Luminesce.Sdk.Model;
+
+namespace Example
+{
+    public class FetchQueryResultHistogramExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.lusid.com/honeycomb";
+            // Configure OAuth2 access token for authorization: oauth2
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SqlBackgroundExecutionApi(config);
+            var executionId = executionId_example;  // string | ExecutionId returned when starting the query
+            var timestampFieldName = timestampFieldName_example;  // string | Name of the timestamp field used in building the histogram
+            var startAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | Start point (of the timestampFieldName field) for the histogram (optional) 
+            var endAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | End point (of the timestampFieldName field) for the histogram (optional) 
+            var bucketSize = bucketSize_example;  // string | Optional histogram bucket width.  If not provided a set number of buckets between start/end range will be generated. (optional) 
+            var filter = filter_example;  // string | An ODATA filter per Finbourne.Filtering syntax. (optional) 
+            var jsonProper = true;  // bool? | Should this be text/json (not json-encoded-as-a-string) (optional)  (default to false)
+
+            try
+            {
+                // [EXPERIMENTAL] FetchQueryResultHistogram: Fetches the result from a previously started query, converts it to a histogram (counts in buckets).
+                string result = apiInstance.FetchQueryResultHistogram(executionId, timestampFieldName, startAt, endAt, bucketSize, filter, jsonProper);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SqlBackgroundExecutionApi.FetchQueryResultHistogram: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **executionId** | **string**| ExecutionId returned when starting the query | 
+ **timestampFieldName** | **string**| Name of the timestamp field used in building the histogram | 
+ **startAt** | **DateTimeOffset?**| Start point (of the timestampFieldName field) for the histogram | [optional] 
+ **endAt** | **DateTimeOffset?**| End point (of the timestampFieldName field) for the histogram | [optional] 
+ **bucketSize** | **string**| Optional histogram bucket width.  If not provided a set number of buckets between start/end range will be generated. | [optional] 
+ **filter** | **string**| An ODATA filter per Finbourne.Filtering syntax. | [optional] 
+ **jsonProper** | **bool?**| Should this be text/json (not json-encoded-as-a-string) | [optional] [default to false]
 
 ### Return type
 
