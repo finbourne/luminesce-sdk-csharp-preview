@@ -4,14 +4,14 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetServicesAsAccessControlledResources**](ApplicationMetadataApi.md#getservicesasaccesscontrolledresources) | **GET** /api/metadata/access/resources | [EXPERIMENTAL] GetServicesAsAccessControlledResources: Get resources available for access control
+[**GetServicesAsAccessControlledResources**](ApplicationMetadataApi.md#getservicesasaccesscontrolledresources) | **GET** /api/metadata/access/resources | GetServicesAsAccessControlledResources: Get resources available for access control
 
 
 <a name="getservicesasaccesscontrolledresources"></a>
 # **GetServicesAsAccessControlledResources**
 > ResourceListOfAccessControlledResource GetServicesAsAccessControlledResources ()
 
-[EXPERIMENTAL] GetServicesAsAccessControlledResources: Get resources available for access control
+GetServicesAsAccessControlledResources: Get resources available for access control
 
 Get the comprehensive set of resources that are available for access control
 
@@ -38,7 +38,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] GetServicesAsAccessControlledResources: Get resources available for access control
+                // GetServicesAsAccessControlledResources: Get resources available for access control
                 ResourceListOfAccessControlledResource result = apiInstance.GetServicesAsAccessControlledResources();
                 Debug.WriteLine(result);
             }
