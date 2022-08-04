@@ -45,7 +45,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var query = select ^ from Sys.Field order by 1, 2;  // string | HoneycombSql to Execute (must be one line only)
+            var query = select ^ from Sys.Field order by 1, 2;  // string | LuminesceSql to Execute (must be one line only)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeout = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -71,7 +71,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **string**| HoneycombSql to Execute (must be one line only) | 
+ **query** | **string**| LuminesceSql to Execute (must be one line only) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **download** | **bool?**| Makes this a file-download request (as opposed to returning the data in the response-body) | [optional] [default to false]
  **timeout** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
@@ -126,7 +126,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var query = select ^ from Sys.Field order by 1, 2;  // string | HoneycombSql to Execute (must be one line only)
+            var query = select ^ from Sys.Field order by 1, 2;  // string | LuminesceSql to Execute (must be one line only)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeout = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -151,7 +151,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **string**| HoneycombSql to Execute (must be one line only) | 
+ **query** | **string**| LuminesceSql to Execute (must be one line only) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **timeout** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
 
@@ -205,7 +205,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var query = select ^ from Sys.Field order by 1, 2;  // string | HoneycombSql to Execute (must be one line only)
+            var query = select ^ from Sys.Field order by 1, 2;  // string | LuminesceSql to Execute (must be one line only)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeout = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
             var jsonProper = true;  // bool? | Should this be text/json (not json-encoded-as-a-string) (optional)  (default to false)
@@ -231,7 +231,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **string**| HoneycombSql to Execute (must be one line only) | 
+ **query** | **string**| LuminesceSql to Execute (must be one line only) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **timeout** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
  **jsonProper** | **bool?**| Should this be text/json (not json-encoded-as-a-string) | [optional] [default to false]
@@ -286,7 +286,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var query = select ^ from Sys.Field order by 1, 2;  // string | HoneycombSql to Execute (must be one line only)
+            var query = select ^ from Sys.Field order by 1, 2;  // string | LuminesceSql to Execute (must be one line only)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeout = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -312,7 +312,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **string**| HoneycombSql to Execute (must be one line only) | 
+ **query** | **string**| LuminesceSql to Execute (must be one line only) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **download** | **bool?**| Makes this a file-download request (as opposed to returning the data in the response-body) | [optional] [default to false]
  **timeout** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
@@ -367,7 +367,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var query = select ^ from Sys.Field order by 1, 2;  // string | HoneycombSql to Execute (must be one line only)
+            var query = select ^ from Sys.Field order by 1, 2;  // string | LuminesceSql to Execute (must be one line only)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeout = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -392,7 +392,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **query** | **string**| HoneycombSql to Execute (must be one line only) | 
+ **query** | **string**| LuminesceSql to Execute (must be one line only) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **timeout** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
 
@@ -424,7 +424,7 @@ Name | Type | Description  | Notes
 
 PutByQueryCsv: Executes Sql, returned in CSV format, where the sql is the post-body url.
 
- For more complex HoneycombSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
+ For more complex LuminesceSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
 
 ### Example
 ```csharp
@@ -446,7 +446,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | HoneycombSql to Execute (may be multi-line)
+            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -472,7 +472,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| HoneycombSql to Execute (may be multi-line) | 
+ **body** | **string**| LuminesceSql to Execute (may be multi-line) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **download** | **bool?**| Makes this a file-download request (as opposed to returning the data in the response-body) | [optional] [default to false]
  **timeoutSeconds** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
@@ -505,7 +505,7 @@ Name | Type | Description  | Notes
 
 PutByQueryExcel: Executes Sql, returned in Excel (xlsx) format (as a file to be downloaded), where the sql is the post-body url.
 
- For more complex HoneycombSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
+ For more complex LuminesceSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
 
 ### Example
 ```csharp
@@ -527,7 +527,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | HoneycombSql to Execute (may be multi-line)
+            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -552,7 +552,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| HoneycombSql to Execute (may be multi-line) | 
+ **body** | **string**| LuminesceSql to Execute (may be multi-line) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **timeoutSeconds** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
 
@@ -584,7 +584,7 @@ Name | Type | Description  | Notes
 
 PutByQueryJson: Executes Sql, returned in JSON format, where the sql is the post-body url.
 
- For more complex HoneycombSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
+ For more complex LuminesceSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
 
 ### Example
 ```csharp
@@ -606,7 +606,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | HoneycombSql to Execute (may be multi-line)
+            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
             var jsonProper = true;  // bool? | Should this be text/json (not json-encoded-as-a-string) (optional)  (default to false)
@@ -632,7 +632,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| HoneycombSql to Execute (may be multi-line) | 
+ **body** | **string**| LuminesceSql to Execute (may be multi-line) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **timeoutSeconds** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
  **jsonProper** | **bool?**| Should this be text/json (not json-encoded-as-a-string) | [optional] [default to false]
@@ -665,7 +665,7 @@ Name | Type | Description  | Notes
 
 PutByQueryPipe: Executes Sql, returned in pipe-delimited format, where the sql is the post-body url.
 
- For more complex HoneycombSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
+ For more complex LuminesceSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
 
 ### Example
 ```csharp
@@ -687,7 +687,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | HoneycombSql to Execute (may be multi-line)
+            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -713,7 +713,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| HoneycombSql to Execute (may be multi-line) | 
+ **body** | **string**| LuminesceSql to Execute (may be multi-line) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **download** | **bool?**| Makes this a file-download request (as opposed to returning the data in the response-body) | [optional] [default to false]
  **timeoutSeconds** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
@@ -746,7 +746,7 @@ Name | Type | Description  | Notes
 
 PutByQuerySqlite: Executes Sql, returned in SqLite DB (sqlite3) format (as a file to be downloaded), where the sql is the post-body url.
 
- For more complex HoneycombSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
+ For more complex LuminesceSql a PUT will allow for longer Sql. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized 
 
 ### Example
 ```csharp
@@ -768,7 +768,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | HoneycombSql to Execute (may be multi-line)
+            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -793,7 +793,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| HoneycombSql to Execute (may be multi-line) | 
+ **body** | **string**| LuminesceSql to Execute (may be multi-line) | 
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **timeoutSeconds** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
 
@@ -847,7 +847,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | HoneycombSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
+            var body = body_example;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
             var trailingCommas = true;  // bool? | Should commas be after an expression (as opposed to before) (optional)  (default to true)
             var uppercaseKeywords = true;  // bool? | Should key words be capitalized (optional)  (default to false)
             var breakJoinOnSections = true;  // bool? | Should clauses on joins be given line breaks? (optional)  (default to true)
@@ -881,7 +881,7 @@ namespace Example
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | **string**| HoneycombSql to Pretty-Print. Even if it doesn&#39;t parse an attempt will be made to format it | 
+ **body** | **string**| LuminesceSql to Pretty-Print. Even if it doesn&#39;t parse an attempt will be made to format it | 
  **trailingCommas** | **bool?**| Should commas be after an expression (as opposed to before) | [optional] [default to true]
  **uppercaseKeywords** | **bool?**| Should key words be capitalized | [optional] [default to false]
  **breakJoinOnSections** | **bool?**| Should clauses on joins be given line breaks? | [optional] [default to true]

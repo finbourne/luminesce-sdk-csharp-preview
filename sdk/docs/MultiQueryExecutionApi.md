@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**CancelMultiQuery**](MultiQueryExecutionApi.md#cancelmultiquery) | **DELETE** /api/MultiQueryBackground/{executionId} | CancelMultiQuery: Cancels (if running) or clears the data from (if completed) a previously started query-set
 [**GetProgressOfMultiQuery**](MultiQueryExecutionApi.md#getprogressofmultiquery) | **GET** /api/MultiQueryBackground/{executionId} | GetProgressOfMultiQuery: View progress information (up until this point) for the entire query-set
-[**StartQueries**](MultiQueryExecutionApi.md#startqueries) | **PUT** /api/MultiQueryBackground | StartQueries: Starts to Execute the HoneycombSql statements in the background.
+[**StartQueries**](MultiQueryExecutionApi.md#startqueries) | **PUT** /api/MultiQueryBackground | StartQueries: Starts to Execute the LuminesceSql statements in the background.
 
 
 <a name="cancelmultiquery"></a>
@@ -161,7 +161,7 @@ Name | Type | Description  | Notes
 # **StartQueries**
 > BackgroundMultiQueryResponse StartQueries (MultiQueryDefinitionType type, string body, DateTimeOffset? asAt = null, DateTimeOffset? effectiveAt = null, int? limit1 = null, int? limit2 = null, string input1 = null, string input2 = null, string input3 = null, int? timeoutSeconds = null, int? keepForSeconds = null)
 
-StartQueries: Starts to Execute the HoneycombSql statements in the background.
+StartQueries: Starts to Execute the LuminesceSql statements in the background.
 
  Allow for starting a potentially long running query and getting back an immediate response with how to  - fetch the data in various formats (if available, or if not simply being informed it is not yet ready), on a per result basis - view progress information (up until this point), for all results in one go - cancel the queries (if still running) / clear the data (if already returned)  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - there was something wrong with your query syntax (the issue was detected at parse-time) - 401 Unauthorized 
 
@@ -199,7 +199,7 @@ namespace Example
 
             try
             {
-                // StartQueries: Starts to Execute the HoneycombSql statements in the background.
+                // StartQueries: Starts to Execute the LuminesceSql statements in the background.
                 BackgroundMultiQueryResponse result = apiInstance.StartQueries(type, body, asAt, effectiveAt, limit1, limit2, input1, input2, input3, timeoutSeconds, keepForSeconds);
                 Debug.WriteLine(result);
             }

@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **State** | **BackgroundQueryState** |  | [optional] 
 **Progress** | **string** | The full progress log (up to this point at least) | [optional] 
 **Feedback** | [**List&lt;FeedbackEventArgs&gt;**](FeedbackEventArgs.md) | Individual Feedback Messages (to replace Progress).  A given message will be returned from only one call. | [optional] 
-**Query** | **string** | The HoneycombSql of the original request | [optional] 
+**Query** | **string** | The LuminesceSql of the original request | [optional] 
 **QueryName** | **string** | The QueryName given in the original request | [optional] 
 **ColumnsAvailable** | [**List&lt;Column&gt;**](Column.md) | When HasData is true this is the schema of columns that will be returned if the data is requested | [optional] 
 
