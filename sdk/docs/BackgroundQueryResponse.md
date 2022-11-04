@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Cancel** | [**Link**](Link.md) |  | [optional] 
 **FetchJson** | [**Link**](Link.md) |  | [optional] 
 **FetchJsonProper** | [**Link**](Link.md) |  | [optional] 
+**FetchXml** | [**Link**](Link.md) |  | [optional] 
+**FetchParquet** | [**Link**](Link.md) |  | [optional] 
 **FetchCsv** | [**Link**](Link.md) |  | [optional] 
 **FetchPipe** | [**Link**](Link.md) |  | [optional] 
 **FetchExcel** | [**Link**](Link.md) |  | [optional] 

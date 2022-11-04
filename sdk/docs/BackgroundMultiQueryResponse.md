@@ -9,6 +9,8 @@ Name | Type | Description | Notes
 **Cancel** | [**Link**](Link.md) |  | [optional] 
 **FetchJson** | [**List&lt;Link&gt;**](Link.md) | Json (as a string) data request links for all of the child queries | [optional] [readonly] 
 **FetchJsonProper** | [**List&lt;Link&gt;**](Link.md) | Json-proper data request links for all of the child queries | [optional] [readonly] 
+**FetchXml** | [**List&lt;Link&gt;**](Link.md) | Xml data request links for all of the child queries | [optional] [readonly] 
+**FetchParquet** | [**List&lt;Link&gt;**](Link.md) | Parquet data request links for all of the child queries | [optional] [readonly] 
 **FetchCsv** | [**List&lt;Link&gt;**](Link.md) | CSV data request links for all of the child queries | [optional] [readonly] 
 **FetchPipe** | [**List&lt;Link&gt;**](Link.md) | Pipe delimited data request links for all of the child queries | [optional] [readonly] 
 **FetchExcel** | [**List&lt;Link&gt;**](Link.md) | Excel workbook data request links for all of the child queries | [optional] [readonly] 
