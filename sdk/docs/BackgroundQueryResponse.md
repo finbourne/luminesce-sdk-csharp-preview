@@ -1,10 +1,11 @@
 # Finbourne.Luminesce.Sdk.Model.BackgroundQueryResponse
+Response for Background Query Start requests
 
 ## Properties
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ExecutionId** | **string** |  | [optional] 
+**ExecutionId** | **string** | ExecutionId of the started-query | [optional] 
 **Progress** | [**Link**](Link.md) |  | [optional] 
 **Cancel** | [**Link**](Link.md) |  | [optional] 
 **FetchJson** | [**Link**](Link.md) |  | [optional] 
