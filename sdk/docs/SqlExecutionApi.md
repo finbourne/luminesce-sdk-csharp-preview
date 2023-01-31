@@ -610,7 +610,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -691,7 +691,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -770,7 +770,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
             var jsonProper = true;  // bool? | Should this be text/json (not json-encoded-as-a-string) (optional)  (default to false)
@@ -851,7 +851,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -930,7 +930,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -1011,7 +1011,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -1090,7 +1090,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -1171,7 +1171,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
+            var body = select * from sys.field;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
             var trailingCommas = true;  // bool? | Should commas be after an expression (as opposed to before) (optional)  (default to true)
             var uppercaseKeywords = true;  // bool? | Should key words be capitalized (optional)  (default to false)
             var breakJoinOnSections = true;  // bool? | Should clauses on joins be given line breaks? (optional)  (default to true)
