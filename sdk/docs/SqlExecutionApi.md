@@ -23,7 +23,7 @@ Method | HTTP request | Description
 
 <a name="getbyquerycsv"></a>
 # **GetByQueryCsv**
-> string GetByQueryCsv (string query, string queryName = null, bool? download = null, int? timeout = null)
+> string GetByQueryCsv (string query, string queryName = null, bool? download = null, int? timeout = null, string delimiter = null, string escape = null)
 
 GetByQueryCsv: Executes Sql, returned in CSV format, where the sql is simply in the url.
 
@@ -53,11 +53,13 @@ namespace Example
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeout = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
+            var delimiter = delimiter_example;  // string | Delimiter string to override the default (optional) 
+            var escape = escape_example;  // string | Escape character to override the default (optional) 
 
             try
             {
                 // GetByQueryCsv: Executes Sql, returned in CSV format, where the sql is simply in the url.
-                string result = apiInstance.GetByQueryCsv(query, queryName, download, timeout);
+                string result = apiInstance.GetByQueryCsv(query, queryName, download, timeout, delimiter, escape);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -79,6 +81,8 @@ Name | Type | Description  | Notes
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **download** | **bool?**| Makes this a file-download request (as opposed to returning the data in the response-body) | [optional] [default to false]
  **timeout** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
+ **delimiter** | **string**| Delimiter string to override the default | [optional] 
+ **escape** | **string**| Escape character to override the default | [optional] 
 
 ### Return type
 
@@ -584,7 +588,7 @@ Name | Type | Description  | Notes
 
 <a name="putbyquerycsv"></a>
 # **PutByQueryCsv**
-> string PutByQueryCsv (string body, string queryName = null, bool? download = null, int? timeoutSeconds = null)
+> string PutByQueryCsv (string body, string queryName = null, bool? download = null, int? timeoutSeconds = null, string delimiter = null, string escape = null)
 
 PutByQueryCsv: Executes Sql, returned in CSV format, where the sql is the post-body url.
 
@@ -614,11 +618,13 @@ namespace Example
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
+            var delimiter = delimiter_example;  // string | Delimiter string to override the default (optional) 
+            var escape = escape_example;  // string | Escape character to override the default (optional) 
 
             try
             {
                 // PutByQueryCsv: Executes Sql, returned in CSV format, where the sql is the post-body url.
-                string result = apiInstance.PutByQueryCsv(body, queryName, download, timeoutSeconds);
+                string result = apiInstance.PutByQueryCsv(body, queryName, download, timeoutSeconds, delimiter, escape);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -640,6 +646,8 @@ Name | Type | Description  | Notes
  **queryName** | **string**| Name to apply to the query in logs and &#x60;Sys.Logs.HcQueryStart&#x60; | [optional] 
  **download** | **bool?**| Makes this a file-download request (as opposed to returning the data in the response-body) | [optional] [default to false]
  **timeoutSeconds** | **int?**| In seconds: &lt;0 → ∞, 0 → 120s | [optional] [default to 0]
+ **delimiter** | **string**| Delimiter string to override the default | [optional] 
+ **escape** | **string**| Escape character to override the default | [optional] 
 
 ### Return type
 

@@ -94,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="fetchqueryresultcsv"></a>
 # **FetchQueryResultCsv**
-> string FetchQueryResultCsv (string executionId, bool? download = null, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null)
+> string FetchQueryResultCsv (string executionId, bool? download = null, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null, string delimiter = null, string escape = null)
 
 FetchQueryResultCsv: Fetches the result from a previously started query, in CSV format.
 
@@ -128,11 +128,13 @@ namespace Example
             var groupBy = groupBy_example;  // string | Groups by the specified fields.              A comma delimited list of: 1 based numeric indexes (cleaner), or repeats of the select expressions (a bit verbose and must match exactly).              e.g. `2,3`, `myColumn`.              Default is null (meaning no grouping will be performed on the selected columns).              This applies only over the result set being requested here, meaning indexes into the \"select\" parameter fields.              Only specify this if you are selecting aggregations in the \"select\" parameter. (optional) 
             var limit = 56;  // int? | When paginating, only return this number of records, page should also be specified. (optional)  (default to 0)
             var page = 56;  // int? | 0-N based on chunk sized determined by the limit, ignored if limit < 1. (optional)  (default to 0)
+            var delimiter = delimiter_example;  // string | Delimiter string to override the default (optional) 
+            var escape = escape_example;  // string | Escape character to override the default (optional) 
 
             try
             {
                 // FetchQueryResultCsv: Fetches the result from a previously started query, in CSV format.
-                string result = apiInstance.FetchQueryResultCsv(executionId, download, sortBy, filter, select, groupBy, limit, page);
+                string result = apiInstance.FetchQueryResultCsv(executionId, download, sortBy, filter, select, groupBy, limit, page, delimiter, escape);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -158,6 +160,8 @@ Name | Type | Description  | Notes
  **groupBy** | **string**| Groups by the specified fields.              A comma delimited list of: 1 based numeric indexes (cleaner), or repeats of the select expressions (a bit verbose and must match exactly).              e.g. &#x60;2,3&#x60;, &#x60;myColumn&#x60;.              Default is null (meaning no grouping will be performed on the selected columns).              This applies only over the result set being requested here, meaning indexes into the \&quot;select\&quot; parameter fields.              Only specify this if you are selecting aggregations in the \&quot;select\&quot; parameter. | [optional] 
  **limit** | **int?**| When paginating, only return this number of records, page should also be specified. | [optional] [default to 0]
  **page** | **int?**| 0-N based on chunk sized determined by the limit, ignored if limit &lt; 1. | [optional] [default to 0]
+ **delimiter** | **string**| Delimiter string to override the default | [optional] 
+ **escape** | **string**| Escape character to override the default | [optional] 
 
 ### Return type
 
