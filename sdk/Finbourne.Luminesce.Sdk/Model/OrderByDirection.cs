@@ -27,36 +27,24 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// Defines ConditionAttributes
+    /// Defines OrderByDirection
     /// </summary>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum ConditionAttributes
+    public enum OrderByDirection
     {
         /// <summary>
-        /// Enum None for value: None
+        /// Enum Asc for value: asc
         /// </summary>
-        [EnumMember(Value = "None")]
-        None = 1,
+        [EnumMember(Value = "asc")]
+        Asc = 1,
 
         /// <summary>
-        /// Enum Normal for value: Normal
+        /// Enum Desc for value: desc
         /// </summary>
-        [EnumMember(Value = "Normal")]
-        Normal = 2,
-
-        /// <summary>
-        /// Enum Required for value: Required
-        /// </summary>
-        [EnumMember(Value = "Required")]
-        Required = 3,
-
-        /// <summary>
-        /// Enum Main for value: Main
-        /// </summary>
-        [EnumMember(Value = "Main")]
-        Main = 4
+        [EnumMember(Value = "desc")]
+        Desc = 2
 
     }
 

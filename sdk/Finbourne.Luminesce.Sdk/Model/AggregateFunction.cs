@@ -27,36 +27,60 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// Defines ConditionAttributes
+    /// Defines AggregateFunction
     /// </summary>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum ConditionAttributes
+    public enum AggregateFunction
     {
         /// <summary>
-        /// Enum None for value: None
+        /// Enum Count for value: count
         /// </summary>
-        [EnumMember(Value = "None")]
-        None = 1,
+        [EnumMember(Value = "count")]
+        Count = 1,
 
         /// <summary>
-        /// Enum Normal for value: Normal
+        /// Enum CountDistinct for value: count_distinct
         /// </summary>
-        [EnumMember(Value = "Normal")]
-        Normal = 2,
+        [EnumMember(Value = "count_distinct")]
+        CountDistinct = 2,
 
         /// <summary>
-        /// Enum Required for value: Required
+        /// Enum Sum for value: sum
         /// </summary>
-        [EnumMember(Value = "Required")]
-        Required = 3,
+        [EnumMember(Value = "sum")]
+        Sum = 3,
 
         /// <summary>
-        /// Enum Main for value: Main
+        /// Enum Total for value: total
         /// </summary>
-        [EnumMember(Value = "Main")]
-        Main = 4
+        [EnumMember(Value = "total")]
+        Total = 4,
+
+        /// <summary>
+        /// Enum Avg for value: avg
+        /// </summary>
+        [EnumMember(Value = "avg")]
+        Avg = 5,
+
+        /// <summary>
+        /// Enum Min for value: min
+        /// </summary>
+        [EnumMember(Value = "min")]
+        Min = 6,
+
+        /// <summary>
+        /// Enum Max for value: max
+        /// </summary>
+        [EnumMember(Value = "max")]
+        Max = 7,
+
+        /// <summary>
+        /// Enum GroupConcat for value: group_concat
+        /// </summary>
+        [EnumMember(Value = "group_concat")]
+        GroupConcat = 8
 
     }
 
