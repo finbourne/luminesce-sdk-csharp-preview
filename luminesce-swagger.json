@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.13.162",
+    "version": "1.13.173",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -55,17 +55,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           }
@@ -308,17 +311,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -447,17 +453,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -643,7 +652,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "Apple"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -858,7 +867,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -870,17 +879,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -987,17 +999,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1068,7 +1083,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -1080,17 +1095,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1171,17 +1189,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1222,40 +1243,32 @@
         "summary": "[EXPERIMENTAL] PutQueryDesignToSql: Generates SQL from a structured query design",
         "description": "SQL Designer specification to generate SQL from",
         "operationId": "PutQueryDesignToSql",
-        "parameters": [
-          {
-            "name": "prettyPrint",
-            "in": "query",
-            "description": "Should this additionally be pretty-printed, or simply returned in the generated format",
-            "schema": {
-              "type": "boolean",
-              "default": true
-            },
-            "x-nullable": true
-          }
-        ],
         "requestBody": {
           "description": "Structured Query design object to generate SQL from",
           "content": {
             "application/json-patch+json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
-              }
+              },
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
             },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
-              }
+              },
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
-              }
+              },
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
-              }
+              },
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
             }
           },
           "required": true
@@ -1267,16 +1280,39 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
+              }
+            }
+          },
+          "400": {
+            "description": "Bad Request",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LusidProblemDetails"
                 }
               }
             }
@@ -1338,7 +1374,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -1350,17 +1386,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1451,17 +1490,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1532,7 +1574,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -1544,17 +1586,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1635,17 +1680,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1726,7 +1774,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -1738,17 +1786,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -1839,17 +1890,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2010,7 +2064,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -2022,17 +2076,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2103,7 +2160,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -2115,17 +2172,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2206,17 +2266,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2260,30 +2323,11 @@
         "requestBody": {
           "description": "SQL query to generate the design object from",
           "content": {
-            "application/json-patch+json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "type": "string"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "type": "string"
-              }
-            },
             "text/plain": {
               "schema": {
                 "type": "string"
-              }
+              },
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -2295,17 +2339,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
               }
             }
           },
@@ -2386,7 +2433,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select * from sys.field"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -2398,17 +2445,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2499,17 +2549,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2592,7 +2645,7 @@
               "schema": {
                 "type": "string"
               },
-              "example": "select Str, Takes500Ms from Testing1K where UseLinq = true and [Int] <= 120"
+              "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
             }
           },
           "required": true
@@ -2855,17 +2908,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -2962,17 +3018,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3090,17 +3149,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3219,17 +3281,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3358,17 +3423,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3465,17 +3533,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3604,17 +3675,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3711,17 +3785,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },
@@ -3850,17 +3927,20 @@
               "text/plain": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "application/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               },
               "text/json": {
                 "schema": {
                   "type": "string"
-                }
+                },
+                "example": "\nSELECT\n   [TableName],\n   Count(distinct [FieldName]) as [NumberOfFields]\nFROM\n   [Sys.Field]\nWHERE\n   ([TableName] = 'Sys.Registration')\nGROUP BY\n   [TableName]\nORDER BY\n   [DataType]\nLIMIT 42"
               }
             }
           },

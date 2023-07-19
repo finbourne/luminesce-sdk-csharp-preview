@@ -616,7 +616,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -701,7 +713,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -780,7 +804,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
             var jsonProper = true;  // bool? | Should this be text/json (not json-encoded-as-a-string) (optional)  (default to false)
@@ -861,7 +897,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -940,7 +988,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -1021,7 +1081,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
@@ -1100,7 +1172,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -1155,7 +1239,7 @@ Name | Type | Description  | Notes
 
 <a name="putquerydesigntosql"></a>
 # **PutQueryDesignToSql**
-> string PutQueryDesignToSql (QueryDesign queryDesign, bool? prettyPrint = null)
+> string PutQueryDesignToSql (QueryDesign queryDesign)
 
 [EXPERIMENTAL] PutQueryDesignToSql: Generates SQL from a structured query design
 
@@ -1182,12 +1266,11 @@ namespace Example
 
             var apiInstance = new SqlExecutionApi(config);
             var queryDesign = new QueryDesign(); // QueryDesign | Structured Query design object to generate SQL from
-            var prettyPrint = true;  // bool? | Should this additionally be pretty-printed, or simply returned in the generated format (optional)  (default to true)
 
             try
             {
                 // [EXPERIMENTAL] PutQueryDesignToSql: Generates SQL from a structured query design
-                string result = apiInstance.PutQueryDesignToSql(queryDesign, prettyPrint);
+                string result = apiInstance.PutQueryDesignToSql(queryDesign);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1206,7 +1289,6 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **queryDesign** | [**QueryDesign**](QueryDesign.md)| Structured Query design object to generate SQL from | 
- **prettyPrint** | **bool?**| Should this additionally be pretty-printed, or simply returned in the generated format | [optional] [default to true]
 
 ### Return type
 
@@ -1226,6 +1308,7 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | Success |  -  |
+| **400** | Bad Request |  -  |
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
@@ -1257,7 +1340,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = select * from sys.field;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
             var trailingCommas = true;  // bool? | Should commas be after an expression (as opposed to before) (optional)  (default to true)
             var uppercaseKeywords = true;  // bool? | Should key words be capitalized (optional)  (default to false)
             var breakJoinOnSections = true;  // bool? | Should clauses on joins be given line breaks? (optional)  (default to true)
@@ -1354,7 +1449,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = body_example;  // string | SQL query to generate the design object from
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | SQL query to generate the design object from
 
             try
             {
@@ -1389,7 +1496,7 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json, text/plain
+ - **Content-Type**: text/plain
  - **Accept**: text/plain, application/json, text/json
 
 

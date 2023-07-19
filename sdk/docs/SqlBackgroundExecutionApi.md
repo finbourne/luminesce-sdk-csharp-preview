@@ -977,7 +977,19 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlBackgroundExecutionApi(config);
-            var body = select Str, Takes500Ms from Testing1K where UseLinq = true and [Int] <= 120;  // string | The LuminesceSql query to kick off.
+            var body = 
+SELECT
+   [TableName],
+   Count(distinct [FieldName]) as [NumberOfFields]
+FROM
+   [Sys.Field]
+WHERE
+   ([TableName] = 'Sys.Registration')
+GROUP BY
+   [TableName]
+ORDER BY
+   [DataType]
+LIMIT 42;  // string | The LuminesceSql query to kick off.
             var queryName = Intentionally slow test query;  // string | A name for this query.  This goes into logs and is available in `Sys.Logs.HcQueryStart`. (optional) 
             var timeoutSeconds = 1200;  // int? | Maximum time the query may run for, in seconds: <0 → ∞, 0 → 7200 (2h) (optional)  (default to 0)
             var keepForSeconds = 7200;  // int? | Maximum time the result may be kept for, in seconds: <0 → 1200 (20m), 0 → 28800 (8h), max = 2,678,400 (31d) (optional)  (default to 0)
