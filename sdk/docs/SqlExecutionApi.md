@@ -1423,7 +1423,7 @@ Name | Type | Description  | Notes
 
 <a name="putsqltoquerydesign"></a>
 # **PutSqlToQueryDesign**
-> string PutSqlToQueryDesign (string body)
+> string PutSqlToQueryDesign (string body, bool? validateWithMetadata = null)
 
 [EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.
 
@@ -1462,11 +1462,12 @@ GROUP BY
 ORDER BY
    [DataType]
 LIMIT 42;  // string | SQL query to generate the design object from
+            var validateWithMetadata = true;  // bool? | Should the table be validated against the users' view of Sys.Field to fill in DataTypes, etc.? (optional)  (default to true)
 
             try
             {
                 // [EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.
-                string result = apiInstance.PutSqlToQueryDesign(body);
+                string result = apiInstance.PutSqlToQueryDesign(body, validateWithMetadata);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1485,6 +1486,7 @@ LIMIT 42;  // string | SQL query to generate the design object from
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **string**| SQL query to generate the design object from | 
+ **validateWithMetadata** | **bool?**| Should the table be validated against the users&#39; view of Sys.Field to fill in DataTypes, etc.? | [optional] [default to true]
 
 ### Return type
 

@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.13.181",
+    "version": "1.13.182",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -1250,25 +1250,25 @@
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
               },
-              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
             },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
               },
-              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
               },
-              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/QueryDesign"
               },
-              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+              "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
             }
           },
           "required": true
@@ -2320,6 +2320,18 @@
         "summary": "[EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.",
         "description": "SQL to attempt to create a Design object from",
         "operationId": "PutSqlToQueryDesign",
+        "parameters": [
+          {
+            "name": "validateWithMetadata",
+            "in": "query",
+            "description": "Should the table be validated against the users' view of Sys.Field to fill in DataTypes, etc.?",
+            "schema": {
+              "type": "boolean",
+              "default": true
+            },
+            "x-nullable": true
+          }
+        ],
         "requestBody": {
           "description": "SQL query to generate the design object from",
           "content": {
@@ -2340,19 +2352,19 @@
                 "schema": {
                   "type": "string"
                 },
-                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
               },
               "application/json": {
                 "schema": {
                   "type": "string"
                 },
-                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
               },
               "text/json": {
                 "schema": {
                   "type": "string"
                 },
-                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42}
+                "example": {"tableName":"Sys.Field","fields":[{"name":"TableName","dataType":"Text","shouldSelect":true,"filters":[{"operator":"Eq","value":"Sys.Registration"}],"aggregations":[]},{"name":"FieldName","dataType":"Text","shouldSelect":true,"filters":[],"aggregations":[{"type":"count_distinct","alias":"NumberOfFields"}]}],"orderBy":[{"field":"DataType","direction":"asc"}],"limit":42,"warnings":[]}
               }
             }
           },
@@ -4563,6 +4575,9 @@
           "dataType": {
             "$ref": "#/components/schemas/DataType"
           },
+          "shouldSelect": {
+            "type": "boolean"
+          },
           "filters": {
             "type": "array",
             "items": {
@@ -4781,6 +4796,13 @@
           "limit": {
             "type": "integer",
             "format": "int32",
+            "nullable": true
+          },
+          "warnings": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           }
         },

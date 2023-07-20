@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Name** | **string** |  | 
 **Alias** | **string** |  | [optional] 
 **DataType** | **DataType** |  | [optional] 
+**ShouldSelect** | **bool** |  | [optional] 
 **Filters** | [**List&lt;FilterTermDesign&gt;**](FilterTermDesign.md) |  | [optional] 
 **Aggregations** | [**List&lt;Aggregation&gt;**](Aggregation.md) |  | [optional] 
 
