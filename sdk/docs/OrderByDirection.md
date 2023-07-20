@@ -1,4 +1,5 @@
 # Finbourne.Luminesce.Sdk.Model.OrderByDirection
+Direction of Order By terms in the Order By clause
 
 ## Properties
 

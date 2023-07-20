@@ -1,4 +1,5 @@
 # Finbourne.Luminesce.Sdk.Model.AggregateFunction
+Aggregation function type
 
 ## Properties
 
