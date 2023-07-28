@@ -110,7 +110,7 @@ Name | Type | Description  | Notes
 
 <a name="getbyqueryexcel"></a>
 # **GetByQueryExcel**
-> string GetByQueryExcel (string query, string queryName = null, int? timeout = null)
+> System.IO.Stream GetByQueryExcel (string query, string queryName = null, int? timeout = null)
 
 GetByQueryExcel: Executes Sql, returned in Excel (xlsx) format (as a file to be downloaded) format, where the sql is simply in the url.
 
@@ -143,7 +143,7 @@ namespace Example
             try
             {
                 // GetByQueryExcel: Executes Sql, returned in Excel (xlsx) format (as a file to be downloaded) format, where the sql is simply in the url.
-                string result = apiInstance.GetByQueryExcel(query, queryName, timeout);
+                System.IO.Stream result = apiInstance.GetByQueryExcel(query, queryName, timeout);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -167,7 +167,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 <a name="getbyqueryparquet"></a>
 # **GetByQueryParquet**
-> string GetByQueryParquet (string query, string queryName = null, int? timeout = null)
+> System.IO.Stream GetByQueryParquet (string query, string queryName = null, int? timeout = null)
 
 GetByQueryParquet: Executes Sql, returned in Parquet (.parquet) format (as a file to be downloaded) format, where the sql is simply in the url.
 
@@ -303,7 +303,7 @@ namespace Example
             try
             {
                 // GetByQueryParquet: Executes Sql, returned in Parquet (.parquet) format (as a file to be downloaded) format, where the sql is simply in the url.
-                string result = apiInstance.GetByQueryParquet(query, queryName, timeout);
+                System.IO.Stream result = apiInstance.GetByQueryParquet(query, queryName, timeout);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -327,7 +327,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -430,7 +430,7 @@ Name | Type | Description  | Notes
 
 <a name="getbyquerysqlite"></a>
 # **GetByQuerySqlite**
-> string GetByQuerySqlite (string query, string queryName = null, int? timeout = null)
+> System.IO.Stream GetByQuerySqlite (string query, string queryName = null, int? timeout = null)
 
 GetByQuerySqlite: Executes Sql, returned in SqLite DB (sqlite3) format (as a file to be downloaded) format, where the sql is simply in the url.
 
@@ -463,7 +463,7 @@ namespace Example
             try
             {
                 // GetByQuerySqlite: Executes Sql, returned in SqLite DB (sqlite3) format (as a file to be downloaded) format, where the sql is simply in the url.
-                string result = apiInstance.GetByQuerySqlite(query, queryName, timeout);
+                System.IO.Stream result = apiInstance.GetByQuerySqlite(query, queryName, timeout);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -487,7 +487,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -616,19 +616,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -687,7 +675,7 @@ Name | Type | Description  | Notes
 
 <a name="putbyqueryexcel"></a>
 # **PutByQueryExcel**
-> string PutByQueryExcel (string body, string queryName = null, int? timeoutSeconds = null)
+> System.IO.Stream PutByQueryExcel (string body, string queryName = null, int? timeoutSeconds = null)
 
 PutByQueryExcel: Executes Sql, returned in Excel (xlsx) format (as a file to be downloaded), where the sql is the post-body url.
 
@@ -713,26 +701,14 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
             try
             {
                 // PutByQueryExcel: Executes Sql, returned in Excel (xlsx) format (as a file to be downloaded), where the sql is the post-body url.
-                string result = apiInstance.PutByQueryExcel(body, queryName, timeoutSeconds);
+                System.IO.Stream result = apiInstance.PutByQueryExcel(body, queryName, timeoutSeconds);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -756,7 +732,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -804,19 +780,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
             var jsonProper = true;  // bool? | Should this be text/json (not json-encoded-as-a-string) (optional)  (default to false)
@@ -871,7 +835,7 @@ Name | Type | Description  | Notes
 
 <a name="putbyqueryparquet"></a>
 # **PutByQueryParquet**
-> string PutByQueryParquet (string body, string queryName = null, int? timeoutSeconds = null)
+> System.IO.Stream PutByQueryParquet (string body, string queryName = null, int? timeoutSeconds = null)
 
 PutByQueryParquet: Executes Sql, returned in Parquet format, where the sql is the post-body url.
 
@@ -897,26 +861,14 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
             try
             {
                 // PutByQueryParquet: Executes Sql, returned in Parquet format, where the sql is the post-body url.
-                string result = apiInstance.PutByQueryParquet(body, queryName, timeoutSeconds);
+                System.IO.Stream result = apiInstance.PutByQueryParquet(body, queryName, timeoutSeconds);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -940,7 +892,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -988,19 +940,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -1055,7 +995,7 @@ Name | Type | Description  | Notes
 
 <a name="putbyquerysqlite"></a>
 # **PutByQuerySqlite**
-> string PutByQuerySqlite (string body, string queryName = null, int? timeoutSeconds = null)
+> System.IO.Stream PutByQuerySqlite (string body, string queryName = null, int? timeoutSeconds = null)
 
 PutByQuerySqlite: Executes Sql, returned in SqLite DB (sqlite3) format (as a file to be downloaded), where the sql is the post-body url.
 
@@ -1081,26 +1021,14 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
 
             try
             {
                 // PutByQuerySqlite: Executes Sql, returned in SqLite DB (sqlite3) format (as a file to be downloaded), where the sql is the post-body url.
-                string result = apiInstance.PutByQuerySqlite(body, queryName, timeoutSeconds);
+                System.IO.Stream result = apiInstance.PutByQuerySqlite(body, queryName, timeoutSeconds);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1124,7 +1052,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+**System.IO.Stream**
 
 ### Authorization
 
@@ -1172,19 +1100,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Execute (may be multi-line)
+            var body = select * from sys.field;  // string | LuminesceSql to Execute (may be multi-line)
             var queryName = Get tables/fields;  // string | Name to apply to the query in logs and `Sys.Logs.HcQueryStart` (optional) 
             var download = true;  // bool? | Makes this a file-download request (as opposed to returning the data in the response-body) (optional)  (default to false)
             var timeoutSeconds = 120;  // int? | In seconds: <0 → ∞, 0 → 120s (optional)  (default to 0)
@@ -1340,19 +1256,7 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
+            var body = select * from sys.field;  // string | LuminesceSql to Pretty-Print. Even if it doesn't parse an attempt will be made to format it
             var trailingCommas = true;  // bool? | Should commas be after an expression (as opposed to before) (optional)  (default to true)
             var uppercaseKeywords = true;  // bool? | Should key words be capitalized (optional)  (default to false)
             var breakJoinOnSections = true;  // bool? | Should clauses on joins be given line breaks? (optional)  (default to true)
@@ -1449,18 +1353,17 @@ namespace Example
             config.AccessToken = "YOUR_ACCESS_TOKEN";
 
             var apiInstance = new SqlExecutionApi(config);
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
+            var body = SELECT
+    [TableName],
+    Count(distinct [FieldName]) as [NumberOfFields]
 FROM
-   [Sys.Field]
+    [Sys.Field]
 WHERE
-   ([TableName] = 'Sys.Registration')
+    ([TableName] = 'Sys.Registration')
 GROUP BY
-   [TableName]
+    [TableName]
 ORDER BY
-   [DataType]
+    [DataType]
 LIMIT 42;  // string | SQL query to generate the design object from
             var validateWithMetadata = true;  // bool? | Should the table be validated against the users' view of Sys.Field to fill in DataTypes, etc.? (optional)  (default to true)
 

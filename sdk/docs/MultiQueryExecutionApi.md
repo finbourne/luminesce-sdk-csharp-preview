@@ -186,19 +186,7 @@ namespace Example
 
             var apiInstance = new MultiQueryExecutionApi(config);
             var type = Instrument;  // MultiQueryDefinitionType | An enum value defining the set of statements being executed
-            var body = 
-SELECT
-   [TableName],
-   Count(distinct [FieldName]) as [NumberOfFields]
-FROM
-   [Sys.Field]
-WHERE
-   ([TableName] = 'Sys.Registration')
-GROUP BY
-   [TableName]
-ORDER BY
-   [DataType]
-LIMIT 42;  // string | A \"search\" value (e.g. 'Apple' on an instrument search, a `Finbourne.Filtering` expression of Insights, etc.)  In the cases where \"Nothing\" is valid for a `Finbourne.Filtering` expression, pass `True`.
+            var body = Apple;  // string | A \"search\" value (e.g. 'Apple' on an instrument search, a `Finbourne.Filtering` expression of Insights, etc.)  In the cases where \"Nothing\" is valid for a `Finbourne.Filtering` expression, pass `True`.
             var asAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | The AsAt time used by any bitemporal provider in the queries. (optional) 
             var effectiveAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | The EffectiveAt time used by any bitemporal provider in the queries. (optional) 
             var limit1 = 56;  // int? | A limit that is applied to first-level queries (e.g. Instruments themselves) (optional) 
