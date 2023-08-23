@@ -1230,7 +1230,7 @@ Name | Type | Description  | Notes
 
 <a name="putquerytoformat"></a>
 # **PutQueryToFormat**
-> string PutQueryToFormat (string body, bool? trailingCommas = null, bool? uppercaseKeywords = null, bool? breakJoinOnSections = null, bool? spaceAfterExpandedComma = null, bool? keywordStandardization = null, bool? expandCommaLists = null, bool? expandInLists = null, bool? expandBooleanExpressions = null, bool? expandBetweenConditions = null, bool? expandCaseStatements = null, int? maxLineWidth = null)
+> string PutQueryToFormat (string body, bool? trailingCommas = null, bool? uppercaseKeywords = null, bool? breakJoinOnSections = null, bool? spaceAfterExpandedComma = null, bool? keywordStandardization = null, bool? expandCommaLists = null, bool? expandInLists = null, bool? expandBooleanExpressions = null, bool? expandBetweenConditions = null, bool? expandCaseStatements = null, int? maxLineWidth = null, bool? spaceBeforeTrailingSingleLineComments = null, bool? multilineCommentExtraLineBreak = null)
 
 PutQueryToFormat: Executes Sql, returned in JSON format, where the sql is the post-body url.
 
@@ -1268,11 +1268,13 @@ namespace Example
             var expandBetweenConditions = true;  // bool? | Should between conditions have line breaks added? (optional)  (default to true)
             var expandCaseStatements = true;  // bool? | Should case-statements have line breaks added? (optional)  (default to true)
             var maxLineWidth = 56;  // int? | Maximum number of characters to allow on one line (if possible) (optional)  (default to 120)
+            var spaceBeforeTrailingSingleLineComments = true;  // bool? | Should the be a space before trailing single line comments? (optional)  (default to true)
+            var multilineCommentExtraLineBreak = true;  // bool? | Should an additional line break be added after multi-line comments? (optional)  (default to false)
 
             try
             {
                 // PutQueryToFormat: Executes Sql, returned in JSON format, where the sql is the post-body url.
-                string result = apiInstance.PutQueryToFormat(body, trailingCommas, uppercaseKeywords, breakJoinOnSections, spaceAfterExpandedComma, keywordStandardization, expandCommaLists, expandInLists, expandBooleanExpressions, expandBetweenConditions, expandCaseStatements, maxLineWidth);
+                string result = apiInstance.PutQueryToFormat(body, trailingCommas, uppercaseKeywords, breakJoinOnSections, spaceAfterExpandedComma, keywordStandardization, expandCommaLists, expandInLists, expandBooleanExpressions, expandBetweenConditions, expandCaseStatements, maxLineWidth, spaceBeforeTrailingSingleLineComments, multilineCommentExtraLineBreak);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -1302,6 +1304,8 @@ Name | Type | Description  | Notes
  **expandBetweenConditions** | **bool?**| Should between conditions have line breaks added? | [optional] [default to true]
  **expandCaseStatements** | **bool?**| Should case-statements have line breaks added? | [optional] [default to true]
  **maxLineWidth** | **int?**| Maximum number of characters to allow on one line (if possible) | [optional] [default to 120]
+ **spaceBeforeTrailingSingleLineComments** | **bool?**| Should the be a space before trailing single line comments? | [optional] [default to true]
+ **multilineCommentExtraLineBreak** | **bool?**| Should an additional line break be added after multi-line comments? | [optional] [default to false]
 
 ### Return type
 
