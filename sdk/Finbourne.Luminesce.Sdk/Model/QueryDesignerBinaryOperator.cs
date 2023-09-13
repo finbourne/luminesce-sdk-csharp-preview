@@ -27,60 +27,72 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// Defines TaskStatus
+    /// Defines QueryDesignerBinaryOperator
     /// </summary>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum TaskStatus
+    public enum QueryDesignerBinaryOperator
     {
         /// <summary>
-        /// Enum Created for value: Created
+        /// Enum Lt for value: Lt
         /// </summary>
-        [EnumMember(Value = "Created")]
-        Created = 1,
+        [EnumMember(Value = "Lt")]
+        Lt = 1,
 
         /// <summary>
-        /// Enum WaitingForActivation for value: WaitingForActivation
+        /// Enum Lte for value: Lte
         /// </summary>
-        [EnumMember(Value = "WaitingForActivation")]
-        WaitingForActivation = 2,
+        [EnumMember(Value = "Lte")]
+        Lte = 2,
 
         /// <summary>
-        /// Enum WaitingToRun for value: WaitingToRun
+        /// Enum Gt for value: Gt
         /// </summary>
-        [EnumMember(Value = "WaitingToRun")]
-        WaitingToRun = 3,
+        [EnumMember(Value = "Gt")]
+        Gt = 3,
 
         /// <summary>
-        /// Enum Running for value: Running
+        /// Enum Gte for value: Gte
         /// </summary>
-        [EnumMember(Value = "Running")]
-        Running = 4,
+        [EnumMember(Value = "Gte")]
+        Gte = 4,
 
         /// <summary>
-        /// Enum WaitingForChildrenToComplete for value: WaitingForChildrenToComplete
+        /// Enum Eq for value: Eq
         /// </summary>
-        [EnumMember(Value = "WaitingForChildrenToComplete")]
-        WaitingForChildrenToComplete = 5,
+        [EnumMember(Value = "Eq")]
+        Eq = 5,
 
         /// <summary>
-        /// Enum RanToCompletion for value: RanToCompletion
+        /// Enum Neq for value: Neq
         /// </summary>
-        [EnumMember(Value = "RanToCompletion")]
-        RanToCompletion = 6,
+        [EnumMember(Value = "Neq")]
+        Neq = 6,
 
         /// <summary>
-        /// Enum Canceled for value: Canceled
+        /// Enum Like for value: Like
         /// </summary>
-        [EnumMember(Value = "Canceled")]
-        Canceled = 7,
+        [EnumMember(Value = "Like")]
+        Like = 7,
 
         /// <summary>
-        /// Enum Faulted for value: Faulted
+        /// Enum Contains for value: Contains
         /// </summary>
-        [EnumMember(Value = "Faulted")]
-        Faulted = 8
+        [EnumMember(Value = "Contains")]
+        Contains = 8,
+
+        /// <summary>
+        /// Enum StartsWith for value: StartsWith
+        /// </summary>
+        [EnumMember(Value = "StartsWith")]
+        StartsWith = 9,
+
+        /// <summary>
+        /// Enum EndsWith for value: EndsWith
+        /// </summary>
+        [EnumMember(Value = "EndsWith")]
+        EndsWith = 10
 
     }
 
