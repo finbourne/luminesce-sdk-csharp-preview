@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**PutQueryDesignToSql**](SqlExecutionApi.md#putquerydesigntosql) | **PUT** /api/Sql/fromdesign | [EXPERIMENTAL] PutQueryDesignToSql: Generates SQL from a structured query design
 [**PutQueryToFormat**](SqlExecutionApi.md#putquerytoformat) | **PUT** /api/Sql/pretty | PutQueryToFormat: Executes Sql, returned in JSON format, where the sql is the post-body url.
 [**PutSqlToQueryDesign**](SqlExecutionApi.md#putsqltoquerydesign) | **PUT** /api/Sql/todesign | [EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.
+[**PutViewDesignToSql**](SqlExecutionApi.md#putviewdesigntosql) | **PUT** /api/Sql/fromviewdesign | [EXPERIMENTAL] PutViewDesignToSql: Generates view creation sql from a structured view creation design
 
 
 <a name="getbyquerycsv"></a>
@@ -1406,6 +1407,81 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
  - **Content-Type**: text/plain
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="putviewdesigntosql"></a>
+# **PutViewDesignToSql**
+> string PutViewDesignToSql (ConvertToViewData convertToViewData)
+
+[EXPERIMENTAL] PutViewDesignToSql: Generates view creation sql from a structured view creation design
+
+Converts a ConvertToView specification into SQL that creates a view
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Finbourne.Luminesce.Sdk.Api;
+using Finbourne.Luminesce.Sdk.Client;
+using Finbourne.Luminesce.Sdk.Model;
+
+namespace Example
+{
+    public class PutViewDesignToSqlExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.lusid.com/honeycomb";
+            // Configure OAuth2 access token for authorization: oauth2
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SqlExecutionApi(config);
+            var convertToViewData = new ConvertToViewData(); // ConvertToViewData | Structured Query design object to generate SQL from
+
+            try
+            {
+                // [EXPERIMENTAL] PutViewDesignToSql: Generates view creation sql from a structured view creation design
+                string result = apiInstance.PutViewDesignToSql(convertToViewData);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SqlExecutionApi.PutViewDesignToSql: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **convertToViewData** | [**ConvertToViewData**](ConvertToViewData.md)| Structured Query design object to generate SQL from | 
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
  - **Accept**: text/plain, application/json, text/json
 
 
