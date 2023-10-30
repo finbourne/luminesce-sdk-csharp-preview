@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **IsPrimaryKey** | **bool** |  | [optional] 
 **IsMain** | **bool** |  | [optional] 
 **IsRequiredByProvider** | **bool** |  | [optional] 
+**MandatoryForActions** | **string** |  | [optional] 
 **ClientIds** | **List&lt;string&gt;** |  | [optional] 
 **Name** | **string** |  | [optional] [readonly] 
 **Type** | **DataType** |  | [optional] 
