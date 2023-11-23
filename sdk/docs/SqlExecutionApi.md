@@ -23,6 +23,7 @@ Method | HTTP request | Description
 [**PutQueryToFormat**](SqlExecutionApi.md#putquerytoformat) | **PUT** /api/Sql/pretty | PutQueryToFormat: Executes Sql, returned in JSON format, where the sql is the post-body url.
 [**PutSqlToFileReadDesign**](SqlExecutionApi.md#putsqltofilereaddesign) | **PUT** /api/Sql/tofilereaddesign | [EXPERIMENTAL] PutSqlToFileReadDesign: Generates a SQL-file-read-design object from SQL string, if possible.
 [**PutSqlToQueryDesign**](SqlExecutionApi.md#putsqltoquerydesign) | **PUT** /api/Sql/todesign | [EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.
+[**PutSqlToViewDesign**](SqlExecutionApi.md#putsqltoviewdesign) | **PUT** /api/Sql/toviewdesign | [EXPERIMENTAL] PutSqlToViewDesign: Generates a structured view creation design from existing view creation SQL.
 [**PutViewDesignToSql**](SqlExecutionApi.md#putviewdesigntosql) | **PUT** /api/Sql/fromviewdesign | [EXPERIMENTAL] PutViewDesignToSql: Generates view creation sql from a structured view creation design
 
 
@@ -1556,6 +1557,88 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **string**| SQL query to generate the design object from | 
  **validateWithMetadata** | **bool?**| Should the table be validated against the users&#39; view of Sys.Field to fill in DataTypes, etc.? | [optional] [default to true]
+
+### Return type
+
+**string**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: text/plain
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="putsqltoviewdesign"></a>
+# **PutSqlToViewDesign**
+> string PutSqlToViewDesign (string body)
+
+[EXPERIMENTAL] PutSqlToViewDesign: Generates a structured view creation design from existing view creation SQL.
+
+SQL which creates a view into a structured ConvertToViewData object
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Finbourne.Luminesce.Sdk.Api;
+using Finbourne.Luminesce.Sdk.Client;
+using Finbourne.Luminesce.Sdk.Model;
+
+namespace Example
+{
+    public class PutSqlToViewDesignExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.lusid.com/honeycomb";
+            // Configure OAuth2 access token for authorization: oauth2
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SqlExecutionApi(config);
+            var body = @x = 
+use Sys.Admin.SetupView
+  --provider=YourView
+----
+select * from Lusid.Instrument
+enduse;
+
+select * from @x;;  // string | SQL Query to generate the ConvertToViewData object from
+
+            try
+            {
+                // [EXPERIMENTAL] PutSqlToViewDesign: Generates a structured view creation design from existing view creation SQL.
+                string result = apiInstance.PutSqlToViewDesign(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SqlExecutionApi.PutSqlToViewDesign: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | **string**| SQL Query to generate the ConvertToViewData object from | 
 
 ### Return type
 
