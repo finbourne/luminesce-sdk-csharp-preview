@@ -27,55 +27,37 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// The file type of a source
+    /// The action to take with a certificate
     /// </summary>
-    /// <value>The file type of a source</value>
+    /// <value>The action to take with a certificate</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum SourceType
+    public enum CertificateAction
     {
         /// <summary>
-        /// Enum Unknown for value: Unknown
+        /// Enum Create for value: Create
         /// </summary>
-        [EnumMember(Value = "Unknown")]
-        Unknown = 1,
+        [EnumMember(Value = "Create")]
+        Create = 1,
 
         /// <summary>
-        /// Enum Csv for value: Csv
+        /// Enum CreateAndAllowMultipleWhichAreValid for value: CreateAndAllowMultipleWhichAreValid
         /// </summary>
-        [EnumMember(Value = "Csv")]
-        Csv = 2,
+        [EnumMember(Value = "CreateAndAllowMultipleWhichAreValid")]
+        CreateAndAllowMultipleWhichAreValid = 2,
 
         /// <summary>
-        /// Enum Excel for value: Excel
+        /// Enum Renew for value: Renew
         /// </summary>
-        [EnumMember(Value = "Excel")]
-        Excel = 3,
+        [EnumMember(Value = "Renew")]
+        Renew = 3,
 
         /// <summary>
-        /// Enum SqLite for value: SqLite
+        /// Enum Revoke for value: Revoke
         /// </summary>
-        [EnumMember(Value = "SqLite")]
-        SqLite = 4,
-
-        /// <summary>
-        /// Enum Xml for value: Xml
-        /// </summary>
-        [EnumMember(Value = "Xml")]
-        Xml = 5,
-
-        /// <summary>
-        /// Enum Parquet for value: Parquet
-        /// </summary>
-        [EnumMember(Value = "Parquet")]
-        Parquet = 6,
-
-        /// <summary>
-        /// Enum RawText for value: RawText
-        /// </summary>
-        [EnumMember(Value = "RawText")]
-        RawText = 7
+        [EnumMember(Value = "Revoke")]
+        Revoke = 4
 
     }
 

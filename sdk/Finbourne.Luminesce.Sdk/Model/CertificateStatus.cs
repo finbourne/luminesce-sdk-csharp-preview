@@ -27,55 +27,49 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// The file type of a source
+    /// Which System(s) have been updated with a given request
     /// </summary>
-    /// <value>The file type of a source</value>
+    /// <value>Which System(s) have been updated with a given request</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum SourceType
+    public enum CertificateStatus
     {
         /// <summary>
-        /// Enum Unknown for value: Unknown
+        /// Enum None for value: None
         /// </summary>
-        [EnumMember(Value = "Unknown")]
-        Unknown = 1,
+        [EnumMember(Value = "None")]
+        None = 1,
 
         /// <summary>
-        /// Enum Csv for value: Csv
+        /// Enum WebApiPersistence for value: WebApiPersistence
         /// </summary>
-        [EnumMember(Value = "Csv")]
-        Csv = 2,
+        [EnumMember(Value = "WebApiPersistence")]
+        WebApiPersistence = 2,
 
         /// <summary>
-        /// Enum Excel for value: Excel
+        /// Enum Vault for value: Vault
         /// </summary>
-        [EnumMember(Value = "Excel")]
-        Excel = 3,
+        [EnumMember(Value = "Vault")]
+        Vault = 3,
 
         /// <summary>
-        /// Enum SqLite for value: SqLite
+        /// Enum Rabbit for value: Rabbit
         /// </summary>
-        [EnumMember(Value = "SqLite")]
-        SqLite = 4,
+        [EnumMember(Value = "Rabbit")]
+        Rabbit = 4,
 
         /// <summary>
-        /// Enum Xml for value: Xml
+        /// Enum ConfigStore for value: ConfigStore
         /// </summary>
-        [EnumMember(Value = "Xml")]
-        Xml = 5,
+        [EnumMember(Value = "ConfigStore")]
+        ConfigStore = 5,
 
         /// <summary>
-        /// Enum Parquet for value: Parquet
+        /// Enum AllSystems for value: AllSystems
         /// </summary>
-        [EnumMember(Value = "Parquet")]
-        Parquet = 6,
-
-        /// <summary>
-        /// Enum RawText for value: RawText
-        /// </summary>
-        [EnumMember(Value = "RawText")]
-        RawText = 7
+        [EnumMember(Value = "AllSystems")]
+        AllSystems = 6
 
     }
 
