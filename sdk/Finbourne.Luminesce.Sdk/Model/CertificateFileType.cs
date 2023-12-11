@@ -27,31 +27,25 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// The method of name/type column inference being used
+    /// The type of the certificate file to be downloaded (both public and private are needed to connect)
     /// </summary>
-    /// <value>The method of name/type column inference being used</value>
+    /// <value>The type of the certificate file to be downloaded (both public and private are needed to connect)</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum AutoDetectType
+    public enum CertificateFileType
     {
         /// <summary>
-        /// Enum Auto for value: Auto
+        /// Enum Public for value: Public
         /// </summary>
-        [EnumMember(Value = "Auto")]
-        Auto = 1,
+        [EnumMember(Value = "Public")]
+        Public = 1,
 
         /// <summary>
-        /// Enum SpecifyColumnsYetInferTypes for value: SpecifyColumnsYetInferTypes
+        /// Enum Private for value: Private
         /// </summary>
-        [EnumMember(Value = "SpecifyColumnsYetInferTypes")]
-        SpecifyColumnsYetInferTypes = 2,
-
-        /// <summary>
-        /// Enum SpecifyColumnsAndTypes for value: SpecifyColumnsAndTypes
-        /// </summary>
-        [EnumMember(Value = "SpecifyColumnsAndTypes")]
-        SpecifyColumnsAndTypes = 3
+        [EnumMember(Value = "Private")]
+        Private = 2
 
     }
 
