@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="downloadcertificate"></a>
 # **DownloadCertificate**
-> System.IO.Stream DownloadCertificate (CertificateType? type = null, CertificateFileType? fileType = null)
+> System.IO.Stream DownloadCertificate (CertificateType? type = null, CertificateFileType? fileType = null, bool? mayAutoCreate = null)
 
 [EXPERIMENTAL] DownloadCertificate: Downloads your latest Domain or User certificate's public or private key - if any.
 
@@ -39,11 +39,12 @@ namespace Example
             var apiInstance = new CertificateManagementApi(config);
             var type = ;  // CertificateType? | User or Domain level cert (Domain level requires additional entitlements) (optional) 
             var fileType = ;  // CertificateFileType? | Should the public key or private key be downloaded? (both must be in place to run providers) (optional) 
+            var mayAutoCreate = true;  // bool? | If no matching cert is available, should an attempt be made to Create/Renew it with default options? (optional)  (default to false)
 
             try
             {
                 // [EXPERIMENTAL] DownloadCertificate: Downloads your latest Domain or User certificate's public or private key - if any.
-                System.IO.Stream result = apiInstance.DownloadCertificate(type, fileType);
+                System.IO.Stream result = apiInstance.DownloadCertificate(type, fileType, mayAutoCreate);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -63,6 +64,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **type** | **CertificateType?**| User or Domain level cert (Domain level requires additional entitlements) | [optional] 
  **fileType** | **CertificateFileType?**| Should the public key or private key be downloaded? (both must be in place to run providers) | [optional] 
+ **mayAutoCreate** | **bool?**| If no matching cert is available, should an attempt be made to Create/Renew it with default options? | [optional] [default to false]
 
 ### Return type
 
