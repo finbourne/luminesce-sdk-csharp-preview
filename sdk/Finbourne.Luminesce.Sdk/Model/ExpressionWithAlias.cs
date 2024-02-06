@@ -27,37 +27,39 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// How to aggregate over a field
+    /// Contract for an expression of data we \&quot;have\&quot; that we may \&quot;want to map to a table-parameter&#39;s column\&quot;
     /// </summary>
-    [DataContract(Name = "Aggregation")]
-    public partial class Aggregation : IEquatable<Aggregation>
+    [DataContract(Name = "ExpressionWithAlias")]
+    public partial class ExpressionWithAlias : IEquatable<ExpressionWithAlias>
     {
-
         /// <summary>
-        /// Gets or Sets Type
-        /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
-        public AggregateFunction Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Aggregation" /> class.
+        /// Initializes a new instance of the <see cref="ExpressionWithAlias" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Aggregation() { }
+        protected ExpressionWithAlias() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Aggregation" /> class.
+        /// Initializes a new instance of the <see cref="ExpressionWithAlias" /> class.
         /// </summary>
-        /// <param name="type">type (required).</param>
-        /// <param name="alias">Alias, if any, for the Aggregate expression when selected.</param>
-        public Aggregation(AggregateFunction type = default(AggregateFunction), string alias = default(string))
+        /// <param name="expression">Expression (column name, constant, complex expression, etc.) (required).</param>
+        /// <param name="alias">Column Alias for the expression.</param>
+        public ExpressionWithAlias(string expression = default(string), string alias = default(string))
         {
-            this.Type = type;
+            // to ensure "expression" is required (not null)
+            this.Expression = expression ?? throw new ArgumentNullException("expression is a required property for ExpressionWithAlias and cannot be null");
             this.Alias = alias;
         }
 
         /// <summary>
-        /// Alias, if any, for the Aggregate expression when selected
+        /// Expression (column name, constant, complex expression, etc.)
         /// </summary>
-        /// <value>Alias, if any, for the Aggregate expression when selected</value>
+        /// <value>Expression (column name, constant, complex expression, etc.)</value>
+        [DataMember(Name = "expression", IsRequired = true, EmitDefaultValue = false)]
+        public string Expression { get; set; }
+
+        /// <summary>
+        /// Column Alias for the expression
+        /// </summary>
+        /// <value>Column Alias for the expression</value>
         [DataMember(Name = "alias", EmitDefaultValue = true)]
         public string Alias { get; set; }
 
@@ -68,8 +70,8 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Aggregation {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
+            sb.Append("class ExpressionWithAlias {\n");
+            sb.Append("  Expression: ").Append(Expression).Append("\n");
             sb.Append("  Alias: ").Append(Alias).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -91,23 +93,24 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Aggregation);
+            return this.Equals(input as ExpressionWithAlias);
         }
 
         /// <summary>
-        /// Returns true if Aggregation instances are equal
+        /// Returns true if ExpressionWithAlias instances are equal
         /// </summary>
-        /// <param name="input">Instance of Aggregation to be compared</param>
+        /// <param name="input">Instance of ExpressionWithAlias to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Aggregation input)
+        public bool Equals(ExpressionWithAlias input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
+                    this.Expression == input.Expression ||
+                    (this.Expression != null &&
+                    this.Expression.Equals(input.Expression))
                 ) && 
                 (
                     this.Alias == input.Alias ||
@@ -125,7 +128,8 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
+                if (this.Expression != null)
+                    hashCode = hashCode * 59 + this.Expression.GetHashCode();
                 if (this.Alias != null)
                     hashCode = hashCode * 59 + this.Alias.GetHashCode();
                 return hashCode;

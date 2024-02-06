@@ -27,10 +27,10 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// Column
+    /// Information about a field that can be designed on (regardless if it currently is)  Kind of a \&quot;mini-available catalog entry\&quot;
     /// </summary>
-    [DataContract(Name = "Column")]
-    public partial class Column : IEquatable<Column>
+    [DataContract(Name = "MappableField")]
+    public partial class MappableField : IEquatable<MappableField>
     {
 
         /// <summary>
@@ -38,109 +38,76 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// </summary>
         [DataMember(Name = "type", EmitDefaultValue = false)]
         public DataType? Type { get; set; }
-
         /// <summary>
-        /// Gets or Sets ConditionUsage
+        /// Initializes a new instance of the <see cref="MappableField" /> class.
         /// </summary>
-        [DataMember(Name = "conditionUsage", EmitDefaultValue = false)]
-        public ConditionAttributes? ConditionUsage { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Column" /> class.
-        /// </summary>
-        /// <param name="isPrimaryKey">isPrimaryKey.</param>
-        /// <param name="isMain">isMain.</param>
-        /// <param name="isRequiredByProvider">isRequiredByProvider.</param>
-        /// <param name="mandatoryForActions">mandatoryForActions.</param>
-        /// <param name="clientIds">clientIds.</param>
+        /// <param name="name">Name of the field in need of mapping (The field name from within the Table Parameter itself).</param>
         /// <param name="type">type.</param>
-        /// <param name="description">description.</param>
-        /// <param name="displayName">displayName.</param>
-        /// <param name="conditionUsage">conditionUsage.</param>
-        /// <param name="sampleValues">sampleValues.</param>
-        /// <param name="allowedValues">allowedValues.</param>
-        public Column(bool isPrimaryKey = default(bool), bool isMain = default(bool), bool isRequiredByProvider = default(bool), string mandatoryForActions = default(string), List<string> clientIds = default(List<string>), DataType? type = default(DataType?), string description = default(string), string displayName = default(string), ConditionAttributes? conditionUsage = default(ConditionAttributes?), string sampleValues = default(string), string allowedValues = default(string))
+        /// <param name="description">Description of the field (just for rendering to the user).</param>
+        /// <param name="displayName">Display Name of the field (just for rendering to the user).</param>
+        /// <param name="sampleValues">Example values for the field (just for rendering to the user).</param>
+        /// <param name="allowedValues">Any set of exactly allowed values for the field (perhaps just for rendering to the user, if nothing else).</param>
+        /// <param name="mandatoryForActions">Which &#x60;Actions&#x60; is this mandatory for? If any (and potentially when), perhaps just for rendering to the user, if nothing else.</param>
+        /// <param name="mapping">mapping.</param>
+        public MappableField(string name = default(string), DataType? type = default(DataType?), string description = default(string), string displayName = default(string), string sampleValues = default(string), string allowedValues = default(string), string mandatoryForActions = default(string), ExpressionWithAlias mapping = default(ExpressionWithAlias))
         {
-            this.IsPrimaryKey = isPrimaryKey;
-            this.IsMain = isMain;
-            this.IsRequiredByProvider = isRequiredByProvider;
-            this.MandatoryForActions = mandatoryForActions;
-            this.ClientIds = clientIds;
+            this.Name = name;
             this.Type = type;
             this.Description = description;
             this.DisplayName = displayName;
-            this.ConditionUsage = conditionUsage;
             this.SampleValues = sampleValues;
             this.AllowedValues = allowedValues;
+            this.MandatoryForActions = mandatoryForActions;
+            this.Mapping = mapping;
         }
 
         /// <summary>
-        /// Gets or Sets IsPrimaryKey
+        /// Name of the field in need of mapping (The field name from within the Table Parameter itself)
         /// </summary>
-        [DataMember(Name = "isPrimaryKey", EmitDefaultValue = true)]
-        public bool IsPrimaryKey { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsMain
-        /// </summary>
-        [DataMember(Name = "isMain", EmitDefaultValue = true)]
-        public bool IsMain { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IsRequiredByProvider
-        /// </summary>
-        [DataMember(Name = "isRequiredByProvider", EmitDefaultValue = true)]
-        public bool IsRequiredByProvider { get; set; }
-
-        /// <summary>
-        /// Gets or Sets MandatoryForActions
-        /// </summary>
-        [DataMember(Name = "mandatoryForActions", EmitDefaultValue = true)]
-        public string MandatoryForActions { get; set; }
-
-        /// <summary>
-        /// Gets or Sets ClientIds
-        /// </summary>
-        [DataMember(Name = "clientIds", EmitDefaultValue = true)]
-        public List<string> ClientIds { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Name
-        /// </summary>
+        /// <value>Name of the field in need of mapping (The field name from within the Table Parameter itself)</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
-        public string Name { get; private set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Returns false as Name should not be serialized given that it's read-only.
+        /// Description of the field (just for rendering to the user)
         /// </summary>
-        /// <returns>false (boolean)</returns>
-        public bool ShouldSerializeName()
-        {
-            return false;
-        }
-
-        /// <summary>
-        /// Gets or Sets Description
-        /// </summary>
+        /// <value>Description of the field (just for rendering to the user)</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
 
         /// <summary>
-        /// Gets or Sets DisplayName
+        /// Display Name of the field (just for rendering to the user)
         /// </summary>
+        /// <value>Display Name of the field (just for rendering to the user)</value>
         [DataMember(Name = "displayName", EmitDefaultValue = true)]
         public string DisplayName { get; set; }
 
         /// <summary>
-        /// Gets or Sets SampleValues
+        /// Example values for the field (just for rendering to the user)
         /// </summary>
+        /// <value>Example values for the field (just for rendering to the user)</value>
         [DataMember(Name = "sampleValues", EmitDefaultValue = true)]
         public string SampleValues { get; set; }
 
         /// <summary>
-        /// Gets or Sets AllowedValues
+        /// Any set of exactly allowed values for the field (perhaps just for rendering to the user, if nothing else)
         /// </summary>
+        /// <value>Any set of exactly allowed values for the field (perhaps just for rendering to the user, if nothing else)</value>
         [DataMember(Name = "allowedValues", EmitDefaultValue = true)]
         public string AllowedValues { get; set; }
+
+        /// <summary>
+        /// Which &#x60;Actions&#x60; is this mandatory for? If any (and potentially when), perhaps just for rendering to the user, if nothing else
+        /// </summary>
+        /// <value>Which &#x60;Actions&#x60; is this mandatory for? If any (and potentially when), perhaps just for rendering to the user, if nothing else</value>
+        [DataMember(Name = "mandatoryForActions", EmitDefaultValue = true)]
+        public string MandatoryForActions { get; set; }
+
+        /// <summary>
+        /// Gets or Sets Mapping
+        /// </summary>
+        [DataMember(Name = "mapping", EmitDefaultValue = false)]
+        public ExpressionWithAlias Mapping { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -149,19 +116,15 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Column {\n");
-            sb.Append("  IsPrimaryKey: ").Append(IsPrimaryKey).Append("\n");
-            sb.Append("  IsMain: ").Append(IsMain).Append("\n");
-            sb.Append("  IsRequiredByProvider: ").Append(IsRequiredByProvider).Append("\n");
-            sb.Append("  MandatoryForActions: ").Append(MandatoryForActions).Append("\n");
-            sb.Append("  ClientIds: ").Append(ClientIds).Append("\n");
+            sb.Append("class MappableField {\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
             sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
             sb.Append("  DisplayName: ").Append(DisplayName).Append("\n");
-            sb.Append("  ConditionUsage: ").Append(ConditionUsage).Append("\n");
             sb.Append("  SampleValues: ").Append(SampleValues).Append("\n");
             sb.Append("  AllowedValues: ").Append(AllowedValues).Append("\n");
+            sb.Append("  MandatoryForActions: ").Append(MandatoryForActions).Append("\n");
+            sb.Append("  Mapping: ").Append(Mapping).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -182,43 +145,20 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Column);
+            return this.Equals(input as MappableField);
         }
 
         /// <summary>
-        /// Returns true if Column instances are equal
+        /// Returns true if MappableField instances are equal
         /// </summary>
-        /// <param name="input">Instance of Column to be compared</param>
+        /// <param name="input">Instance of MappableField to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Column input)
+        public bool Equals(MappableField input)
         {
             if (input == null)
                 return false;
 
             return 
-                (
-                    this.IsPrimaryKey == input.IsPrimaryKey ||
-                    this.IsPrimaryKey.Equals(input.IsPrimaryKey)
-                ) && 
-                (
-                    this.IsMain == input.IsMain ||
-                    this.IsMain.Equals(input.IsMain)
-                ) && 
-                (
-                    this.IsRequiredByProvider == input.IsRequiredByProvider ||
-                    this.IsRequiredByProvider.Equals(input.IsRequiredByProvider)
-                ) && 
-                (
-                    this.MandatoryForActions == input.MandatoryForActions ||
-                    (this.MandatoryForActions != null &&
-                    this.MandatoryForActions.Equals(input.MandatoryForActions))
-                ) && 
-                (
-                    this.ClientIds == input.ClientIds ||
-                    this.ClientIds != null &&
-                    input.ClientIds != null &&
-                    this.ClientIds.SequenceEqual(input.ClientIds)
-                ) && 
                 (
                     this.Name == input.Name ||
                     (this.Name != null &&
@@ -239,10 +179,6 @@ namespace Finbourne.Luminesce.Sdk.Model
                     this.DisplayName.Equals(input.DisplayName))
                 ) && 
                 (
-                    this.ConditionUsage == input.ConditionUsage ||
-                    this.ConditionUsage.Equals(input.ConditionUsage)
-                ) && 
-                (
                     this.SampleValues == input.SampleValues ||
                     (this.SampleValues != null &&
                     this.SampleValues.Equals(input.SampleValues))
@@ -251,6 +187,16 @@ namespace Finbourne.Luminesce.Sdk.Model
                     this.AllowedValues == input.AllowedValues ||
                     (this.AllowedValues != null &&
                     this.AllowedValues.Equals(input.AllowedValues))
+                ) && 
+                (
+                    this.MandatoryForActions == input.MandatoryForActions ||
+                    (this.MandatoryForActions != null &&
+                    this.MandatoryForActions.Equals(input.MandatoryForActions))
+                ) && 
+                (
+                    this.Mapping == input.Mapping ||
+                    (this.Mapping != null &&
+                    this.Mapping.Equals(input.Mapping))
                 );
         }
 
@@ -263,13 +209,6 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.IsPrimaryKey.GetHashCode();
-                hashCode = hashCode * 59 + this.IsMain.GetHashCode();
-                hashCode = hashCode * 59 + this.IsRequiredByProvider.GetHashCode();
-                if (this.MandatoryForActions != null)
-                    hashCode = hashCode * 59 + this.MandatoryForActions.GetHashCode();
-                if (this.ClientIds != null)
-                    hashCode = hashCode * 59 + this.ClientIds.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
                 hashCode = hashCode * 59 + this.Type.GetHashCode();
@@ -277,11 +216,14 @@ namespace Finbourne.Luminesce.Sdk.Model
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
                 if (this.DisplayName != null)
                     hashCode = hashCode * 59 + this.DisplayName.GetHashCode();
-                hashCode = hashCode * 59 + this.ConditionUsage.GetHashCode();
                 if (this.SampleValues != null)
                     hashCode = hashCode * 59 + this.SampleValues.GetHashCode();
                 if (this.AllowedValues != null)
                     hashCode = hashCode * 59 + this.AllowedValues.GetHashCode();
+                if (this.MandatoryForActions != null)
+                    hashCode = hashCode * 59 + this.MandatoryForActions.GetHashCode();
+                if (this.Mapping != null)
+                    hashCode = hashCode * 59 + this.Mapping.GetHashCode();
                 return hashCode;
             }
         }
