@@ -27,25 +27,36 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// The sort of certificate being Created / Revoked / Renewed
+    /// Defines MappingFlags
     /// </summary>
-    /// <value>The sort of certificate being Created / Revoked / Renewed</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum CertificateType
+    public enum MappingFlags
     {
         /// <summary>
-        /// Enum Domain for value: Domain
+        /// Enum None for value: None
         /// </summary>
-        [EnumMember(Value = "Domain")]
-        Domain = 1,
+        [EnumMember(Value = "None")]
+        None = 1,
 
         /// <summary>
-        /// Enum User for value: User
+        /// Enum Exact for value: Exact
         /// </summary>
-        [EnumMember(Value = "User")]
-        User = 2
+        [EnumMember(Value = "Exact")]
+        Exact = 2,
+
+        /// <summary>
+        /// Enum Similar for value: Similar
+        /// </summary>
+        [EnumMember(Value = "Similar")]
+        Similar = 3,
+
+        /// <summary>
+        /// Enum Additional for value: Additional
+        /// </summary>
+        [EnumMember(Value = "Additional")]
+        Additional = 4
 
     }
 

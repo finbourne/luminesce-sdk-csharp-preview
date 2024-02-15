@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.14.511",
+    "version": "1.14.519",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -1856,25 +1856,25 @@
               "schema": {
                 "$ref": "#/components/schemas/WriterDesign"
               },
-              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
             },
             "application/json": {
               "schema": {
                 "$ref": "#/components/schemas/WriterDesign"
               },
-              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
             },
             "text/json": {
               "schema": {
                 "$ref": "#/components/schemas/WriterDesign"
               },
-              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
             },
             "application/*+json": {
               "schema": {
                 "$ref": "#/components/schemas/WriterDesign"
               },
-              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+              "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
             }
           },
           "required": true
@@ -3170,6 +3170,18 @@
         "summary": "[EXPERIMENTAL] PutSqlToWriterDesign: Generates a SQL-writer-design object from SQL string, if possible.",
         "description": "SQL to attempt to create a Writer Design object from",
         "operationId": "PutSqlToWriterDesign",
+        "parameters": [
+          {
+            "name": "mergeAdditionalMappingFields",
+            "in": "query",
+            "description": "Should `Sys.Field` be used to find additional potential fields to map from? (not always possible)",
+            "schema": {
+              "type": "boolean",
+              "default": false
+            },
+            "x-nullable": true
+          }
+        ],
         "requestBody": {
           "description": "SQL query to generate the writer design object from",
           "content": {
@@ -3190,19 +3202,19 @@
                 "schema": {
                   "type": "string"
                 },
-                "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+                "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
               },
               "application/json": {
                 "schema": {
                   "type": "string"
                 },
-                "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+                "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
               },
               "text/json": {
                 "schema": {
                   "type": "string"
                 },
-                "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
+                "example": {"sql":"\n@x = select SomeScope as Scope from Somewhere;\nselect * from Lusid.Instrument.Bond where ToWriter = @x","availableToMapFrom":[{"expression":"SomeScope","alias":"Scope","flags":"None"}],"parameter":{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},"availableParameters":[{"providerName":"Lusid.Instrument.Bond","parameterName":"ToWrite","fields":[{"name":"Scope","type":"Text","description":"Scope of the instrument","mapping":{"expression":"SomeScope","alias":"Scope","flags":"None"}},{"name":"DisplayName","type":"Text"}]},{"providerName":"Email.Send","parameterName":"ToSend","fields":[{"name":"Subject","type":"Text"},{"name":"Body","type":"Text"}]}]}
               }
             }
           },
@@ -5571,6 +5583,9 @@
             "type": "string",
             "description": "Column Alias for the expression",
             "nullable": true
+          },
+          "flags": {
+            "$ref": "#/components/schemas/MappingFlags"
           }
         },
         "additionalProperties": false,
@@ -5962,6 +5977,15 @@
         },
         "additionalProperties": false,
         "description": "Information about a field that can be designed on (regardless if it currently is)\r\nKind of a \"mini-available catalog entry\""
+      },
+      "MappingFlags": {
+        "enum": [
+          "None",
+          "Exact",
+          "Similar",
+          "Additional"
+        ],
+        "type": "string"
       },
       "MultiQueryDefinitionType": {
         "enum": [

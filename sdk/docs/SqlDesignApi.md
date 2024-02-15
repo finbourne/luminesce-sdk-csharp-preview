@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 <a name="putsqltowriterdesign"></a>
 # **PutSqlToWriterDesign**
-> string PutSqlToWriterDesign (string body)
+> string PutSqlToWriterDesign (string body, bool? mergeAdditionalMappingFields = null)
 
 [EXPERIMENTAL] PutSqlToWriterDesign: Generates a SQL-writer-design object from SQL string, if possible.
 
@@ -549,11 +549,12 @@ namespace Example
 
             var apiInstance = new SqlDesignApi(config);
             var body = Select abc from xyz;  // string | SQL query to generate the writer design object from
+            var mergeAdditionalMappingFields = true;  // bool? | Should `Sys.Field` be used to find additional potential fields to map from? (not always possible) (optional)  (default to false)
 
             try
             {
                 // [EXPERIMENTAL] PutSqlToWriterDesign: Generates a SQL-writer-design object from SQL string, if possible.
-                string result = apiInstance.PutSqlToWriterDesign(body);
+                string result = apiInstance.PutSqlToWriterDesign(body, mergeAdditionalMappingFields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -572,6 +573,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **body** | **string**| SQL query to generate the writer design object from | 
+ **mergeAdditionalMappingFields** | **bool?**| Should &#x60;Sys.Field&#x60; be used to find additional potential fields to map from? (not always possible) | [optional] [default to false]
 
 ### Return type
 
