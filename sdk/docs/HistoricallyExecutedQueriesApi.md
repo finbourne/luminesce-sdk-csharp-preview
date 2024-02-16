@@ -257,7 +257,7 @@ Name | Type | Description  | Notes
 
 <a name="gethistory"></a>
 # **GetHistory**
-> BackgroundQueryResponse GetHistory (DateTimeOffset? startAt = null, DateTimeOffset? endAt = null, string freeTextSearch = null, bool? showAll = null)
+> BackgroundQueryResponse GetHistory (DateTimeOffset? startAt = null, DateTimeOffset? endAt = null, string freeTextSearch = null, bool? showAll = null, bool? mayUseNativeStore = null)
 
 GetHistory: Shows queries executed in a given historical time window (in Json format).
 
@@ -287,11 +287,12 @@ namespace Example
             var endAt = 2013-10-20T19:20:30+01:00;  // DateTimeOffset? | Date time to end the search at.  Defaults to now. (optional) 
             var freeTextSearch = freeTextSearch_example;  // string | Some test that must be in at least one field returned. (optional) 
             var showAll = true;  // bool? | For users with extra permissions, they may optionally see other users' queries. (optional)  (default to false)
+            var mayUseNativeStore = true;  // bool? | Should a native data store (e.g. Athena or Fabric) be used over Elastic Search if available? (optional)  (default to true)
 
             try
             {
                 // GetHistory: Shows queries executed in a given historical time window (in Json format).
-                BackgroundQueryResponse result = apiInstance.GetHistory(startAt, endAt, freeTextSearch, showAll);
+                BackgroundQueryResponse result = apiInstance.GetHistory(startAt, endAt, freeTextSearch, showAll, mayUseNativeStore);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -313,6 +314,7 @@ Name | Type | Description  | Notes
  **endAt** | **DateTimeOffset?**| Date time to end the search at.  Defaults to now. | [optional] 
  **freeTextSearch** | **string**| Some test that must be in at least one field returned. | [optional] 
  **showAll** | **bool?**| For users with extra permissions, they may optionally see other users&#39; queries. | [optional] [default to false]
+ **mayUseNativeStore** | **bool?**| Should a native data store (e.g. Athena or Fabric) be used over Elastic Search if available? | [optional] [default to true]
 
 ### Return type
 
