@@ -5,6 +5,7 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**PutFileReadDesignToSql**](SqlDesignApi.md#putfilereaddesigntosql) | **PUT** /api/Sql/fromfilereaddesign | [EXPERIMENTAL] PutFileReadDesignToSql: Generates file read SQL from a structured query design
+[**PutIntellisense**](SqlDesignApi.md#putintellisense) | **PUT** /api/Sql/intellisense | [EXPERIMENTAL] PutIntellisense: Generate a set of possible intellisense prompts given a SQL snipit (in need not yet be valid) and cursor location
 [**PutQueryDesignToSql**](SqlDesignApi.md#putquerydesigntosql) | **PUT** /api/Sql/fromdesign | [EXPERIMENTAL] PutQueryDesignToSql: Generates SQL from a structured query design
 [**PutQueryToFormat**](SqlDesignApi.md#putquerytoformat) | **PUT** /api/Sql/pretty | PutQueryToFormat: Formats SQL into a more readable form, a.k.a. Pretty-Print the SQL.
 [**PutSqlToFileReadDesign**](SqlDesignApi.md#putsqltofilereaddesign) | **PUT** /api/Sql/tofilereaddesign | [EXPERIMENTAL] PutSqlToFileReadDesign: Generates a SQL-file-read-design object from SQL string, if possible.
@@ -17,7 +18,7 @@ Method | HTTP request | Description
 
 <a name="putfilereaddesigntosql"></a>
 # **PutFileReadDesignToSql**
-> string PutFileReadDesignToSql (FileReaderBuilderDef fileReaderBuilderDef, bool? executeQuery = null)
+> FileReaderBuilderResponse PutFileReadDesignToSql (FileReaderBuilderDef fileReaderBuilderDef, bool? executeQuery = null)
 
 [EXPERIMENTAL] PutFileReadDesignToSql: Generates file read SQL from a structured query design
 
@@ -49,7 +50,7 @@ namespace Example
             try
             {
                 // [EXPERIMENTAL] PutFileReadDesignToSql: Generates file read SQL from a structured query design
-                string result = apiInstance.PutFileReadDesignToSql(fileReaderBuilderDef, executeQuery);
+                FileReaderBuilderResponse result = apiInstance.PutFileReadDesignToSql(fileReaderBuilderDef, executeQuery);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -72,7 +73,82 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**FileReaderBuilderResponse**](FileReaderBuilderResponse.md)
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json-patch+json, application/json, text/json, application/_*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
+| **400** | Bad Request |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="putintellisense"></a>
+# **PutIntellisense**
+> IntellisenseResponse PutIntellisense (IntellisenseRequest intellisenseRequest)
+
+[EXPERIMENTAL] PutIntellisense: Generate a set of possible intellisense prompts given a SQL snipit (in need not yet be valid) and cursor location
+
+SQL and a row/colum position within it from which to determine intellisense options for the user to potentially choose from.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Finbourne.Luminesce.Sdk.Api;
+using Finbourne.Luminesce.Sdk.Client;
+using Finbourne.Luminesce.Sdk.Model;
+
+namespace Example
+{
+    public class PutIntellisenseExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.lusid.com/honeycomb";
+            // Configure OAuth2 access token for authorization: oauth2
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new SqlDesignApi(config);
+            var intellisenseRequest = new IntellisenseRequest(); // IntellisenseRequest | 
+
+            try
+            {
+                // [EXPERIMENTAL] PutIntellisense: Generate a set of possible intellisense prompts given a SQL snipit (in need not yet be valid) and cursor location
+                IntellisenseResponse result = apiInstance.PutIntellisense(intellisenseRequest);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling SqlDesignApi.PutIntellisense: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **intellisenseRequest** | [**IntellisenseRequest**](IntellisenseRequest.md)|  | 
+
+### Return type
+
+[**IntellisenseResponse**](IntellisenseResponse.md)
 
 ### Authorization
 
@@ -270,7 +346,7 @@ Name | Type | Description  | Notes
 
 <a name="putsqltofilereaddesign"></a>
 # **PutSqlToFileReadDesign**
-> string PutSqlToFileReadDesign (bool? determineAvailableSources = null, string body = null)
+> FileReaderBuilderDef PutSqlToFileReadDesign (bool? determineAvailableSources = null, string body = null)
 
 [EXPERIMENTAL] PutSqlToFileReadDesign: Generates a SQL-file-read-design object from SQL string, if possible.
 
@@ -307,7 +383,7 @@ select * from @x;;  // string | SQL query to generate the file read design objec
             try
             {
                 // [EXPERIMENTAL] PutSqlToFileReadDesign: Generates a SQL-file-read-design object from SQL string, if possible.
-                string result = apiInstance.PutSqlToFileReadDesign(determineAvailableSources, body);
+                FileReaderBuilderDef result = apiInstance.PutSqlToFileReadDesign(determineAvailableSources, body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -330,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**FileReaderBuilderDef**](FileReaderBuilderDef.md)
 
 ### Authorization
 
@@ -352,7 +428,7 @@ Name | Type | Description  | Notes
 
 <a name="putsqltoquerydesign"></a>
 # **PutSqlToQueryDesign**
-> string PutSqlToQueryDesign (string body, bool? validateWithMetadata = null)
+> QueryDesign PutSqlToQueryDesign (string body, bool? validateWithMetadata = null)
 
 [EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.
 
@@ -395,7 +471,7 @@ LIMIT 42;  // string | SQL query to generate the design object from
             try
             {
                 // [EXPERIMENTAL] PutSqlToQueryDesign: Generates a SQL-design object from SQL string, if possible.
-                string result = apiInstance.PutSqlToQueryDesign(body, validateWithMetadata);
+                QueryDesign result = apiInstance.PutSqlToQueryDesign(body, validateWithMetadata);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -418,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**QueryDesign**](QueryDesign.md)
 
 ### Authorization
 
@@ -440,7 +516,7 @@ Name | Type | Description  | Notes
 
 <a name="putsqltoviewdesign"></a>
 # **PutSqlToViewDesign**
-> string PutSqlToViewDesign (string body)
+> ConvertToViewData PutSqlToViewDesign (string body)
 
 [EXPERIMENTAL] PutSqlToViewDesign: Generates a structured view creation design from existing view creation SQL.
 
@@ -478,7 +554,7 @@ select * from @x;;  // string | SQL Query to generate the ConvertToViewData obje
             try
             {
                 // [EXPERIMENTAL] PutSqlToViewDesign: Generates a structured view creation design from existing view creation SQL.
-                string result = apiInstance.PutSqlToViewDesign(body);
+                ConvertToViewData result = apiInstance.PutSqlToViewDesign(body);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -500,7 +576,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**ConvertToViewData**](ConvertToViewData.md)
 
 ### Authorization
 
@@ -522,7 +598,7 @@ Name | Type | Description  | Notes
 
 <a name="putsqltowriterdesign"></a>
 # **PutSqlToWriterDesign**
-> string PutSqlToWriterDesign (string body, bool? mergeAdditionalMappingFields = null)
+> WriterDesign PutSqlToWriterDesign (string body, bool? mergeAdditionalMappingFields = null)
 
 [EXPERIMENTAL] PutSqlToWriterDesign: Generates a SQL-writer-design object from SQL string, if possible.
 
@@ -554,7 +630,7 @@ namespace Example
             try
             {
                 // [EXPERIMENTAL] PutSqlToWriterDesign: Generates a SQL-writer-design object from SQL string, if possible.
-                string result = apiInstance.PutSqlToWriterDesign(body, mergeAdditionalMappingFields);
+                WriterDesign result = apiInstance.PutSqlToWriterDesign(body, mergeAdditionalMappingFields);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -577,7 +653,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-**string**
+[**WriterDesign**](WriterDesign.md)
 
 ### Authorization
 

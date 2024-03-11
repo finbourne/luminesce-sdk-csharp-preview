@@ -27,39 +27,40 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// How to aggregate over a field
+    /// CursorPosition
     /// </summary>
-    [DataContract(Name = "Aggregation")]
-    public partial class Aggregation : IEquatable<Aggregation>
+    [DataContract(Name = "CursorPosition")]
+    public partial class CursorPosition : IEquatable<CursorPosition>
     {
-
         /// <summary>
-        /// Gets or Sets Type
-        /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
-        public AggregateFunction Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Aggregation" /> class.
+        /// Initializes a new instance of the <see cref="CursorPosition" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Aggregation() { }
+        protected CursorPosition() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Aggregation" /> class.
+        /// Initializes a new instance of the <see cref="CursorPosition" /> class.
         /// </summary>
-        /// <param name="type">type (required).</param>
-        /// <param name="alias">Alias, if any, for the Aggregate expression when selected.</param>
-        public Aggregation(AggregateFunction type = default(AggregateFunction), string alias = default(string))
+        /// <param name="row">Row (0 based) of the user&#39;s cursor position (required).</param>
+        /// <param name="column">Column (0 based) of the user&#39;s cursor position (required).</param>
+        public CursorPosition(int row = default(int), int column = default(int))
         {
-            this.Type = type;
-            this.Alias = alias;
+            this.Row = row;
+            this.Column = column;
         }
 
         /// <summary>
-        /// Alias, if any, for the Aggregate expression when selected
+        /// Row (0 based) of the user&#39;s cursor position
         /// </summary>
-        /// <value>Alias, if any, for the Aggregate expression when selected</value>
-        [DataMember(Name = "alias", EmitDefaultValue = true)]
-        public string Alias { get; set; }
+        /// <value>Row (0 based) of the user&#39;s cursor position</value>
+        [DataMember(Name = "row", IsRequired = true, EmitDefaultValue = true)]
+        public int Row { get; set; }
+
+        /// <summary>
+        /// Column (0 based) of the user&#39;s cursor position
+        /// </summary>
+        /// <value>Column (0 based) of the user&#39;s cursor position</value>
+        [DataMember(Name = "column", IsRequired = true, EmitDefaultValue = true)]
+        public int Column { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,9 +69,9 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Aggregation {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Alias: ").Append(Alias).Append("\n");
+            sb.Append("class CursorPosition {\n");
+            sb.Append("  Row: ").Append(Row).Append("\n");
+            sb.Append("  Column: ").Append(Column).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,28 +92,27 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Aggregation);
+            return this.Equals(input as CursorPosition);
         }
 
         /// <summary>
-        /// Returns true if Aggregation instances are equal
+        /// Returns true if CursorPosition instances are equal
         /// </summary>
-        /// <param name="input">Instance of Aggregation to be compared</param>
+        /// <param name="input">Instance of CursorPosition to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Aggregation input)
+        public bool Equals(CursorPosition input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
+                    this.Row == input.Row ||
+                    this.Row.Equals(input.Row)
                 ) && 
                 (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
+                    this.Column == input.Column ||
+                    this.Column.Equals(input.Column)
                 );
         }
 
@@ -125,9 +125,8 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                hashCode = hashCode * 59 + this.Row.GetHashCode();
+                hashCode = hashCode * 59 + this.Column.GetHashCode();
                 return hashCode;
             }
         }

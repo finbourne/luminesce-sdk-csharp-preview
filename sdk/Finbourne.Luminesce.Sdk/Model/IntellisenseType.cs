@@ -27,31 +27,54 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// The method of name/type column inference being used
+    /// Defines IntellisenseType
     /// </summary>
-    /// <value>The method of name/type column inference being used</value>
     
     [JsonConverter(typeof(StringEnumConverter))]
     
-    public enum AutoDetectType
+    public enum IntellisenseType
     {
         /// <summary>
-        /// Enum Auto for value: Auto
+        /// Enum Keyword for value: Keyword
         /// </summary>
-        [EnumMember(Value = "Auto")]
-        Auto = 1,
+        [EnumMember(Value = "Keyword")]
+        Keyword = 1,
 
         /// <summary>
-        /// Enum SpecifyColumnsYetInferTypes for value: SpecifyColumnsYetInferTypes
+        /// Enum Symbol for value: Symbol
         /// </summary>
-        [EnumMember(Value = "SpecifyColumnsYetInferTypes")]
-        SpecifyColumnsYetInferTypes = 2,
+        [EnumMember(Value = "Symbol")]
+        Symbol = 2,
 
         /// <summary>
-        /// Enum SpecifyColumnsAndTypes for value: SpecifyColumnsAndTypes
+        /// Enum Function for value: Function
         /// </summary>
-        [EnumMember(Value = "SpecifyColumnsAndTypes")]
-        SpecifyColumnsAndTypes = 3
+        [EnumMember(Value = "Function")]
+        Function = 3,
+
+        /// <summary>
+        /// Enum Operator for value: Operator
+        /// </summary>
+        [EnumMember(Value = "Operator")]
+        Operator = 4,
+
+        /// <summary>
+        /// Enum Table for value: Table
+        /// </summary>
+        [EnumMember(Value = "Table")]
+        Table = 5,
+
+        /// <summary>
+        /// Enum Column for value: Column
+        /// </summary>
+        [EnumMember(Value = "Column")]
+        Column = 6,
+
+        /// <summary>
+        /// Enum Parameter for value: Parameter
+        /// </summary>
+        [EnumMember(Value = "Parameter")]
+        Parameter = 7
 
     }
 
