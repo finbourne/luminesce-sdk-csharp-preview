@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.14.692",
+    "version": "1.14.699",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -1984,19 +1984,19 @@
                 "schema": {
                   "$ref": "#/components/schemas/IntellisenseResponse"
                 },
-                "example": {"autoCompleteList":[{"caption":"SELECT","value":"SELECT","meta":"select some data","score":100,"docHtml":"<p>Select some data!</p>","type":"Keyword"},{"caption":"VALUES","value":"VALUES","meta":"some hard-coded data","score":100,"docHtml":"<p>values give you data</p>","type":"Keyword"}],"tryAgainSoonForMore":false,"sqlWithMarker":"▷select◁︎ * from somewhere"}
+                "example": {"autoCompleteList":[{"caption":"SELECT","value":"SELECT","meta":"select some data","score":100,"docHTML":"<p>Select some data!</p>","type":"Keyword"},{"caption":"VALUES","value":"VALUES","meta":"some hard-coded data","score":100,"docHTML":"<p>values give you data</p>","type":"Keyword"}],"tryAgainSoonForMore":false,"sqlWithMarker":"▷select◁︎ * from somewhere"}
               },
               "application/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IntellisenseResponse"
                 },
-                "example": {"autoCompleteList":[{"caption":"SELECT","value":"SELECT","meta":"select some data","score":100,"docHtml":"<p>Select some data!</p>","type":"Keyword"},{"caption":"VALUES","value":"VALUES","meta":"some hard-coded data","score":100,"docHtml":"<p>values give you data</p>","type":"Keyword"}],"tryAgainSoonForMore":false,"sqlWithMarker":"▷select◁︎ * from somewhere"}
+                "example": {"autoCompleteList":[{"caption":"SELECT","value":"SELECT","meta":"select some data","score":100,"docHTML":"<p>Select some data!</p>","type":"Keyword"},{"caption":"VALUES","value":"VALUES","meta":"some hard-coded data","score":100,"docHTML":"<p>values give you data</p>","type":"Keyword"}],"tryAgainSoonForMore":false,"sqlWithMarker":"▷select◁︎ * from somewhere"}
               },
               "text/json": {
                 "schema": {
                   "$ref": "#/components/schemas/IntellisenseResponse"
                 },
-                "example": {"autoCompleteList":[{"caption":"SELECT","value":"SELECT","meta":"select some data","score":100,"docHtml":"<p>Select some data!</p>","type":"Keyword"},{"caption":"VALUES","value":"VALUES","meta":"some hard-coded data","score":100,"docHtml":"<p>values give you data</p>","type":"Keyword"}],"tryAgainSoonForMore":false,"sqlWithMarker":"▷select◁︎ * from somewhere"}
+                "example": {"autoCompleteList":[{"caption":"SELECT","value":"SELECT","meta":"select some data","score":100,"docHTML":"<p>Select some data!</p>","type":"Keyword"},{"caption":"VALUES","value":"VALUES","meta":"some hard-coded data","score":100,"docHTML":"<p>values give you data</p>","type":"Keyword"}],"tryAgainSoonForMore":false,"sqlWithMarker":"▷select◁︎ * from somewhere"}
               }
             }
           },
@@ -6017,7 +6017,7 @@
             "description": "How important is this.  Bigger is more important.",
             "format": "int32"
           },
-          "docHtml": {
+          "docHTML": {
             "type": "string",
             "description": "Popup further info (as in a whole documentation article!)",
             "nullable": true
