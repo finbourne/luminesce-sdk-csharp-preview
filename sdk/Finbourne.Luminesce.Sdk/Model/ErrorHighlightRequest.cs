@@ -27,39 +27,32 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// How to aggregate over a field
+    /// ErrorHighlightRequest
     /// </summary>
-    [DataContract(Name = "Aggregation")]
-    public partial class Aggregation : IEquatable<Aggregation>
+    [DataContract(Name = "ErrorHighlightRequest")]
+    public partial class ErrorHighlightRequest : IEquatable<ErrorHighlightRequest>
     {
-
         /// <summary>
-        /// Gets or Sets Type
-        /// </summary>
-        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
-        public AggregateFunction Type { get; set; }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="Aggregation" /> class.
+        /// Initializes a new instance of the <see cref="ErrorHighlightRequest" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected Aggregation() { }
+        protected ErrorHighlightRequest() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="Aggregation" /> class.
+        /// Initializes a new instance of the <see cref="ErrorHighlightRequest" /> class.
         /// </summary>
-        /// <param name="type">type (required).</param>
-        /// <param name="alias">Alias, if any, for the Aggregate expression when selected.</param>
-        public Aggregation(AggregateFunction type = default(AggregateFunction), string alias = default(string))
+        /// <param name="lines">The lines of text the user currently has in the editor (required).</param>
+        public ErrorHighlightRequest(List<string> lines = default(List<string>))
         {
-            this.Type = type;
-            this.Alias = alias;
+            // to ensure "lines" is required (not null)
+            this.Lines = lines ?? throw new ArgumentNullException("lines is a required property for ErrorHighlightRequest and cannot be null");
         }
 
         /// <summary>
-        /// Alias, if any, for the Aggregate expression when selected
+        /// The lines of text the user currently has in the editor
         /// </summary>
-        /// <value>Alias, if any, for the Aggregate expression when selected</value>
-        [DataMember(Name = "alias", EmitDefaultValue = true)]
-        public string Alias { get; set; }
+        /// <value>The lines of text the user currently has in the editor</value>
+        [DataMember(Name = "lines", IsRequired = true, EmitDefaultValue = false)]
+        public List<string> Lines { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -68,9 +61,8 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class Aggregation {\n");
-            sb.Append("  Type: ").Append(Type).Append("\n");
-            sb.Append("  Alias: ").Append(Alias).Append("\n");
+            sb.Append("class ErrorHighlightRequest {\n");
+            sb.Append("  Lines: ").Append(Lines).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -91,28 +83,25 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as Aggregation);
+            return this.Equals(input as ErrorHighlightRequest);
         }
 
         /// <summary>
-        /// Returns true if Aggregation instances are equal
+        /// Returns true if ErrorHighlightRequest instances are equal
         /// </summary>
-        /// <param name="input">Instance of Aggregation to be compared</param>
+        /// <param name="input">Instance of ErrorHighlightRequest to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Aggregation input)
+        public bool Equals(ErrorHighlightRequest input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Type == input.Type ||
-                    this.Type.Equals(input.Type)
-                ) && 
-                (
-                    this.Alias == input.Alias ||
-                    (this.Alias != null &&
-                    this.Alias.Equals(input.Alias))
+                    this.Lines == input.Lines ||
+                    this.Lines != null &&
+                    input.Lines != null &&
+                    this.Lines.SequenceEqual(input.Lines)
                 );
         }
 
@@ -125,9 +114,8 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Type.GetHashCode();
-                if (this.Alias != null)
-                    hashCode = hashCode * 59 + this.Alias.GetHashCode();
+                if (this.Lines != null)
+                    hashCode = hashCode * 59 + this.Lines.GetHashCode();
                 return hashCode;
             }
         }
