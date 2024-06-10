@@ -27,57 +27,59 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// AccessControlledResource
+    /// Information about a inlined property so that decorated properties can be inlined into luminesce
     /// </summary>
-    [DataContract(Name = "AccessControlledResource")]
-    public partial class AccessControlledResource : IEquatable<AccessControlledResource>
+    [DataContract(Name = "InlinedPropertyItem")]
+    public partial class InlinedPropertyItem : IEquatable<InlinedPropertyItem>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="AccessControlledResource" /> class.
+        /// Initializes a new instance of the <see cref="InlinedPropertyItem" /> class.
         /// </summary>
-        /// <param name="application">application.</param>
-        /// <param name="name">name.</param>
-        /// <param name="description">description.</param>
-        /// <param name="actions">actions.</param>
-        /// <param name="identifierParts">identifierParts.</param>
-        public AccessControlledResource(string application = default(string), string name = default(string), string description = default(string), List<AccessControlledAction> actions = default(List<AccessControlledAction>), List<AccessControlledResourceIdentifierPartSchemaAttribute> identifierParts = default(List<AccessControlledResourceIdentifierPartSchemaAttribute>))
+        [JsonConstructorAttribute]
+        protected InlinedPropertyItem() { }
+        /// <summary>
+        /// Initializes a new instance of the <see cref="InlinedPropertyItem" /> class.
+        /// </summary>
+        /// <param name="key">Key of the property (required).</param>
+        /// <param name="name">Name of the property.</param>
+        /// <param name="isMain">Is Main indicator for the property.</param>
+        /// <param name="description">Description of the property.</param>
+        public InlinedPropertyItem(string key = default(string), string name = default(string), bool isMain = default(bool), string description = default(string))
         {
-            this.Application = application;
+            // to ensure "key" is required (not null)
+            this.Key = key ?? throw new ArgumentNullException("key is a required property for InlinedPropertyItem and cannot be null");
             this.Name = name;
+            this.IsMain = isMain;
             this.Description = description;
-            this.Actions = actions;
-            this.IdentifierParts = identifierParts;
         }
 
         /// <summary>
-        /// Gets or Sets Application
+        /// Key of the property
         /// </summary>
-        [DataMember(Name = "application", EmitDefaultValue = true)]
-        public string Application { get; set; }
+        /// <value>Key of the property</value>
+        [DataMember(Name = "key", IsRequired = true, EmitDefaultValue = false)]
+        public string Key { get; set; }
 
         /// <summary>
-        /// Gets or Sets Name
+        /// Name of the property
         /// </summary>
+        /// <value>Name of the property</value>
         [DataMember(Name = "name", EmitDefaultValue = true)]
         public string Name { get; set; }
 
         /// <summary>
-        /// Gets or Sets Description
+        /// Is Main indicator for the property
         /// </summary>
+        /// <value>Is Main indicator for the property</value>
+        [DataMember(Name = "isMain", EmitDefaultValue = true)]
+        public bool IsMain { get; set; }
+
+        /// <summary>
+        /// Description of the property
+        /// </summary>
+        /// <value>Description of the property</value>
         [DataMember(Name = "description", EmitDefaultValue = true)]
         public string Description { get; set; }
-
-        /// <summary>
-        /// Gets or Sets Actions
-        /// </summary>
-        [DataMember(Name = "actions", EmitDefaultValue = true)]
-        public List<AccessControlledAction> Actions { get; set; }
-
-        /// <summary>
-        /// Gets or Sets IdentifierParts
-        /// </summary>
-        [DataMember(Name = "identifierParts", EmitDefaultValue = true)]
-        public List<AccessControlledResourceIdentifierPartSchemaAttribute> IdentifierParts { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -86,12 +88,11 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class AccessControlledResource {\n");
-            sb.Append("  Application: ").Append(Application).Append("\n");
+            sb.Append("class InlinedPropertyItem {\n");
+            sb.Append("  Key: ").Append(Key).Append("\n");
             sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  IsMain: ").Append(IsMain).Append("\n");
             sb.Append("  Description: ").Append(Description).Append("\n");
-            sb.Append("  Actions: ").Append(Actions).Append("\n");
-            sb.Append("  IdentifierParts: ").Append(IdentifierParts).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -112,24 +113,24 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as AccessControlledResource);
+            return this.Equals(input as InlinedPropertyItem);
         }
 
         /// <summary>
-        /// Returns true if AccessControlledResource instances are equal
+        /// Returns true if InlinedPropertyItem instances are equal
         /// </summary>
-        /// <param name="input">Instance of AccessControlledResource to be compared</param>
+        /// <param name="input">Instance of InlinedPropertyItem to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(AccessControlledResource input)
+        public bool Equals(InlinedPropertyItem input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Application == input.Application ||
-                    (this.Application != null &&
-                    this.Application.Equals(input.Application))
+                    this.Key == input.Key ||
+                    (this.Key != null &&
+                    this.Key.Equals(input.Key))
                 ) && 
                 (
                     this.Name == input.Name ||
@@ -137,21 +138,13 @@ namespace Finbourne.Luminesce.Sdk.Model
                     this.Name.Equals(input.Name))
                 ) && 
                 (
+                    this.IsMain == input.IsMain ||
+                    this.IsMain.Equals(input.IsMain)
+                ) && 
+                (
                     this.Description == input.Description ||
                     (this.Description != null &&
                     this.Description.Equals(input.Description))
-                ) && 
-                (
-                    this.Actions == input.Actions ||
-                    this.Actions != null &&
-                    input.Actions != null &&
-                    this.Actions.SequenceEqual(input.Actions)
-                ) && 
-                (
-                    this.IdentifierParts == input.IdentifierParts ||
-                    this.IdentifierParts != null &&
-                    input.IdentifierParts != null &&
-                    this.IdentifierParts.SequenceEqual(input.IdentifierParts)
                 );
         }
 
@@ -164,16 +157,13 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Application != null)
-                    hashCode = hashCode * 59 + this.Application.GetHashCode();
+                if (this.Key != null)
+                    hashCode = hashCode * 59 + this.Key.GetHashCode();
                 if (this.Name != null)
                     hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.IsMain.GetHashCode();
                 if (this.Description != null)
                     hashCode = hashCode * 59 + this.Description.GetHashCode();
-                if (this.Actions != null)
-                    hashCode = hashCode * 59 + this.Actions.GetHashCode();
-                if (this.IdentifierParts != null)
-                    hashCode = hashCode * 59 + this.IdentifierParts.GetHashCode();
                 return hashCode;
             }
         }
