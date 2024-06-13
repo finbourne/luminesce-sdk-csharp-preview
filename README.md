@@ -1,3 +1,5 @@
+![LUSID_by_Finbourne](./resources/Finbourne_Logo_Teal.svg)
+
 # Deprecated
 
 Please note that this repository is deprecated and will be archived early 2024.
@@ -5,7 +7,6 @@ Please note that this repository is deprecated and will be archived early 2024.
 All functionality is now contained, in the [luminesce-sdk-csharp](https://github.com/finbourne/luminesce-sdk-csharp) repository on the `main` branch.
 
 # LUSID<sup>®</sup> Luminesce SDK C# (Preview)
-![LUSID by Finbourne](https://content.finbourne.com/LUSID_repo.png)
 
 This is the C# SDK (Preview) for the Luminesce application, part of the [LUSID by FINBOURNE](https://www.finbourne.com/lusid-technology) platform. To use it you'll need a LUSID account. [Sign up for free at lusid.com](https://www.lusid.com/app/signup).
 
