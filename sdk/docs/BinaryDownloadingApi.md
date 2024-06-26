@@ -5,6 +5,7 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DownloadBinary**](BinaryDownloadingApi.md#downloadbinary) | **GET** /api/Download/download | [EXPERIMENTAL] DownloadBinary: Downloads the latest version (or specific if needs be) of the specified Luminesce Binary, given the required entitlements.
+[**GetBinaryVersions**](BinaryDownloadingApi.md#getbinaryversions) | **GET** /api/Download/versions | [EXPERIMENTAL] GetBinaryVersions: Gets the list of available versions of a user-downloadable binary from Nexus
 
 
 <a name="downloadbinary"></a>
@@ -80,6 +81,82 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 | **200** | The .nupkg file of the requested binary |  -  |
+| **400** | Bad Request |  -  |
+| **403** | Forbidden |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="getbinaryversions"></a>
+# **GetBinaryVersions**
+> ICollection&lt;string&gt; GetBinaryVersions (LuminesceBinaryType? type = null)
+
+[EXPERIMENTAL] GetBinaryVersions: Gets the list of available versions of a user-downloadable binary from Nexus
+
+ Gets all available versions of a given binary type (from newest to oldest) This does not mean you are entitled to download them.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Finbourne.Luminesce.Sdk.Api;
+using Finbourne.Luminesce.Sdk.Client;
+using Finbourne.Luminesce.Sdk.Model;
+
+namespace Example
+{
+    public class GetBinaryVersionsExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "https://www.lusid.com/honeycomb";
+            // Configure OAuth2 access token for authorization: oauth2
+            config.AccessToken = "YOUR_ACCESS_TOKEN";
+
+            var apiInstance = new BinaryDownloadingApi(config);
+            var type = ;  // LuminesceBinaryType? | Type of binary to fetch available versions of (optional) 
+
+            try
+            {
+                // [EXPERIMENTAL] GetBinaryVersions: Gets the list of available versions of a user-downloadable binary from Nexus
+                ICollection<string> result = apiInstance.GetBinaryVersions(type);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling BinaryDownloadingApi.GetBinaryVersions: " + e.Message );
+                Debug.Print("Status Code: "+ e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **type** | **LuminesceBinaryType?**| Type of binary to fetch available versions of | [optional] 
+
+### Return type
+
+**ICollection<string>**
+
+### Authorization
+
+[oauth2](../README.md#oauth2)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | Success |  -  |
 | **400** | Bad Request |  -  |
 | **403** | Forbidden |  -  |
 
