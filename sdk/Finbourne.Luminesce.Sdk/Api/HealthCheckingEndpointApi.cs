@@ -16,7 +16,6 @@ using System.Linq;
 using System.Net;
 using System.Net.Mime;
 using Finbourne.Luminesce.Sdk.Client;
-using Finbourne.Luminesce.Sdk.Model;
 
 namespace Finbourne.Luminesce.Sdk.Api
 {
@@ -24,65 +23,69 @@ namespace Finbourne.Luminesce.Sdk.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IApplicationMetadataApiSync : IApiAccessor
+    public interface IHealthCheckingEndpointApiSync : IApiAccessor
     {
         #region Synchronous Operations
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
         /// </summary>
         /// <remarks>
-        ///  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </remarks>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ResourceListOfAccessControlledResource</returns>
-        ResourceListOfAccessControlledResource GetServicesAsAccessControlledResources();
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
+        /// <returns>Object</returns>
+        Object FakeNodeReclaim(int? secondsUntilReclaim = default(int?));
 
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
         /// </summary>
         /// <remarks>
-        ///  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </remarks>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ResourceListOfAccessControlledResource</returns>
-        ApiResponse<ResourceListOfAccessControlledResource> GetServicesAsAccessControlledResourcesWithHttpInfo();
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
+        /// <returns>ApiResponse of Object</returns>
+        ApiResponse<Object> FakeNodeReclaimWithHttpInfo(int? secondsUntilReclaim = default(int?));
         #endregion Synchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IApplicationMetadataApiAsync : IApiAccessor
+    public interface IHealthCheckingEndpointApiAsync : IApiAccessor
     {
         #region Asynchronous Operations
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
         /// </summary>
         /// <remarks>
-        ///  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </remarks>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ResourceListOfAccessControlledResource</returns>
-        System.Threading.Tasks.Task<ResourceListOfAccessControlledResource> GetServicesAsAccessControlledResourcesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of Object</returns>
+        System.Threading.Tasks.Task<Object> FakeNodeReclaimAsync(int? secondsUntilReclaim = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
 
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
         /// </summary>
         /// <remarks>
-        ///  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </remarks>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ResourceListOfAccessControlledResource)</returns>
-        System.Threading.Tasks.Task<ApiResponse<ResourceListOfAccessControlledResource>> GetServicesAsAccessControlledResourcesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
+        /// <returns>Task of ApiResponse (Object)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> FakeNodeReclaimWithHttpInfoAsync(int? secondsUntilReclaim = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public interface IApplicationMetadataApi : IApplicationMetadataApiSync, IApplicationMetadataApiAsync
+    public interface IHealthCheckingEndpointApi : IHealthCheckingEndpointApiSync, IHealthCheckingEndpointApiAsync
     {
 
     }
@@ -90,23 +93,23 @@ namespace Finbourne.Luminesce.Sdk.Api
     /// <summary>
     /// Represents a collection of functions to interact with the API endpoints
     /// </summary>
-    public partial class ApplicationMetadataApi : IApplicationMetadataApi
+    public partial class HealthCheckingEndpointApi : IHealthCheckingEndpointApi
     {
         private Finbourne.Luminesce.Sdk.Client.ExceptionFactory _exceptionFactory = (name, response) => null;
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class.
+        /// Initializes a new instance of the <see cref="HealthCheckingEndpointApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ApplicationMetadataApi() : this((string)null)
+        public HealthCheckingEndpointApi() : this((string)null)
         {
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class.
+        /// Initializes a new instance of the <see cref="HealthCheckingEndpointApi"/> class.
         /// </summary>
         /// <returns></returns>
-        public ApplicationMetadataApi(String basePath)
+        public HealthCheckingEndpointApi(String basePath)
         {
             this.Configuration = Finbourne.Luminesce.Sdk.Client.Configuration.MergeConfigurations(
                 Finbourne.Luminesce.Sdk.Client.GlobalConfiguration.Instance,
@@ -118,12 +121,12 @@ namespace Finbourne.Luminesce.Sdk.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class
+        /// Initializes a new instance of the <see cref="HealthCheckingEndpointApi"/> class
         /// using Configuration object
         /// </summary>
         /// <param name="configuration">An instance of Configuration</param>
         /// <returns></returns>
-        public ApplicationMetadataApi(Finbourne.Luminesce.Sdk.Client.Configuration configuration)
+        public HealthCheckingEndpointApi(Finbourne.Luminesce.Sdk.Client.Configuration configuration)
         {
             if (configuration == null) throw new ArgumentNullException("configuration");
 
@@ -134,13 +137,13 @@ namespace Finbourne.Luminesce.Sdk.Api
         }
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="ApplicationMetadataApi"/> class
+        /// Initializes a new instance of the <see cref="HealthCheckingEndpointApi"/> class
         /// using a Configuration object and client instance.
         /// </summary>
         /// <param name="client">The client interface for synchronous API access.</param>
         /// <param name="asyncClient">The client interface for asynchronous API access.</param>
         /// <param name="configuration">The configuration object.</param>
-        public ApplicationMetadataApi(Finbourne.Luminesce.Sdk.Client.ISynchronousClient client, Finbourne.Luminesce.Sdk.Client.IAsynchronousClient asyncClient, Finbourne.Luminesce.Sdk.Client.IReadableConfiguration configuration)
+        public HealthCheckingEndpointApi(Finbourne.Luminesce.Sdk.Client.ISynchronousClient client, Finbourne.Luminesce.Sdk.Client.IAsynchronousClient asyncClient, Finbourne.Luminesce.Sdk.Client.IReadableConfiguration configuration)
         {
             if (client == null) throw new ArgumentNullException("client");
             if (asyncClient == null) throw new ArgumentNullException("asyncClient");
@@ -194,22 +197,24 @@ namespace Finbourne.Luminesce.Sdk.Api
         }
 
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place. Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </summary>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ResourceListOfAccessControlledResource</returns>
-        public ResourceListOfAccessControlledResource GetServicesAsAccessControlledResources()
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
+        /// <returns>Object</returns>
+        public Object FakeNodeReclaim(int? secondsUntilReclaim = default(int?))
         {
-            Finbourne.Luminesce.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = GetServicesAsAccessControlledResourcesWithHttpInfo();
+            Finbourne.Luminesce.Sdk.Client.ApiResponse<Object> localVarResponse = FakeNodeReclaimWithHttpInfo(secondsUntilReclaim);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place. Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </summary>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <returns>ApiResponse of ResourceListOfAccessControlledResource</returns>
-        public Finbourne.Luminesce.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> GetServicesAsAccessControlledResourcesWithHttpInfo()
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
+        /// <returns>ApiResponse of Object</returns>
+        public Finbourne.Luminesce.Sdk.Client.ApiResponse<Object> FakeNodeReclaimWithHttpInfo(int? secondsUntilReclaim = default(int?))
         {
             Finbourne.Luminesce.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Luminesce.Sdk.Client.RequestOptions();
 
@@ -229,6 +234,10 @@ namespace Finbourne.Luminesce.Sdk.Api
             var localVarAccept = Finbourne.Luminesce.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (secondsUntilReclaim != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Luminesce.Sdk.Client.ClientUtils.ParameterToMultiMap("", "secondsUntilReclaim", secondsUntilReclaim));
+            }
 
             // authentication (oauth2) required
             // oauth required
@@ -242,11 +251,11 @@ namespace Finbourne.Luminesce.Sdk.Api
             localVarRequestOptions.HeaderParameters.Add("X-LUSID-Sdk-Version", "1.16.299");
 
             // make the HTTP request
-            var localVarResponse = this.Client.Get<ResourceListOfAccessControlledResource>("/api/metadata/access/resources", localVarRequestOptions, this.Configuration);
+            var localVarResponse = this.Client.Get<Object>("/fakeNodeReclaim", localVarRequestOptions, this.Configuration);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetServicesAsAccessControlledResources", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FakeNodeReclaim", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
@@ -254,24 +263,26 @@ namespace Finbourne.Luminesce.Sdk.Api
         }
 
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place. Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </summary>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ResourceListOfAccessControlledResource</returns>
-        public async System.Threading.Tasks.Task<ResourceListOfAccessControlledResource> GetServicesAsAccessControlledResourcesAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of Object</returns>
+        public async System.Threading.Tasks.Task<Object> FakeNodeReclaimAsync(int? secondsUntilReclaim = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
-            Finbourne.Luminesce.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource> localVarResponse = await GetServicesAsAccessControlledResourcesWithHttpInfoAsync(cancellationToken).ConfigureAwait(false);
+            Finbourne.Luminesce.Sdk.Client.ApiResponse<Object> localVarResponse = await FakeNodeReclaimWithHttpInfoAsync(secondsUntilReclaim, cancellationToken).ConfigureAwait(false);
             return localVarResponse.Data;
         }
 
         /// <summary>
-        /// GetServicesAsAccessControlledResources: Get resources available for access control  Get the comprehensive set of resources that are available for access control.  The following LuminesceSql is executed to return this information,  which is then packaged up as AccessControlledResource:  &#x60;&#x60;&#x60;sql select     Name,     min(coalesce(Description, Name) || &#39; (&#39; || Type || &#39;)&#39;) as Description from     Sys.Registration where     Type in (&#39;DirectProvider&#39;, &#39;DataProvider&#39;)     and     ShowAll &#x3D; true group by 1 order by 1     &#x60;&#x60;&#x60;  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
+        /// [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place. Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
         /// </summary>
         /// <exception cref="Finbourne.Luminesce.Sdk.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="secondsUntilReclaim">the number of seconds from which to assume node termination (optional, default to 119)</param>
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
-        /// <returns>Task of ApiResponse (ResourceListOfAccessControlledResource)</returns>
-        public async System.Threading.Tasks.Task<Finbourne.Luminesce.Sdk.Client.ApiResponse<ResourceListOfAccessControlledResource>> GetServicesAsAccessControlledResourcesWithHttpInfoAsync(System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
+        /// <returns>Task of ApiResponse (Object)</returns>
+        public async System.Threading.Tasks.Task<Finbourne.Luminesce.Sdk.Client.ApiResponse<Object>> FakeNodeReclaimWithHttpInfoAsync(int? secondsUntilReclaim = default(int?), System.Threading.CancellationToken cancellationToken = default(System.Threading.CancellationToken))
         {
 
             Finbourne.Luminesce.Sdk.Client.RequestOptions localVarRequestOptions = new Finbourne.Luminesce.Sdk.Client.RequestOptions();
@@ -293,6 +304,10 @@ namespace Finbourne.Luminesce.Sdk.Api
             var localVarAccept = Finbourne.Luminesce.Sdk.Client.ClientUtils.SelectHeaderAccept(_accepts);
             if (localVarAccept != null) localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
 
+            if (secondsUntilReclaim != null)
+            {
+                localVarRequestOptions.QueryParameters.Add(Finbourne.Luminesce.Sdk.Client.ClientUtils.ParameterToMultiMap("", "secondsUntilReclaim", secondsUntilReclaim));
+            }
 
             // authentication (oauth2) required
             // oauth required
@@ -307,11 +322,11 @@ namespace Finbourne.Luminesce.Sdk.Api
 
             // make the HTTP request
 
-            var localVarResponse = await this.AsynchronousClient.GetAsync<ResourceListOfAccessControlledResource>("/api/metadata/access/resources", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+            var localVarResponse = await this.AsynchronousClient.GetAsync<Object>("/fakeNodeReclaim", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
 
             if (this.ExceptionFactory != null)
             {
-                Exception _exception = this.ExceptionFactory("GetServicesAsAccessControlledResources", localVarResponse);
+                Exception _exception = this.ExceptionFactory("FakeNodeReclaim", localVarResponse);
                 if (_exception != null) throw _exception;
             }
 
