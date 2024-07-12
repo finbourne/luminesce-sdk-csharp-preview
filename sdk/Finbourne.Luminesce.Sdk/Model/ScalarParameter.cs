@@ -27,40 +27,49 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// A single filter clause
+    /// Describes a scalar parameter as defined in the SQL
     /// </summary>
-    [DataContract(Name = "FilterTermDesign")]
-    public partial class FilterTermDesign : IEquatable<FilterTermDesign>
+    [DataContract(Name = "ScalarParameter")]
+    public partial class ScalarParameter : IEquatable<ScalarParameter>
     {
 
         /// <summary>
-        /// Gets or Sets Operator
+        /// Gets or Sets Type
         /// </summary>
-        [DataMember(Name = "operator", IsRequired = true, EmitDefaultValue = false)]
-        public QueryDesignerBinaryOperator Operator { get; set; }
+        [DataMember(Name = "type", IsRequired = true, EmitDefaultValue = false)]
+        public DataType Type { get; set; }
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilterTermDesign" /> class.
+        /// Initializes a new instance of the <see cref="ScalarParameter" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected FilterTermDesign() { }
+        protected ScalarParameter() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="FilterTermDesign" /> class.
+        /// Initializes a new instance of the <see cref="ScalarParameter" /> class.
         /// </summary>
-        /// <param name="_operator">_operator (required).</param>
-        /// <param name="value">The value to compare against (always as a string, but will be formatted to the correct type) (required).</param>
-        public FilterTermDesign(QueryDesignerBinaryOperator _operator = default(QueryDesignerBinaryOperator), string value = default(string))
+        /// <param name="name">Name of the scalar parameter (required).</param>
+        /// <param name="type">type (required).</param>
+        /// <param name="value">the default value of the parameter.</param>
+        public ScalarParameter(string name = default(string), DataType type = default(DataType), Object value = default(Object))
         {
-            this.Operator = _operator;
-            // to ensure "value" is required (not null)
-            this.Value = value ?? throw new ArgumentNullException("value is a required property for FilterTermDesign and cannot be null");
+            // to ensure "name" is required (not null)
+            this.Name = name ?? throw new ArgumentNullException("name is a required property for ScalarParameter and cannot be null");
+            this.Type = type;
+            this.Value = value;
         }
 
         /// <summary>
-        /// The value to compare against (always as a string, but will be formatted to the correct type)
+        /// Name of the scalar parameter
         /// </summary>
-        /// <value>The value to compare against (always as a string, but will be formatted to the correct type)</value>
-        [DataMember(Name = "value", IsRequired = true, EmitDefaultValue = false)]
-        public string Value { get; set; }
+        /// <value>Name of the scalar parameter</value>
+        [DataMember(Name = "name", IsRequired = true, EmitDefaultValue = false)]
+        public string Name { get; set; }
+
+        /// <summary>
+        /// the default value of the parameter
+        /// </summary>
+        /// <value>the default value of the parameter</value>
+        [DataMember(Name = "value", EmitDefaultValue = true)]
+        public Object Value { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -69,8 +78,9 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class FilterTermDesign {\n");
-            sb.Append("  Operator: ").Append(Operator).Append("\n");
+            sb.Append("class ScalarParameter {\n");
+            sb.Append("  Name: ").Append(Name).Append("\n");
+            sb.Append("  Type: ").Append(Type).Append("\n");
             sb.Append("  Value: ").Append(Value).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
@@ -92,23 +102,28 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as FilterTermDesign);
+            return this.Equals(input as ScalarParameter);
         }
 
         /// <summary>
-        /// Returns true if FilterTermDesign instances are equal
+        /// Returns true if ScalarParameter instances are equal
         /// </summary>
-        /// <param name="input">Instance of FilterTermDesign to be compared</param>
+        /// <param name="input">Instance of ScalarParameter to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(FilterTermDesign input)
+        public bool Equals(ScalarParameter input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Operator == input.Operator ||
-                    this.Operator.Equals(input.Operator)
+                    this.Name == input.Name ||
+                    (this.Name != null &&
+                    this.Name.Equals(input.Name))
+                ) && 
+                (
+                    this.Type == input.Type ||
+                    this.Type.Equals(input.Type)
                 ) && 
                 (
                     this.Value == input.Value ||
@@ -126,7 +141,9 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                hashCode = hashCode * 59 + this.Operator.GetHashCode();
+                if (this.Name != null)
+                    hashCode = hashCode * 59 + this.Name.GetHashCode();
+                hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.Value != null)
                     hashCode = hashCode * 59 + this.Value.GetHashCode();
                 return hashCode;
