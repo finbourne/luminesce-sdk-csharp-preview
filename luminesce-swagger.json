@@ -8,7 +8,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.16.315",
+    "version": "1.16.322",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -1513,6 +1513,22 @@
         "operationId": "PutByQueryCsv",
         "parameters": [
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -1662,6 +1678,22 @@
             "example": "select ^ from Sys.Field order by 1, 2"
           },
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -1789,6 +1821,22 @@
         "operationId": "PutByQueryExcel",
         "parameters": [
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -1913,6 +1961,22 @@
               "type": "string"
             },
             "example": "select ^ from Sys.Field order by 1, 2"
+          },
+          {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
           },
           {
             "name": "queryName",
@@ -2893,6 +2957,22 @@
         "operationId": "PutByQueryJson",
         "parameters": [
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -3026,6 +3106,22 @@
             "example": "select ^ from Sys.Field order by 1, 2"
           },
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -3136,6 +3232,22 @@
         "description": "\nFor more complex LuminesceSql a PUT will allow for longer Sql.\ne.g.:\n```sql\n@@cutoff = select #2020-02-01#;\n@issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;\n\nselect i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary\nfrom @issues i\ninner join Dev.Jira.Issue.Link li\n    on i.Id = li.IssueId\n```\n\nThe following error codes are to be anticipated with standard Problem Detail reports:\n- 400 BadRequest - something failed with the execution or parsing of your query\n- 401 Unauthorized\n- 403 Forbidden\n",
         "operationId": "PutByQueryParquet",
         "parameters": [
+          {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
           {
             "name": "queryName",
             "in": "query",
@@ -3263,6 +3375,22 @@
             "example": "select ^ from Sys.Field order by 1, 2"
           },
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -3366,6 +3494,22 @@
         "description": "\nFor more complex LuminesceSql a PUT will allow for longer Sql.\ne.g.:\n```sql\n@@cutoff = select #2020-02-01#;\n@issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;\n\nselect i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary\nfrom @issues i\ninner join Dev.Jira.Issue.Link li\n    on i.Id = li.IssueId\n```\n\nThe following error codes are to be anticipated with standard Problem Detail reports:\n- 400 BadRequest - something failed with the execution or parsing of your query\n- 401 Unauthorized\n- 403 Forbidden\n",
         "operationId": "PutByQueryPipe",
         "parameters": [
+          {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
           {
             "name": "queryName",
             "in": "query",
@@ -3498,6 +3642,22 @@
               "type": "string"
             },
             "example": "select ^ from Sys.Field order by 1, 2"
+          },
+          {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
           },
           {
             "name": "queryName",
@@ -3834,6 +3994,22 @@
         "operationId": "PutByQuerySqlite",
         "parameters": [
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -3958,6 +4134,22 @@
               "type": "string"
             },
             "example": "select ^ from Sys.Field order by 1, 2"
+          },
+          {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
           },
           {
             "name": "queryName",
@@ -4563,6 +4755,22 @@
         "operationId": "PutByQueryXml",
         "parameters": [
           {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
+          },
+          {
             "name": "queryName",
             "in": "query",
             "description": "Name to apply to the query in logs and `Sys.Logs.HcQueryStart`",
@@ -4694,6 +4902,22 @@
               "type": "string"
             },
             "example": "select ^ from Sys.Field order by 1, 2"
+          },
+          {
+            "name": "scalarParameters",
+            "in": "query",
+            "description": "Json encoded dictionary of key-value pairs for scalar parameter values to use in the sql execution.",
+            "schema": {
+              "type": "object",
+              "additionalProperties": {
+                "type": "string"
+              }
+            },
+            "example": {
+              "someParameter": 12,
+              "someOtherParameter": "someValue"
+            },
+            "x-nullable": true
           },
           {
             "name": "queryName",
