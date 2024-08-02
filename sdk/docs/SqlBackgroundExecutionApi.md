@@ -886,7 +886,7 @@ Name | Type | Description  | Notes
 
 <a name="getprogressof"></a>
 # **GetProgressOf**
-> BackgroundQueryProgressResponse GetProgressOf (string executionId)
+> BackgroundQueryProgressResponse GetProgressOf (string executionId, bool buildFromLogs)
 
 GetProgressOf: View progress information (up until this point)
 
@@ -913,11 +913,12 @@ namespace Example
 
             var apiInstance = new SqlBackgroundExecutionApi(config);
             var executionId = executionId_example;  // string | ExecutionId returned when starting the query
+            var buildFromLogs = true;  // bool | Should the response state be build from query logs if missing from the shared-db-state?  False will mean `404 Not Found` in cases where it was a real query but has passed its `keepForSeconds`  since the query completed (as well as 'this was not a query at all' of course) (default to true)
 
             try
             {
                 // GetProgressOf: View progress information (up until this point)
-                BackgroundQueryProgressResponse result = apiInstance.GetProgressOf(executionId);
+                BackgroundQueryProgressResponse result = apiInstance.GetProgressOf(executionId, buildFromLogs);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -936,6 +937,7 @@ namespace Example
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **executionId** | **string**| ExecutionId returned when starting the query | 
+ **buildFromLogs** | **bool**| Should the response state be build from query logs if missing from the shared-db-state?  False will mean &#x60;404 Not Found&#x60; in cases where it was a real query but has passed its &#x60;keepForSeconds&#x60;  since the query completed (as well as &#39;this was not a query at all&#39; of course) | [default to true]
 
 ### Return type
 
