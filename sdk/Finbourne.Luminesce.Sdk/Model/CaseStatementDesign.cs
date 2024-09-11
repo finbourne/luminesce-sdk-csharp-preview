@@ -27,41 +27,35 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// Representation of a request for IntellisenseItems
+    /// Representation of the selected field and a list of: filter, source, and target.
     /// </summary>
-    [DataContract(Name = "IntellisenseRequest")]
-    public partial class IntellisenseRequest : IEquatable<IntellisenseRequest>
+    [DataContract(Name = "CaseStatementDesign")]
+    public partial class CaseStatementDesign : IEquatable<CaseStatementDesign>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="IntellisenseRequest" /> class.
+        /// Initializes a new instance of the <see cref="CaseStatementDesign" /> class.
         /// </summary>
-        [JsonConstructorAttribute]
-        protected IntellisenseRequest() { }
-        /// <summary>
-        /// Initializes a new instance of the <see cref="IntellisenseRequest" /> class.
-        /// </summary>
-        /// <param name="lines">The lines of text the user currently has in the editor (required).</param>
-        /// <param name="position">position (required).</param>
-        public IntellisenseRequest(List<string> lines = default(List<string>), CursorPosition position = default(CursorPosition))
+        /// <param name="selectedField">Selected field in the SQL query..</param>
+        /// <param name="caseStatementItems">A list containing the filter, source, and target..</param>
+        public CaseStatementDesign(string selectedField = default(string), List<CaseStatementItem> caseStatementItems = default(List<CaseStatementItem>))
         {
-            // to ensure "lines" is required (not null)
-            this.Lines = lines ?? throw new ArgumentNullException("lines is a required property for IntellisenseRequest and cannot be null");
-            // to ensure "position" is required (not null)
-            this.Position = position ?? throw new ArgumentNullException("position is a required property for IntellisenseRequest and cannot be null");
+            this.SelectedField = selectedField;
+            this.CaseStatementItems = caseStatementItems;
         }
 
         /// <summary>
-        /// The lines of text the user currently has in the editor
+        /// Selected field in the SQL query.
         /// </summary>
-        /// <value>The lines of text the user currently has in the editor</value>
-        [DataMember(Name = "lines", IsRequired = true, EmitDefaultValue = false)]
-        public List<string> Lines { get; set; }
+        /// <value>Selected field in the SQL query.</value>
+        [DataMember(Name = "selectedField", EmitDefaultValue = true)]
+        public string SelectedField { get; set; }
 
         /// <summary>
-        /// Gets or Sets Position
+        /// A list containing the filter, source, and target.
         /// </summary>
-        [DataMember(Name = "position", IsRequired = true, EmitDefaultValue = false)]
-        public CursorPosition Position { get; set; }
+        /// <value>A list containing the filter, source, and target.</value>
+        [DataMember(Name = "caseStatementItems", EmitDefaultValue = true)]
+        public List<CaseStatementItem> CaseStatementItems { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,9 +64,9 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class IntellisenseRequest {\n");
-            sb.Append("  Lines: ").Append(Lines).Append("\n");
-            sb.Append("  Position: ").Append(Position).Append("\n");
+            sb.Append("class CaseStatementDesign {\n");
+            sb.Append("  SelectedField: ").Append(SelectedField).Append("\n");
+            sb.Append("  CaseStatementItems: ").Append(CaseStatementItems).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,30 +87,30 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IntellisenseRequest);
+            return this.Equals(input as CaseStatementDesign);
         }
 
         /// <summary>
-        /// Returns true if IntellisenseRequest instances are equal
+        /// Returns true if CaseStatementDesign instances are equal
         /// </summary>
-        /// <param name="input">Instance of IntellisenseRequest to be compared</param>
+        /// <param name="input">Instance of CaseStatementDesign to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(IntellisenseRequest input)
+        public bool Equals(CaseStatementDesign input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Lines == input.Lines ||
-                    this.Lines != null &&
-                    input.Lines != null &&
-                    this.Lines.SequenceEqual(input.Lines)
+                    this.SelectedField == input.SelectedField ||
+                    (this.SelectedField != null &&
+                    this.SelectedField.Equals(input.SelectedField))
                 ) && 
                 (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
+                    this.CaseStatementItems == input.CaseStatementItems ||
+                    this.CaseStatementItems != null &&
+                    input.CaseStatementItems != null &&
+                    this.CaseStatementItems.SequenceEqual(input.CaseStatementItems)
                 );
         }
 
@@ -129,10 +123,10 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Lines != null)
-                    hashCode = hashCode * 59 + this.Lines.GetHashCode();
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
+                if (this.SelectedField != null)
+                    hashCode = hashCode * 59 + this.SelectedField.GetHashCode();
+                if (this.CaseStatementItems != null)
+                    hashCode = hashCode * 59 + this.CaseStatementItems.GetHashCode();
                 return hashCode;
             }
         }

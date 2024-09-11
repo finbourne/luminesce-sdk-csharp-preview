@@ -27,41 +27,52 @@ using OpenAPIDateConverter = Finbourne.Luminesce.Sdk.Client.OpenAPIDateConverter
 namespace Finbourne.Luminesce.Sdk.Model
 {
     /// <summary>
-    /// Representation of a request for IntellisenseItems
+    /// Information about a case statement.  A typical case statement would look like:  CASE WHEN Field {Filter} Source THEN Target  For example: CASE WHEN &#39;currency&#39; &#x3D; &#39;USD&#39; THEN &#39;US&#39;  Here the Field is &#39;currency&#39;, the Source is &#39;USD&#39;, the Filter is &#39;&#x3D;&#39;, and the Target is &#39;US&#39;
     /// </summary>
-    [DataContract(Name = "IntellisenseRequest")]
-    public partial class IntellisenseRequest : IEquatable<IntellisenseRequest>
+    [DataContract(Name = "CaseStatementItem")]
+    public partial class CaseStatementItem : IEquatable<CaseStatementItem>
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="IntellisenseRequest" /> class.
+        /// Initializes a new instance of the <see cref="CaseStatementItem" /> class.
         /// </summary>
         [JsonConstructorAttribute]
-        protected IntellisenseRequest() { }
+        protected CaseStatementItem() { }
         /// <summary>
-        /// Initializes a new instance of the <see cref="IntellisenseRequest" /> class.
+        /// Initializes a new instance of the <see cref="CaseStatementItem" /> class.
         /// </summary>
-        /// <param name="lines">The lines of text the user currently has in the editor (required).</param>
-        /// <param name="position">position (required).</param>
-        public IntellisenseRequest(List<string> lines = default(List<string>), CursorPosition position = default(CursorPosition))
+        /// <param name="filter">The operator in the case statement SQL expression (required).</param>
+        /// <param name="source">The expression that is on the LHS of the operator  A typical case statement would look like:  CASE Field {Filter} Source THEN Target (required).</param>
+        /// <param name="target">The expression that is on the RHS of the operator  A typical case statement would look like:  CASE Field {Filter} Source THEN Target (required).</param>
+        public CaseStatementItem(string filter = default(string), string source = default(string), string target = default(string))
         {
-            // to ensure "lines" is required (not null)
-            this.Lines = lines ?? throw new ArgumentNullException("lines is a required property for IntellisenseRequest and cannot be null");
-            // to ensure "position" is required (not null)
-            this.Position = position ?? throw new ArgumentNullException("position is a required property for IntellisenseRequest and cannot be null");
+            // to ensure "filter" is required (not null)
+            this.Filter = filter ?? throw new ArgumentNullException("filter is a required property for CaseStatementItem and cannot be null");
+            // to ensure "source" is required (not null)
+            this.Source = source ?? throw new ArgumentNullException("source is a required property for CaseStatementItem and cannot be null");
+            // to ensure "target" is required (not null)
+            this.Target = target ?? throw new ArgumentNullException("target is a required property for CaseStatementItem and cannot be null");
         }
 
         /// <summary>
-        /// The lines of text the user currently has in the editor
+        /// The operator in the case statement SQL expression
         /// </summary>
-        /// <value>The lines of text the user currently has in the editor</value>
-        [DataMember(Name = "lines", IsRequired = true, EmitDefaultValue = false)]
-        public List<string> Lines { get; set; }
+        /// <value>The operator in the case statement SQL expression</value>
+        [DataMember(Name = "filter", IsRequired = true, EmitDefaultValue = false)]
+        public string Filter { get; set; }
 
         /// <summary>
-        /// Gets or Sets Position
+        /// The expression that is on the LHS of the operator  A typical case statement would look like:  CASE Field {Filter} Source THEN Target
         /// </summary>
-        [DataMember(Name = "position", IsRequired = true, EmitDefaultValue = false)]
-        public CursorPosition Position { get; set; }
+        /// <value>The expression that is on the LHS of the operator  A typical case statement would look like:  CASE Field {Filter} Source THEN Target</value>
+        [DataMember(Name = "source", IsRequired = true, EmitDefaultValue = false)]
+        public string Source { get; set; }
+
+        /// <summary>
+        /// The expression that is on the RHS of the operator  A typical case statement would look like:  CASE Field {Filter} Source THEN Target
+        /// </summary>
+        /// <value>The expression that is on the RHS of the operator  A typical case statement would look like:  CASE Field {Filter} Source THEN Target</value>
+        [DataMember(Name = "target", IsRequired = true, EmitDefaultValue = false)]
+        public string Target { get; set; }
 
         /// <summary>
         /// Returns the string presentation of the object
@@ -70,9 +81,10 @@ namespace Finbourne.Luminesce.Sdk.Model
         public override string ToString()
         {
             var sb = new StringBuilder();
-            sb.Append("class IntellisenseRequest {\n");
-            sb.Append("  Lines: ").Append(Lines).Append("\n");
-            sb.Append("  Position: ").Append(Position).Append("\n");
+            sb.Append("class CaseStatementItem {\n");
+            sb.Append("  Filter: ").Append(Filter).Append("\n");
+            sb.Append("  Source: ").Append(Source).Append("\n");
+            sb.Append("  Target: ").Append(Target).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -93,30 +105,34 @@ namespace Finbourne.Luminesce.Sdk.Model
         /// <returns>Boolean</returns>
         public override bool Equals(object input)
         {
-            return this.Equals(input as IntellisenseRequest);
+            return this.Equals(input as CaseStatementItem);
         }
 
         /// <summary>
-        /// Returns true if IntellisenseRequest instances are equal
+        /// Returns true if CaseStatementItem instances are equal
         /// </summary>
-        /// <param name="input">Instance of IntellisenseRequest to be compared</param>
+        /// <param name="input">Instance of CaseStatementItem to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(IntellisenseRequest input)
+        public bool Equals(CaseStatementItem input)
         {
             if (input == null)
                 return false;
 
             return 
                 (
-                    this.Lines == input.Lines ||
-                    this.Lines != null &&
-                    input.Lines != null &&
-                    this.Lines.SequenceEqual(input.Lines)
+                    this.Filter == input.Filter ||
+                    (this.Filter != null &&
+                    this.Filter.Equals(input.Filter))
                 ) && 
                 (
-                    this.Position == input.Position ||
-                    (this.Position != null &&
-                    this.Position.Equals(input.Position))
+                    this.Source == input.Source ||
+                    (this.Source != null &&
+                    this.Source.Equals(input.Source))
+                ) && 
+                (
+                    this.Target == input.Target ||
+                    (this.Target != null &&
+                    this.Target.Equals(input.Target))
                 );
         }
 
@@ -129,10 +145,12 @@ namespace Finbourne.Luminesce.Sdk.Model
             unchecked // Overflow is fine, just wrap
             {
                 int hashCode = 41;
-                if (this.Lines != null)
-                    hashCode = hashCode * 59 + this.Lines.GetHashCode();
-                if (this.Position != null)
-                    hashCode = hashCode * 59 + this.Position.GetHashCode();
+                if (this.Filter != null)
+                    hashCode = hashCode * 59 + this.Filter.GetHashCode();
+                if (this.Source != null)
+                    hashCode = hashCode * 59 + this.Source.GetHashCode();
+                if (this.Target != null)
+                    hashCode = hashCode * 59 + this.Target.GetHashCode();
                 return hashCode;
             }
         }
