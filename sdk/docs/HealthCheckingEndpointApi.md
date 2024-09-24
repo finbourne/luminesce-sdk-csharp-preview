@@ -4,16 +4,16 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**FakeNodeReclaim**](HealthCheckingEndpointApi.md#fakenodereclaim) | **GET** /fakeNodeReclaim | [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
+[**FakeNodeReclaim**](HealthCheckingEndpointApi.md#fakenodereclaim) | **GET** /fakeNodeReclaim | [INTERNAL] FakeNodeReclaim: Helps testing of AWS node reclaim behaviour
 
 
 <a name="fakenodereclaim"></a>
 # **FakeNodeReclaim**
 > Object FakeNodeReclaim (int? secondsUntilReclaim = null)
 
-[INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
+[INTERNAL] FakeNodeReclaim: Helps testing of AWS node reclaim behaviour
 
-Internal testing controller to simulate having received an AWS node reclaim warning, or similar.
+ An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place. Simulates having received an AWS node reclaim warning, or similar.
 
 ### Example
 ```csharp
@@ -39,7 +39,7 @@ namespace Example
 
             try
             {
-                // [INTERNAL] FakeNodeReclaim: An internal Method used to mark the next SIGTERM as though an Aws Node reclaim were about to take place.
+                // [INTERNAL] FakeNodeReclaim: Helps testing of AWS node reclaim behaviour
                 Object result = apiInstance.FakeNodeReclaim(secondsUntilReclaim);
                 Debug.WriteLine(result);
             }

@@ -4,25 +4,25 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelQuery**](SqlBackgroundExecutionApi.md#cancelquery) | **DELETE** /api/SqlBackground/{executionId} | CancelQuery: Cancels (if running) or clears the data from (if completed) a previously started query
-[**FetchQueryResultCsv**](SqlBackgroundExecutionApi.md#fetchqueryresultcsv) | **GET** /api/SqlBackground/{executionId}/csv | FetchQueryResultCsv: Fetches the result from a previously started query, in CSV format.
-[**FetchQueryResultExcel**](SqlBackgroundExecutionApi.md#fetchqueryresultexcel) | **GET** /api/SqlBackground/{executionId}/excel | FetchQueryResultExcel: Fetches the result from a previously started query, in Excel format.
-[**FetchQueryResultHistogram**](SqlBackgroundExecutionApi.md#fetchqueryresulthistogram) | **GET** /api/SqlBackground/{executionId}/histogram | FetchQueryResultHistogram: Fetches the result from a previously started query, converts it to a histogram (counts in buckets).
-[**FetchQueryResultJson**](SqlBackgroundExecutionApi.md#fetchqueryresultjson) | **GET** /api/SqlBackground/{executionId}/json | FetchQueryResultJson: Fetches the result from a previously started query, in JSON string format.  Please move to &#39;/jsonProper&#39; instead.  This may be marked as Deprecated in the future.
-[**FetchQueryResultJsonProper**](SqlBackgroundExecutionApi.md#fetchqueryresultjsonproper) | **GET** /api/SqlBackground/{executionId}/jsonProper | FetchQueryResultJsonProper: Fetches the result from a previously started query, in JSON format.
-[**FetchQueryResultParquet**](SqlBackgroundExecutionApi.md#fetchqueryresultparquet) | **GET** /api/SqlBackground/{executionId}/parquet | FetchQueryResultParquet: Fetches the result from a previously started query, in Parquet format.
-[**FetchQueryResultPipe**](SqlBackgroundExecutionApi.md#fetchqueryresultpipe) | **GET** /api/SqlBackground/{executionId}/pipe | FetchQueryResultPipe: Fetches the result from a previously started query, in pipe-delimited format.
-[**FetchQueryResultSqlite**](SqlBackgroundExecutionApi.md#fetchqueryresultsqlite) | **GET** /api/SqlBackground/{executionId}/sqlite | FetchQueryResultSqlite: Fetches the result from a previously started query, in SqLite format.
-[**FetchQueryResultXml**](SqlBackgroundExecutionApi.md#fetchqueryresultxml) | **GET** /api/SqlBackground/{executionId}/xml | FetchQueryResultXml: Fetches the result from a previously started query, in Xml format.
-[**GetProgressOf**](SqlBackgroundExecutionApi.md#getprogressof) | **GET** /api/SqlBackground/{executionId} | GetProgressOf: View progress information (up until this point)
-[**StartQuery**](SqlBackgroundExecutionApi.md#startquery) | **PUT** /api/SqlBackground | StartQuery: Starts to Execute LuminesceSql in the background.
+[**CancelQuery**](SqlBackgroundExecutionApi.md#cancelquery) | **DELETE** /api/SqlBackground/{executionId} | CancelQuery: Cancels / Clears data from a previously run query
+[**FetchQueryResultCsv**](SqlBackgroundExecutionApi.md#fetchqueryresultcsv) | **GET** /api/SqlBackground/{executionId}/csv | FetchQueryResultCsv: Fetches the result of a query as CSV
+[**FetchQueryResultExcel**](SqlBackgroundExecutionApi.md#fetchqueryresultexcel) | **GET** /api/SqlBackground/{executionId}/excel | FetchQueryResultExcel: Fetches the result of a query as an Excel file
+[**FetchQueryResultHistogram**](SqlBackgroundExecutionApi.md#fetchqueryresulthistogram) | **GET** /api/SqlBackground/{executionId}/histogram | FetchQueryResultHistogram: Constructs a histogram of the result of a query
+[**FetchQueryResultJson**](SqlBackgroundExecutionApi.md#fetchqueryresultjson) | **GET** /api/SqlBackground/{executionId}/json | FetchQueryResultJson: Fetches the result of a query as a JSON string
+[**FetchQueryResultJsonProper**](SqlBackgroundExecutionApi.md#fetchqueryresultjsonproper) | **GET** /api/SqlBackground/{executionId}/jsonProper | FetchQueryResultJsonProper: Fetches the result of a query as JSON
+[**FetchQueryResultParquet**](SqlBackgroundExecutionApi.md#fetchqueryresultparquet) | **GET** /api/SqlBackground/{executionId}/parquet | FetchQueryResultParquet: Fetches the result of a query as Parquet
+[**FetchQueryResultPipe**](SqlBackgroundExecutionApi.md#fetchqueryresultpipe) | **GET** /api/SqlBackground/{executionId}/pipe | FetchQueryResultPipe: Fetches the result of a query as pipe-delimited
+[**FetchQueryResultSqlite**](SqlBackgroundExecutionApi.md#fetchqueryresultsqlite) | **GET** /api/SqlBackground/{executionId}/sqlite | FetchQueryResultSqlite: Fetches the result of a query as SqLite
+[**FetchQueryResultXml**](SqlBackgroundExecutionApi.md#fetchqueryresultxml) | **GET** /api/SqlBackground/{executionId}/xml | FetchQueryResultXml: Fetches the result of a query as XML
+[**GetProgressOf**](SqlBackgroundExecutionApi.md#getprogressof) | **GET** /api/SqlBackground/{executionId} | GetProgressOf: View progress information up until this point
+[**StartQuery**](SqlBackgroundExecutionApi.md#startquery) | **PUT** /api/SqlBackground | StartQuery: Starts to Execute Sql in the background
 
 
 <a name="cancelquery"></a>
 # **CancelQuery**
 > BackgroundQueryCancelResponse CancelQuery (string executionId)
 
-CancelQuery: Cancels (if running) or clears the data from (if completed) a previously started query
+CancelQuery: Cancels / Clears data from a previously run query
 
 Cancel the query (if still running) / clear the data (if already returned) The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't exist and is not running. 
 
@@ -50,7 +50,7 @@ namespace Example
 
             try
             {
-                // CancelQuery: Cancels (if running) or clears the data from (if completed) a previously started query
+                // CancelQuery: Cancels / Clears data from a previously run query
                 BackgroundQueryCancelResponse result = apiInstance.CancelQuery(executionId);
                 Debug.WriteLine(result);
             }
@@ -96,9 +96,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultCsv**
 > string FetchQueryResultCsv (string executionId, bool? download = null, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null, string delimiter = null, string escape = null)
 
-FetchQueryResultCsv: Fetches the result from a previously started query, in CSV format.
+FetchQueryResultCsv: Fetches the result of a query as CSV
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -133,7 +133,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultCsv: Fetches the result from a previously started query, in CSV format.
+                // FetchQueryResultCsv: Fetches the result of a query as CSV
                 string result = apiInstance.FetchQueryResultCsv(executionId, download, sortBy, filter, select, groupBy, limit, page, delimiter, escape);
                 Debug.WriteLine(result);
             }
@@ -190,9 +190,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultExcel**
 > System.IO.Stream FetchQueryResultExcel (string executionId, string sortBy = null, string filter = null, string select = null, string groupBy = null)
 
-FetchQueryResultExcel: Fetches the result from a previously started query, in Excel format.
+FetchQueryResultExcel: Fetches the result of a query as an Excel file
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -222,7 +222,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultExcel: Fetches the result from a previously started query, in Excel format.
+                // FetchQueryResultExcel: Fetches the result of a query as an Excel file
                 System.IO.Stream result = apiInstance.FetchQueryResultExcel(executionId, sortBy, filter, select, groupBy);
                 Debug.WriteLine(result);
             }
@@ -274,7 +274,7 @@ Name | Type | Description  | Notes
 # **FetchQueryResultHistogram**
 > string FetchQueryResultHistogram (string executionId, string timestampFieldName, DateTimeOffset? startAt = null, DateTimeOffset? endAt = null, string bucketSize = null, string filter = null, bool? jsonProper = null)
 
-FetchQueryResultHistogram: Fetches the result from a previously started query, converts it to a histogram (counts in buckets).
+FetchQueryResultHistogram: Constructs a histogram of the result of a query
 
 Fetch the histogram in Json format (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
@@ -308,7 +308,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultHistogram: Fetches the result from a previously started query, converts it to a histogram (counts in buckets).
+                // FetchQueryResultHistogram: Constructs a histogram of the result of a query
                 string result = apiInstance.FetchQueryResultHistogram(executionId, timestampFieldName, startAt, endAt, bucketSize, filter, jsonProper);
                 Debug.WriteLine(result);
             }
@@ -362,9 +362,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultJson**
 > string FetchQueryResultJson (string executionId, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null)
 
-FetchQueryResultJson: Fetches the result from a previously started query, in JSON string format.  Please move to '/jsonProper' instead.  This may be marked as Deprecated in the future.
+FetchQueryResultJson: Fetches the result of a query as a JSON string
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+ *Please move to '/jsonProper' instead.  This may be marked as Deprecated in the future.*  Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -396,7 +396,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultJson: Fetches the result from a previously started query, in JSON string format.  Please move to '/jsonProper' instead.  This may be marked as Deprecated in the future.
+                // FetchQueryResultJson: Fetches the result of a query as a JSON string
                 string result = apiInstance.FetchQueryResultJson(executionId, sortBy, filter, select, groupBy, limit, page);
                 Debug.WriteLine(result);
             }
@@ -450,9 +450,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultJsonProper**
 > string FetchQueryResultJsonProper (string executionId, bool? download = null, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null)
 
-FetchQueryResultJsonProper: Fetches the result from a previously started query, in JSON format.
+FetchQueryResultJsonProper: Fetches the result of a query as JSON
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -485,7 +485,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultJsonProper: Fetches the result from a previously started query, in JSON format.
+                // FetchQueryResultJsonProper: Fetches the result of a query as JSON
                 string result = apiInstance.FetchQueryResultJsonProper(executionId, download, sortBy, filter, select, groupBy, limit, page);
                 Debug.WriteLine(result);
             }
@@ -540,9 +540,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultParquet**
 > System.IO.Stream FetchQueryResultParquet (string executionId, string sortBy = null, string filter = null, string select = null, string groupBy = null)
 
-FetchQueryResultParquet: Fetches the result from a previously started query, in Parquet format.
+FetchQueryResultParquet: Fetches the result of a query as Parquet
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -572,7 +572,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultParquet: Fetches the result from a previously started query, in Parquet format.
+                // FetchQueryResultParquet: Fetches the result of a query as Parquet
                 System.IO.Stream result = apiInstance.FetchQueryResultParquet(executionId, sortBy, filter, select, groupBy);
                 Debug.WriteLine(result);
             }
@@ -624,9 +624,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultPipe**
 > string FetchQueryResultPipe (string executionId, bool? download = null, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null)
 
-FetchQueryResultPipe: Fetches the result from a previously started query, in pipe-delimited format.
+FetchQueryResultPipe: Fetches the result of a query as pipe-delimited
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -659,7 +659,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultPipe: Fetches the result from a previously started query, in pipe-delimited format.
+                // FetchQueryResultPipe: Fetches the result of a query as pipe-delimited
                 string result = apiInstance.FetchQueryResultPipe(executionId, download, sortBy, filter, select, groupBy, limit, page);
                 Debug.WriteLine(result);
             }
@@ -714,9 +714,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultSqlite**
 > System.IO.Stream FetchQueryResultSqlite (string executionId, string sortBy = null, string filter = null, string select = null, string groupBy = null)
 
-FetchQueryResultSqlite: Fetches the result from a previously started query, in SqLite format.
+FetchQueryResultSqlite: Fetches the result of a query as SqLite
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -746,7 +746,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultSqlite: Fetches the result from a previously started query, in SqLite format.
+                // FetchQueryResultSqlite: Fetches the result of a query as SqLite
                 System.IO.Stream result = apiInstance.FetchQueryResultSqlite(executionId, sortBy, filter, select, groupBy);
                 Debug.WriteLine(result);
             }
@@ -798,9 +798,9 @@ Name | Type | Description  | Notes
 # **FetchQueryResultXml**
 > string FetchQueryResultXml (string executionId, bool? download = null, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null)
 
-FetchQueryResultXml: Fetches the result from a previously started query, in Xml format.
+FetchQueryResultXml: Fetches the result of a query as XML
 
-Fetch the data in various formats (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
+Fetch the data in the format of the method's name (if available, or if not simply being informed it is not yet ready).  The following error codes are to be anticipated most with standard Problem Detail reports: - 400 BadRequest : Something failed with the execution of your query - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
 ### Example
 ```csharp
@@ -833,7 +833,7 @@ namespace Example
 
             try
             {
-                // FetchQueryResultXml: Fetches the result from a previously started query, in Xml format.
+                // FetchQueryResultXml: Fetches the result of a query as XML
                 string result = apiInstance.FetchQueryResultXml(executionId, download, sortBy, filter, select, groupBy, limit, page);
                 Debug.WriteLine(result);
             }
@@ -888,7 +888,7 @@ Name | Type | Description  | Notes
 # **GetProgressOf**
 > BackgroundQueryProgressResponse GetProgressOf (string executionId, bool? buildFromLogs = null)
 
-GetProgressOf: View progress information (up until this point)
+GetProgressOf: View progress information up until this point
 
 View progress information (up until this point) The following error codes are to be anticipated most with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't exist and is not running. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
@@ -917,7 +917,7 @@ namespace Example
 
             try
             {
-                // GetProgressOf: View progress information (up until this point)
+                // GetProgressOf: View progress information up until this point
                 BackgroundQueryProgressResponse result = apiInstance.GetProgressOf(executionId, buildFromLogs);
                 Debug.WriteLine(result);
             }
@@ -964,7 +964,7 @@ Name | Type | Description  | Notes
 # **StartQuery**
 > BackgroundQueryResponse StartQuery (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeoutSeconds = null, int? keepForSeconds = null)
 
-StartQuery: Starts to Execute LuminesceSql in the background.
+StartQuery: Starts to Execute Sql in the background
 
  Allow for starting a potentially long running query and getting back an immediate response with how to  - fetch the data in various formats (if available, or if not simply being informed it is not yet ready) - view progress information (up until this point) - cancel the query (if still running) / clear the data (if already returned)  This can still error on things like an outright syntax error, but more runtime errors (e.g. from providers) will not cause this to error (that will happen when attempting to fetch data)  Here is an example that intentionally takes one minute to run:  ```sql select Str, Takes500Ms from Testing1K where UseLinq = true and [Int] <= 120 ```  This is the only place in the Luminesce WebAPI where the following is supported. This will allow for the same user running a character-identical query not kick off a new query but simply be returned a reference  to the already running one for up to `N` seconds (where `N` should be `<=` `keepForSeconds`).  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - there was something wrong with your query syntax (the issue was detected at parse-time) - 401 Unauthorized - 403 Forbidden 
 
@@ -996,7 +996,7 @@ namespace Example
 
             try
             {
-                // StartQuery: Starts to Execute LuminesceSql in the background.
+                // StartQuery: Starts to Execute Sql in the background
                 BackgroundQueryResponse result = apiInstance.StartQuery(body, scalarParameters, queryName, timeoutSeconds, keepForSeconds);
                 Debug.WriteLine(result);
             }
