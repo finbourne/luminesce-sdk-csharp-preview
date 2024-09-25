@@ -4,16 +4,16 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetCatalog**](CurrentTableFieldCatalogApi.md#getcatalog) | **GET** /api/Catalog | GetCatalog: Flattened Table/Faield Catalog
-[**GetFields**](CurrentTableFieldCatalogApi.md#getfields) | **GET** /api/Catalog/fields | GetFields: Lists field/parameter information for providers
-[**GetProviders**](CurrentTableFieldCatalogApi.md#getproviders) | **GET** /api/Catalog/providers | GetProviders: Lists providers available
+[**GetCatalog**](CurrentTableFieldCatalogApi.md#getcatalog) | **GET** /api/Catalog | GetCatalog: Get a Flattened Table/Field Catalog
+[**GetFields**](CurrentTableFieldCatalogApi.md#getfields) | **GET** /api/Catalog/fields | GetFields: List field and parameters for providers
+[**GetProviders**](CurrentTableFieldCatalogApi.md#getproviders) | **GET** /api/Catalog/providers | GetProviders: List available providers
 
 
 <a name="getcatalog"></a>
 # **GetCatalog**
 > string GetCatalog (string freeTextSearch = null, bool? jsonProper = null, bool? useCache = null)
 
-GetCatalog: Flattened Table/Faield Catalog
+GetCatalog: Get a Flattened Table/Field Catalog
 
  Returns the User's full version of the catalog (Providers, their fields and associated information) that are currently running that you have access to (in Json format).  This is the entire catalog flattened, which is often quite large and always a bit repetitive.   The internal results are cached for several minutes.  Consider using `api/Catalog/providers` and `api/Catalog/fields` for a more granular and incremental loading flow.  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // GetCatalog: Flattened Table/Faield Catalog
+                // GetCatalog: Get a Flattened Table/Field Catalog
                 string result = apiInstance.GetCatalog(freeTextSearch, jsonProper, useCache);
                 Debug.WriteLine(result);
             }
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 # **GetFields**
 > string GetFields (string tableLike = null)
 
-GetFields: Lists field/parameter information for providers
+GetFields: List field and parameters for providers
 
  Returns the User's full version of the catalog but only the field/parameter-level information  (as well as the TableName they refer to, of course) for tables matching the `tableLike` (manually include wildcards if desired).  The internal results are cached for several minutes.  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
 
@@ -119,7 +119,7 @@ namespace Example
 
             try
             {
-                // GetFields: Lists field/parameter information for providers
+                // GetFields: List field and parameters for providers
                 string result = apiInstance.GetFields(tableLike);
                 Debug.WriteLine(result);
             }
@@ -165,7 +165,7 @@ Name | Type | Description  | Notes
 # **GetProviders**
 > string GetProviders (string freeTextSearch = null, bool? useCache = null)
 
-GetProviders: Lists providers available
+GetProviders: List available providers
 
  Returns the User's full version of the catalog but only the table/provider-level information they have access to.  The internal results are cached for several minutes.  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
 
@@ -194,7 +194,7 @@ namespace Example
 
             try
             {
-                // GetProviders: Lists providers available
+                // GetProviders: List available providers
                 string result = apiInstance.GetProviders(freeTextSearch, useCache);
                 Debug.WriteLine(result);
             }

@@ -4,18 +4,18 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**CancelHistory**](HistoricallyExecutedQueriesApi.md#cancelhistory) | **DELETE** /api/History/{executionId} | CancelHistory: Cancels / Clears data from a query history search
-[**FetchHistoryResultHistogram**](HistoricallyExecutedQueriesApi.md#fetchhistoryresulthistogram) | **GET** /api/History/{executionId}/histogram | FetchHistoryResultHistogram: Makes a histogram of results from a query history search
-[**FetchHistoryResultJson**](HistoricallyExecutedQueriesApi.md#fetchhistoryresultjson) | **GET** /api/History/{executionId}/json | FetchHistoryResultJson: Fetches JSON results from a query history search
-[**GetHistory**](HistoricallyExecutedQueriesApi.md#gethistory) | **GET** /api/History | GetHistory: Starts a background query history search
-[**GetProgressOfHistory**](HistoricallyExecutedQueriesApi.md#getprogressofhistory) | **GET** /api/History/{executionId} | GetProgressOfHistory: View progress of a query history search
+[**CancelHistory**](HistoricallyExecutedQueriesApi.md#cancelhistory) | **DELETE** /api/History/{executionId} | CancelHistory: Cancel / Clear data from a history search
+[**FetchHistoryResultHistogram**](HistoricallyExecutedQueriesApi.md#fetchhistoryresulthistogram) | **GET** /api/History/{executionId}/histogram | FetchHistoryResultHistogram: Make a histogram of results of a history search
+[**FetchHistoryResultJson**](HistoricallyExecutedQueriesApi.md#fetchhistoryresultjson) | **GET** /api/History/{executionId}/json | FetchHistoryResultJson: Fetch JSON results from a query history search
+[**GetHistory**](HistoricallyExecutedQueriesApi.md#gethistory) | **GET** /api/History | GetHistory: Start a background history search
+[**GetProgressOfHistory**](HistoricallyExecutedQueriesApi.md#getprogressofhistory) | **GET** /api/History/{executionId} | GetProgressOfHistory: View progress of a history search
 
 
 <a name="cancelhistory"></a>
 # **CancelHistory**
 > BackgroundQueryCancelResponse CancelHistory (string executionId)
 
-CancelHistory: Cancels / Clears data from a query history search
+CancelHistory: Cancel / Clear data from a history search
 
 Cancel the query (if still running) / clear the data (if already returned) The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't exist and is not running. 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // CancelHistory: Cancels / Clears data from a query history search
+                // CancelHistory: Cancel / Clear data from a history search
                 BackgroundQueryCancelResponse result = apiInstance.CancelHistory(executionId);
                 Debug.WriteLine(result);
             }
@@ -89,7 +89,7 @@ Name | Type | Description  | Notes
 # **FetchHistoryResultHistogram**
 > string FetchHistoryResultHistogram (string executionId, string bucketSize = null, string filter = null, bool? jsonProper = null)
 
-FetchHistoryResultHistogram: Makes a histogram of results from a query history search
+FetchHistoryResultHistogram: Make a histogram of results of a history search
 
 Fetch the histogram in Json format (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
@@ -120,7 +120,7 @@ namespace Example
 
             try
             {
-                // FetchHistoryResultHistogram: Makes a histogram of results from a query history search
+                // FetchHistoryResultHistogram: Make a histogram of results of a history search
                 string result = apiInstance.FetchHistoryResultHistogram(executionId, bucketSize, filter, jsonProper);
                 Debug.WriteLine(result);
             }
@@ -171,7 +171,7 @@ Name | Type | Description  | Notes
 # **FetchHistoryResultJson**
 > string FetchHistoryResultJson (string executionId, string sortBy = null, string filter = null, string select = null, string groupBy = null, int? limit = null, int? page = null, bool? jsonProper = null)
 
-FetchHistoryResultJson: Fetches JSON results from a query history search
+FetchHistoryResultJson: Fetch JSON results from a query history search
 
 Fetch the data in Json format (if available, or if not simply being informed it is not yet ready) The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't (yet) exist. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
@@ -206,7 +206,7 @@ namespace Example
 
             try
             {
-                // FetchHistoryResultJson: Fetches JSON results from a query history search
+                // FetchHistoryResultJson: Fetch JSON results from a query history search
                 string result = apiInstance.FetchHistoryResultJson(executionId, sortBy, filter, select, groupBy, limit, page, jsonProper);
                 Debug.WriteLine(result);
             }
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 # **GetHistory**
 > BackgroundQueryResponse GetHistory (DateTimeOffset? startAt = null, DateTimeOffset? endAt = null, string freeTextSearch = null, bool? showAll = null, bool? mayUseNativeStore = null)
 
-GetHistory: Starts a background query history search
+GetHistory: Start a background history search
 
  Starts to load the historical query logs for a certain time range, search criteria, etc.  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
 
@@ -293,7 +293,7 @@ namespace Example
 
             try
             {
-                // GetHistory: Starts a background query history search
+                // GetHistory: Start a background history search
                 BackgroundQueryResponse result = apiInstance.GetHistory(startAt, endAt, freeTextSearch, showAll, mayUseNativeStore);
                 Debug.WriteLine(result);
             }
@@ -343,7 +343,7 @@ Name | Type | Description  | Notes
 # **GetProgressOfHistory**
 > BackgroundQueryProgressResponse GetProgressOfHistory (string executionId)
 
-GetProgressOfHistory: View progress of a query history search
+GetProgressOfHistory: View progress of a history search
 
 View progress information (up until this point) of previously started History query The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden - 404 Not Found : The requested query result doesn't exist and is not running. - 429 Too Many Requests : Please try your request again soon   1. The query has been executed successfully in the past yet the server-instance receiving this request (e.g. from a load balancer) doesn't yet have this data available.   1. By virtue of the request you have just placed this will have started to load from the persisted cache and will soon be available.   1. It is also the case that the original server-instance to process the original query is likely to already be able to service this request.
 
@@ -371,7 +371,7 @@ namespace Example
 
             try
             {
-                // GetProgressOfHistory: View progress of a query history search
+                // GetProgressOfHistory: View progress of a history search
                 BackgroundQueryProgressResponse result = apiInstance.GetProgressOfHistory(executionId);
                 Debug.WriteLine(result);
             }

@@ -4,8 +4,8 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DownloadCertificate**](CertificateManagementApi.md#downloadcertificate) | **GET** /api/Certificate/certificate | [EXPERIMENTAL] DownloadCertificate: Download Domain or your personal certificates
-[**ListCertificates**](CertificateManagementApi.md#listcertificates) | **GET** /api/Certificate/certificates | [EXPERIMENTAL] ListCertificates: Lists previously minted certificates
+[**DownloadCertificate**](CertificateManagementApi.md#downloadcertificate) | **GET** /api/Certificate/certificate | [EXPERIMENTAL] DownloadCertificate: Download domain or your personal certificates
+[**ListCertificates**](CertificateManagementApi.md#listcertificates) | **GET** /api/Certificate/certificates | [EXPERIMENTAL] ListCertificates: List previously minted certificates
 [**ManageCertificate**](CertificateManagementApi.md#managecertificate) | **PUT** /api/Certificate/manage | [EXPERIMENTAL] ManageCertificate: Create / Renew / Revoke a certificate
 
 
@@ -13,7 +13,7 @@ Method | HTTP request | Description
 # **DownloadCertificate**
 > System.IO.Stream DownloadCertificate (CertificateType? type = null, CertificateFileType? fileType = null, bool? mayAutoCreate = null)
 
-[EXPERIMENTAL] DownloadCertificate: Download Domain or your personal certificates
+[EXPERIMENTAL] DownloadCertificate: Download domain or your personal certificates
 
  Downloads your latest Domain or your User certificate's public or private key - if any.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - certificate is not available for some reason - 401 Unauthorized - 403 Forbidden 
 
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] DownloadCertificate: Download Domain or your personal certificates
+                // [EXPERIMENTAL] DownloadCertificate: Download domain or your personal certificates
                 System.IO.Stream result = apiInstance.DownloadCertificate(type, fileType, mayAutoCreate);
                 Debug.WriteLine(result);
             }
@@ -93,7 +93,7 @@ Name | Type | Description  | Notes
 # **ListCertificates**
 > ICollection&lt;CertificateState&gt; ListCertificates ()
 
-[EXPERIMENTAL] ListCertificates: Lists previously minted certificates
+[EXPERIMENTAL] ListCertificates: List previously minted certificates
 
  Lists all the certificates previously minted to which you have access.  The following error codes are to be anticipated with standard Problem Detail reports: - 401 Unauthorized - 403 Forbidden 
 
@@ -120,7 +120,7 @@ namespace Example
 
             try
             {
-                // [EXPERIMENTAL] ListCertificates: Lists previously minted certificates
+                // [EXPERIMENTAL] ListCertificates: List previously minted certificates
                 ICollection<CertificateState> result = apiInstance.ListCertificates();
                 Debug.WriteLine(result);
             }

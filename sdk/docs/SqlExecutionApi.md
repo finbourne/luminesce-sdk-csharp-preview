@@ -4,27 +4,27 @@ All URIs are relative to *https://www.lusid.com/honeycomb*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**GetByQueryCsv**](SqlExecutionApi.md#getbyquerycsv) | **GET** /api/Sql/csv/{query} | GetByQueryCsv: Executes Sql from the url returning CSV
-[**GetByQueryExcel**](SqlExecutionApi.md#getbyqueryexcel) | **GET** /api/Sql/excel/{query} | GetByQueryExcel: Executes Sql from the url returning an Excel file
-[**GetByQueryJson**](SqlExecutionApi.md#getbyqueryjson) | **GET** /api/Sql/json/{query} | GetByQueryJson: Executes Sql from the url returning JSON
-[**GetByQueryParquet**](SqlExecutionApi.md#getbyqueryparquet) | **GET** /api/Sql/parquet/{query} | GetByQueryParquet: Executes Sql from the url returning a Parquet file
-[**GetByQueryPipe**](SqlExecutionApi.md#getbyquerypipe) | **GET** /api/Sql/pipe/{query} | GetByQueryPipe: Executes Sql from the url returning pipe-delimited
-[**GetByQuerySqlite**](SqlExecutionApi.md#getbyquerysqlite) | **GET** /api/Sql/sqlite/{query} | GetByQuerySqlite: Executes Sql from the url returning SqLite DB
-[**GetByQueryXml**](SqlExecutionApi.md#getbyqueryxml) | **GET** /api/Sql/xml/{query} | GetByQueryXml: Executes Sql from the url returning XML
-[**PutByQueryCsv**](SqlExecutionApi.md#putbyquerycsv) | **PUT** /api/Sql/csv | PutByQueryCsv: Executes Sql from the body returning CSV
-[**PutByQueryExcel**](SqlExecutionApi.md#putbyqueryexcel) | **PUT** /api/Sql/excel | PutByQueryExcel: Executes Sql from the body making an Excel file
-[**PutByQueryJson**](SqlExecutionApi.md#putbyqueryjson) | **PUT** /api/Sql/json | PutByQueryJson: Executes Sql from the body returning JSON
-[**PutByQueryParquet**](SqlExecutionApi.md#putbyqueryparquet) | **PUT** /api/Sql/parquet | PutByQueryParquet: Executes Sql from the body making a Parquet file
-[**PutByQueryPipe**](SqlExecutionApi.md#putbyquerypipe) | **PUT** /api/Sql/pipe | PutByQueryPipe: Executes Sql from the body making pipe-delimited
-[**PutByQuerySqlite**](SqlExecutionApi.md#putbyquerysqlite) | **PUT** /api/Sql/sqlite | PutByQuerySqlite: Executes Sql from the body returning SqLite DB
-[**PutByQueryXml**](SqlExecutionApi.md#putbyqueryxml) | **PUT** /api/Sql/xml | PutByQueryXml: Executes Sql from the body returning XML
+[**GetByQueryCsv**](SqlExecutionApi.md#getbyquerycsv) | **GET** /api/Sql/csv/{query} | GetByQueryCsv: Execute Sql from the url returning CSV
+[**GetByQueryExcel**](SqlExecutionApi.md#getbyqueryexcel) | **GET** /api/Sql/excel/{query} | GetByQueryExcel: Execute Sql from the url returning an Excel file
+[**GetByQueryJson**](SqlExecutionApi.md#getbyqueryjson) | **GET** /api/Sql/json/{query} | GetByQueryJson: Execute Sql from the url returning JSON
+[**GetByQueryParquet**](SqlExecutionApi.md#getbyqueryparquet) | **GET** /api/Sql/parquet/{query} | GetByQueryParquet: Execute Sql from the url returning a Parquet file
+[**GetByQueryPipe**](SqlExecutionApi.md#getbyquerypipe) | **GET** /api/Sql/pipe/{query} | GetByQueryPipe: Execute Sql from the url returning pipe-delimited
+[**GetByQuerySqlite**](SqlExecutionApi.md#getbyquerysqlite) | **GET** /api/Sql/sqlite/{query} | GetByQuerySqlite: Execute Sql from the url returning SqLite DB
+[**GetByQueryXml**](SqlExecutionApi.md#getbyqueryxml) | **GET** /api/Sql/xml/{query} | GetByQueryXml: Execute Sql from the url returning XML
+[**PutByQueryCsv**](SqlExecutionApi.md#putbyquerycsv) | **PUT** /api/Sql/csv | PutByQueryCsv: Execute Sql from the body returning CSV
+[**PutByQueryExcel**](SqlExecutionApi.md#putbyqueryexcel) | **PUT** /api/Sql/excel | PutByQueryExcel: Execute Sql from the body making an Excel file
+[**PutByQueryJson**](SqlExecutionApi.md#putbyqueryjson) | **PUT** /api/Sql/json | PutByQueryJson: Execute Sql from the body returning JSON
+[**PutByQueryParquet**](SqlExecutionApi.md#putbyqueryparquet) | **PUT** /api/Sql/parquet | PutByQueryParquet: Execute Sql from the body making a Parquet file
+[**PutByQueryPipe**](SqlExecutionApi.md#putbyquerypipe) | **PUT** /api/Sql/pipe | PutByQueryPipe: Execute Sql from the body making pipe-delimited
+[**PutByQuerySqlite**](SqlExecutionApi.md#putbyquerysqlite) | **PUT** /api/Sql/sqlite | PutByQuerySqlite: Execute Sql from the body returning SqLite DB
+[**PutByQueryXml**](SqlExecutionApi.md#putbyqueryxml) | **PUT** /api/Sql/xml | PutByQueryXml: Execute Sql from the body returning XML
 
 
 <a name="getbyquerycsv"></a>
 # **GetByQueryCsv**
 > string GetByQueryCsv (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, bool? download = null, int? timeout = null, string delimiter = null, string escape = null)
 
-GetByQueryCsv: Executes Sql from the url returning CSV
+GetByQueryCsv: Execute Sql from the url returning CSV
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -58,7 +58,7 @@ namespace Example
 
             try
             {
-                // GetByQueryCsv: Executes Sql from the url returning CSV
+                // GetByQueryCsv: Execute Sql from the url returning CSV
                 string result = apiInstance.GetByQueryCsv(query, scalarParameters, queryName, download, timeout, delimiter, escape);
                 Debug.WriteLine(result);
             }
@@ -112,7 +112,7 @@ Name | Type | Description  | Notes
 # **GetByQueryExcel**
 > System.IO.Stream GetByQueryExcel (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeout = null)
 
-GetByQueryExcel: Executes Sql from the url returning an Excel file
+GetByQueryExcel: Execute Sql from the url returning an Excel file
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -143,7 +143,7 @@ namespace Example
 
             try
             {
-                // GetByQueryExcel: Executes Sql from the url returning an Excel file
+                // GetByQueryExcel: Execute Sql from the url returning an Excel file
                 System.IO.Stream result = apiInstance.GetByQueryExcel(query, scalarParameters, queryName, timeout);
                 Debug.WriteLine(result);
             }
@@ -194,7 +194,7 @@ Name | Type | Description  | Notes
 # **GetByQueryJson**
 > string GetByQueryJson (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeout = null, bool? jsonProper = null)
 
-GetByQueryJson: Executes Sql from the url returning JSON
+GetByQueryJson: Execute Sql from the url returning JSON
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -226,7 +226,7 @@ namespace Example
 
             try
             {
-                // GetByQueryJson: Executes Sql from the url returning JSON
+                // GetByQueryJson: Execute Sql from the url returning JSON
                 string result = apiInstance.GetByQueryJson(query, scalarParameters, queryName, timeout, jsonProper);
                 Debug.WriteLine(result);
             }
@@ -278,7 +278,7 @@ Name | Type | Description  | Notes
 # **GetByQueryParquet**
 > System.IO.Stream GetByQueryParquet (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeout = null)
 
-GetByQueryParquet: Executes Sql from the url returning a Parquet file
+GetByQueryParquet: Execute Sql from the url returning a Parquet file
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -309,7 +309,7 @@ namespace Example
 
             try
             {
-                // GetByQueryParquet: Executes Sql from the url returning a Parquet file
+                // GetByQueryParquet: Execute Sql from the url returning a Parquet file
                 System.IO.Stream result = apiInstance.GetByQueryParquet(query, scalarParameters, queryName, timeout);
                 Debug.WriteLine(result);
             }
@@ -360,7 +360,7 @@ Name | Type | Description  | Notes
 # **GetByQueryPipe**
 > string GetByQueryPipe (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, bool? download = null, int? timeout = null)
 
-GetByQueryPipe: Executes Sql from the url returning pipe-delimited
+GetByQueryPipe: Execute Sql from the url returning pipe-delimited
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -392,7 +392,7 @@ namespace Example
 
             try
             {
-                // GetByQueryPipe: Executes Sql from the url returning pipe-delimited
+                // GetByQueryPipe: Execute Sql from the url returning pipe-delimited
                 string result = apiInstance.GetByQueryPipe(query, scalarParameters, queryName, download, timeout);
                 Debug.WriteLine(result);
             }
@@ -444,7 +444,7 @@ Name | Type | Description  | Notes
 # **GetByQuerySqlite**
 > System.IO.Stream GetByQuerySqlite (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeout = null)
 
-GetByQuerySqlite: Executes Sql from the url returning SqLite DB
+GetByQuerySqlite: Execute Sql from the url returning SqLite DB
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -475,7 +475,7 @@ namespace Example
 
             try
             {
-                // GetByQuerySqlite: Executes Sql from the url returning SqLite DB
+                // GetByQuerySqlite: Execute Sql from the url returning SqLite DB
                 System.IO.Stream result = apiInstance.GetByQuerySqlite(query, scalarParameters, queryName, timeout);
                 Debug.WriteLine(result);
             }
@@ -526,7 +526,7 @@ Name | Type | Description  | Notes
 # **GetByQueryXml**
 > string GetByQueryXml (string query, Dictionary<string, string> scalarParameters = null, string queryName = null, bool? download = null, int? timeout = null)
 
-GetByQueryXml: Executes Sql from the url returning XML
+GetByQueryXml: Execute Sql from the url returning XML
 
  Returns data from a simple single-line query execution which is specified on the url. e.g. `select ^ from Sys.Field order by 1, 2`, returned in the format of the method name.  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -558,7 +558,7 @@ namespace Example
 
             try
             {
-                // GetByQueryXml: Executes Sql from the url returning XML
+                // GetByQueryXml: Execute Sql from the url returning XML
                 string result = apiInstance.GetByQueryXml(query, scalarParameters, queryName, download, timeout);
                 Debug.WriteLine(result);
             }
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 # **PutByQueryCsv**
 > string PutByQueryCsv (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, bool? download = null, int? timeoutSeconds = null, string delimiter = null, string escape = null)
 
-PutByQueryCsv: Executes Sql from the body returning CSV
+PutByQueryCsv: Execute Sql from the body returning CSV
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -644,7 +644,7 @@ namespace Example
 
             try
             {
-                // PutByQueryCsv: Executes Sql from the body returning CSV
+                // PutByQueryCsv: Execute Sql from the body returning CSV
                 string result = apiInstance.PutByQueryCsv(body, scalarParameters, queryName, download, timeoutSeconds, delimiter, escape);
                 Debug.WriteLine(result);
             }
@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
 # **PutByQueryExcel**
 > System.IO.Stream PutByQueryExcel (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeoutSeconds = null)
 
-PutByQueryExcel: Executes Sql from the body making an Excel file
+PutByQueryExcel: Execute Sql from the body making an Excel file
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -729,7 +729,7 @@ namespace Example
 
             try
             {
-                // PutByQueryExcel: Executes Sql from the body making an Excel file
+                // PutByQueryExcel: Execute Sql from the body making an Excel file
                 System.IO.Stream result = apiInstance.PutByQueryExcel(body, scalarParameters, queryName, timeoutSeconds);
                 Debug.WriteLine(result);
             }
@@ -780,7 +780,7 @@ Name | Type | Description  | Notes
 # **PutByQueryJson**
 > string PutByQueryJson (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeoutSeconds = null, bool? jsonProper = null)
 
-PutByQueryJson: Executes Sql from the body returning JSON
+PutByQueryJson: Execute Sql from the body returning JSON
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -812,7 +812,7 @@ namespace Example
 
             try
             {
-                // PutByQueryJson: Executes Sql from the body returning JSON
+                // PutByQueryJson: Execute Sql from the body returning JSON
                 string result = apiInstance.PutByQueryJson(body, scalarParameters, queryName, timeoutSeconds, jsonProper);
                 Debug.WriteLine(result);
             }
@@ -864,7 +864,7 @@ Name | Type | Description  | Notes
 # **PutByQueryParquet**
 > System.IO.Stream PutByQueryParquet (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeoutSeconds = null)
 
-PutByQueryParquet: Executes Sql from the body making a Parquet file
+PutByQueryParquet: Execute Sql from the body making a Parquet file
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -895,7 +895,7 @@ namespace Example
 
             try
             {
-                // PutByQueryParquet: Executes Sql from the body making a Parquet file
+                // PutByQueryParquet: Execute Sql from the body making a Parquet file
                 System.IO.Stream result = apiInstance.PutByQueryParquet(body, scalarParameters, queryName, timeoutSeconds);
                 Debug.WriteLine(result);
             }
@@ -946,7 +946,7 @@ Name | Type | Description  | Notes
 # **PutByQueryPipe**
 > string PutByQueryPipe (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, bool? download = null, int? timeoutSeconds = null)
 
-PutByQueryPipe: Executes Sql from the body making pipe-delimited
+PutByQueryPipe: Execute Sql from the body making pipe-delimited
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -978,7 +978,7 @@ namespace Example
 
             try
             {
-                // PutByQueryPipe: Executes Sql from the body making pipe-delimited
+                // PutByQueryPipe: Execute Sql from the body making pipe-delimited
                 string result = apiInstance.PutByQueryPipe(body, scalarParameters, queryName, download, timeoutSeconds);
                 Debug.WriteLine(result);
             }
@@ -1030,7 +1030,7 @@ Name | Type | Description  | Notes
 # **PutByQuerySqlite**
 > System.IO.Stream PutByQuerySqlite (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, int? timeoutSeconds = null)
 
-PutByQuerySqlite: Executes Sql from the body returning SqLite DB
+PutByQuerySqlite: Execute Sql from the body returning SqLite DB
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -1061,7 +1061,7 @@ namespace Example
 
             try
             {
-                // PutByQuerySqlite: Executes Sql from the body returning SqLite DB
+                // PutByQuerySqlite: Execute Sql from the body returning SqLite DB
                 System.IO.Stream result = apiInstance.PutByQuerySqlite(body, scalarParameters, queryName, timeoutSeconds);
                 Debug.WriteLine(result);
             }
@@ -1112,7 +1112,7 @@ Name | Type | Description  | Notes
 # **PutByQueryXml**
 > string PutByQueryXml (string body, Dictionary<string, string> scalarParameters = null, string queryName = null, bool? download = null, int? timeoutSeconds = null)
 
-PutByQueryXml: Executes Sql from the body returning XML
+PutByQueryXml: Execute Sql from the body returning XML
 
  For more complex LuminesceSql a PUT will allow for longer and line break delimited Sql, whic will be returned in the format of the method name. e.g.: ```sql @@cutoff = select #2020-02-01#; @issues = select Id, SortId, Summary, Created, Updated from Dev.Jira.Issue where Project='HC' and Created < @@cutoff and Updated > @@cutoff;  select i.Id, i.SortId, i.Summary, LinkText, LinkedIssueId, LinkedIssueSortId, LinkedIssueSummary from @issues i inner join Dev.Jira.Issue.Link li     on i.Id = li.IssueId ```  The following error codes are to be anticipated with standard Problem Detail reports: - 400 BadRequest - something failed with the execution or parsing of your query - 401 Unauthorized - 403 Forbidden 
 
@@ -1144,7 +1144,7 @@ namespace Example
 
             try
             {
-                // PutByQueryXml: Executes Sql from the body returning XML
+                // PutByQueryXml: Execute Sql from the body returning XML
                 string result = apiInstance.PutByQueryXml(body, scalarParameters, queryName, download, timeoutSeconds);
                 Debug.WriteLine(result);
             }
