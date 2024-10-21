@@ -9,7 +9,7 @@
       "url": "https://www.finbourne.com",
       "email": "info@finbourne.com"
     },
-    "version": "1.16.736",
+    "version": "1.16.747",
     "x-logo": {
       "url": "https://www.lusid.com/app/assets/logo_white.png",
       "backgroundColor": "#415464"
@@ -5724,7 +5724,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -5862,7 +5862,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -6173,7 +6173,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -6343,7 +6343,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -6481,7 +6481,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -6654,7 +6654,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -6792,7 +6792,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
@@ -6965,7 +6965,7 @@
           {
             "name": "loadWaitMilliseconds",
             "in": "query",
-            "description": "Optional period to wait for results deserialization if in progress when this method is called.",
+            "description": "Optional maximum additional wait period for post execution platform processing.",
             "schema": {
               "type": "integer",
               "format": "int32",
